@@ -1,0 +1,85 @@
+import { motion } from "framer-motion";
+import SubPageLayout from "@/components/SubPageLayout";
+import { MapPin, Phone, Mail, Clock } from "lucide-react";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 28 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] } },
+};
+
+export default function BizeUlasin() {
+  return (
+    <SubPageLayout
+      title="MERKEZ OFİS"
+      breadcrumbs={[
+        { label: "Ana Sayfa", href: "/" },
+        { label: "İletişim" },
+        { label: "Bize Ulaşın" },
+      ]}
+    >
+      <motion.div initial="hidden" animate="visible" variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+          <div>
+            <motion.div variants={fadeUp} className="bg-[#f8f8f8] p-8 border-l-4 border-[#ee7514]">
+              <h3 className="text-lg font-bold text-[#212a3c] mb-6 uppercase" style={{ fontFamily: "'Oswald', sans-serif" }}>Merkez Ofis</h3>
+              <div className="space-y-5">
+                <div className="flex gap-4 items-start">
+                  <MapPin size={18} className="text-[#ee7514] shrink-0 mt-0.5" />
+                  <div>
+                    <p className="text-[#333] text-sm font-semibold">Adres</p>
+                    <p className="text-[#555] text-sm leading-6">Barbaros Mah. Akzambak Sok. Uphill Towers A Blok No: 3/A İç Kapı No: 122 Ataşehir / İstanbul</p>
+                  </div>
+                </div>
+                <div className="flex gap-4 items-start">
+                  <Phone size={18} className="text-[#ee7514] shrink-0 mt-0.5" />
+                  <div>
+                    <p className="text-[#333] text-sm font-semibold">Telefon</p>
+                    <p className="text-[#555] text-sm">0216 821 34 34</p>
+                  </div>
+                </div>
+                <div className="flex gap-4 items-start">
+                  <Phone size={18} className="text-[#ee7514] shrink-0 mt-0.5" />
+                  <div>
+                    <p className="text-[#333] text-sm font-semibold">Faks</p>
+                    <p className="text-[#555] text-sm">0850 522 34 03</p>
+                  </div>
+                </div>
+                <div className="flex gap-4 items-start">
+                  <Mail size={18} className="text-[#ee7514] shrink-0 mt-0.5" />
+                  <div>
+                    <p className="text-[#333] text-sm font-semibold">E-posta</p>
+                    <a href="mailto:info@bogazicigroup.com.tr" className="text-[#ee7514] text-sm hover:underline">info@bogazicigroup.com.tr</a>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+          <motion.div variants={fadeUp} className="bg-[#f8f8f8] p-8">
+            <h3 className="text-lg font-bold text-[#212a3c] mb-6 uppercase" style={{ fontFamily: "'Oswald', sans-serif" }}>İletişim Formu</h3>
+            <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+              <div>
+                <label className="block text-xs font-bold text-[#333] uppercase tracking-wider mb-1.5" style={{ fontFamily: "'Raleway', sans-serif" }}>Ad Soyad *</label>
+                <input type="text" className="w-full border border-gray-200 px-4 py-2.5 text-sm focus:border-[#ee7514] focus:outline-none transition-colors" />
+              </div>
+              <div>
+                <label className="block text-xs font-bold text-[#333] uppercase tracking-wider mb-1.5" style={{ fontFamily: "'Raleway', sans-serif" }}>E-posta *</label>
+                <input type="email" className="w-full border border-gray-200 px-4 py-2.5 text-sm focus:border-[#ee7514] focus:outline-none transition-colors" />
+              </div>
+              <div>
+                <label className="block text-xs font-bold text-[#333] uppercase tracking-wider mb-1.5" style={{ fontFamily: "'Raleway', sans-serif" }}>Telefon</label>
+                <input type="tel" className="w-full border border-gray-200 px-4 py-2.5 text-sm focus:border-[#ee7514] focus:outline-none transition-colors" />
+              </div>
+              <div>
+                <label className="block text-xs font-bold text-[#333] uppercase tracking-wider mb-1.5" style={{ fontFamily: "'Raleway', sans-serif" }}>Mesajınız *</label>
+                <textarea rows={4} className="w-full border border-gray-200 px-4 py-2.5 text-sm focus:border-[#ee7514] focus:outline-none transition-colors" />
+              </div>
+              <button type="submit" className="bg-[#212a3c] hover:bg-[#ee7514] text-white px-8 py-3 text-sm font-bold uppercase tracking-widest transition-all duration-200 active:scale-[0.97]" style={{ fontFamily: "'Oswald', sans-serif" }}>
+                Gönder
+              </button>
+            </form>
+          </motion.div>
+        </div>
+      </motion.div>
+    </SubPageLayout>
+  );
+}

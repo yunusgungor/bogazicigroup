@@ -1,24 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import {
-  Menu, X, ChevronDown, ChevronRight,
-  Facebook, Twitter, Instagram, Youtube, MapPin, Mail, Search, SlidersHorizontal
+  ChevronRight, Facebook, Twitter, Instagram, Youtube, MapPin, Mail, Search, SlidersHorizontal
 } from "lucide-react";
+import Header from "@/components/Header";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] } },
 };
 const stagger = { hidden: {}, visible: { transition: { staggerChildren: 0.07 } } };
-
-const navItems = [
-  { label: "Kurumsal", href: "#", sub: ["Hakkımızda", "Onursal Başkan", "Tarihçe", "Vizyon & Misyon", "Kalite Politikamız", "Belgeler"] },
-  { label: "Faaliyet Alanları", href: "#", sub: ["Gayrimenkul", "Taahhüt", "Turizm"] },
-  { label: "Projeler", href: "#", sub: ["Gelecek Projeler", "Tamamlanan Projeler"], subHrefs: ["/projeler/gelecek", "/projeler/tamamlanan"], active: true },
-  { label: "Makine Parkı", href: "#", sub: [] },
-  { label: "İletişim", href: "#", sub: ["Bize Ulaşın", "Satış Ofisleri"] },
-];
 
 type Category = "Tümü" | "Gayrimenkul" | "Taahhüt" | "Turizm" | "Uluslararası";
 
@@ -48,16 +40,43 @@ const allProjects: { name: string; tag: Category; location: string; img: string 
   { name: "190 Strand London", tag: "Uluslararası", location: "Londra, UK", img: "/images/bogazici/taahhut.png" },
   { name: "Goodman's Fields London", tag: "Uluslararası", location: "Londra, UK", img: "/images/bogazici/gayrimenkul.png" },
   { name: "Lantern House", tag: "Uluslararası", location: "Londra, UK", img: "/images/bogazici/project-1.png" },
-  { name: "One Madison", tag: "Uluslararası", location: "New York, ABD", img: "/images/bogazici/project-2.png" },
-  { name: "Van Names", tag: "Uluslararası", location: "Rusya", img: "/images/bogazici/project-3.png" },
+  { name: "One Madison ABD", tag: "Uluslararası", location: "New York, ABD", img: "/images/bogazici/project-2.png" },
+  { name: "Van Names - Rusya", tag: "Uluslararası", location: "Rusya", img: "/images/bogazici/project-3.png" },
   { name: "Gölcük Deprem Konutları", tag: "Taahhüt", location: "Kocaeli, TR", img: "/images/bogazici/project-4.png" },
   { name: "Sakarya Deprem Konutları", tag: "Taahhüt", location: "Sakarya, TR", img: "/images/bogazici/taahhut.png" },
-  { name: "The Spiral", tag: "Uluslararası", location: "New York, ABD", img: "/images/bogazici/project-1.png" },
-  { name: "Al Hitmi Doha", tag: "Uluslararası", location: "Doha, Katar", img: "/images/bogazici/project-2.png" },
-  { name: "Tempo Scan Tower", tag: "Uluslararası", location: "Endonezya", img: "/images/bogazici/project-3.png" },
-  { name: "Vivelva Orebro", tag: "Uluslararası", location: "İsveç", img: "/images/bogazici/project-4.png" },
-  { name: "Kartal Lütfi Kırdar Hastanesi", tag: "Taahhüt", location: "İstanbul, TR", img: "/images/bogazici/taahhut.png" },
+  { name: "The Spiral ABD", tag: "Uluslararası", location: "New York, ABD", img: "/images/bogazici/project-1.png" },
+  { name: "Al Hitmi Doha Katar", tag: "Uluslararası", location: "Doha, Katar", img: "/images/bogazici/project-2.png" },
+  { name: "Tempo Scan Tower - Endonezya", tag: "Uluslararası", location: "Endonezya", img: "/images/bogazici/project-3.png" },
+  { name: "Vivelva Orebro - İsveç", tag: "Uluslararası", location: "İsveç", img: "/images/bogazici/project-4.png" },
+  { name: "Kartal Lütfi Kırdar Eğitim Araştırma Hastanesi", tag: "Taahhüt", location: "İstanbul, TR", img: "/images/bogazici/taahhut.png" },
   { name: "Garanti Bankası Teknoloji Kampüsü", tag: "Taahhüt", location: "İstanbul, TR", img: "/images/bogazici/gayrimenkul.png" },
+  { name: "Tuzla Ticaret Merkezi", tag: "Taahhüt", location: "İstanbul, TR", img: "/images/bogazici/project-1.png" },
+  { name: "Çağlayan Adliye Sarayı", tag: "Taahhüt", location: "İstanbul, TR", img: "/images/bogazici/project-2.png" },
+  { name: "Dolphin AVM Center", tag: "Taahhüt", location: "İstanbul, TR", img: "/images/bogazici/project-3.png" },
+  { name: "Teknopark İstanbul", tag: "Taahhüt", location: "İstanbul, TR", img: "/images/bogazici/project-4.png" },
+  { name: "Hükümet Konağı", tag: "Taahhüt", location: "İstanbul, TR", img: "/images/bogazici/taahhut.png" },
+  { name: "Desbaş Endüstriyel Tesis", tag: "Taahhüt", location: "İstanbul, TR", img: "/images/bogazici/gayrimenkul.png" },
+  { name: "İ.E.T.T. Otogar Yapımı", tag: "Taahhüt", location: "İstanbul, TR", img: "/images/bogazici/project-1.png" },
+  { name: "İsken Su Gözü Enerji Santrali", tag: "Taahhüt", location: "İstanbul, TR", img: "/images/bogazici/taahhut.png" },
+  { name: "Adıyaman Kahta Doğalgaz Boru Hattı", tag: "Taahhüt", location: "Adıyaman, TR", img: "/images/bogazici/project-2.png" },
+  { name: "İstanbul Ankara Hızlı Tren", tag: "Taahhüt", location: "Türkiye", img: "/images/bogazici/project-3.png" },
+  { name: "İGDAŞ Anadolu Doğalgaz İşi", tag: "Taahhüt", location: "İstanbul, TR", img: "/images/bogazici/project-4.png" },
+  { name: "Çayırova Atatürk ve Özgürlük Mahallesi Altyapısı", tag: "Taahhüt", location: "Kocaeli, TR", img: "/images/bogazici/gayrimenkul.png" },
+  { name: "Tekirdağ Karayolu İnşaatı", tag: "Taahhüt", location: "Tekirdağ, TR", img: "/images/bogazici/taahhut.png" },
+  { name: "Maltepe Sosyal Güvenlik Merkezi", tag: "Taahhüt", location: "İstanbul, TR", img: "/images/bogazici/project-4.png" },
+  { name: "Küçükçekmece Kalp Damar Cerrahisi", tag: "Taahhüt", location: "İstanbul, TR", img: "/images/bogazici/project-1.png" },
+  { name: "Otobüs Terminali", tag: "Taahhüt", location: "İstanbul, TR", img: "/images/bogazici/taahhut.png" },
+  { name: "Germencik Enerji Santrali", tag: "Taahhüt", location: "Aydın, TR", img: "/images/bogazici/gayrimenkul.png" },
+  { name: "Borabay-Kazakistan Yol İnşaatı", tag: "Uluslararası", location: "Kazakistan", img: "/images/bogazici/project-2.png" },
+  { name: "Blue Line Estantion ABD", tag: "Uluslararası", location: "ABD", img: "/images/bogazici/project-3.png" },
+  { name: "E45 İsveç Otoyolu", tag: "Uluslararası", location: "İsveç", img: "/images/bogazici/project-4.png" },
+  { name: "Usti Nab Ladem Üstgeçit", tag: "Uluslararası", location: "Almanya", img: "/images/bogazici/taahhut.png" },
+  { name: "I5 Amerika Birleşik Devletler Yolu ABD", tag: "Uluslararası", location: "ABD", img: "/images/bogazici/gayrimenkul.png" },
+  { name: "The Sibellus Academy - Finlandiya", tag: "Uluslararası", location: "Finlandiya", img: "/images/bogazici/project-1.png" },
+  { name: "Bat Spa Üniversitesi London", tag: "Uluslararası", location: "Londra, UK", img: "/images/bogazici/project-2.png" },
+  { name: "Business Center Macaristan", tag: "Uluslararası", location: "Macaristan", img: "/images/bogazici/project-3.png" },
+  { name: "Çalık Enerji Taşkent Business Center Özbekistan", tag: "Uluslararası", location: "Özbekistan", img: "/images/bogazici/project-4.png" },
+  { name: "Nursultan Kazakistan Ahunbay Wintergarden Otel", tag: "Uluslararası", location: "Kazakistan", img: "/images/bogazici/taahhut.png" },
 ];
 
 const categories: Category[] = ["Tümü", "Gayrimenkul", "Taahhüt", "Turizm", "Uluslararası"];
@@ -70,18 +89,8 @@ const tagColors: Record<string, string> = {
 };
 
 export default function TamamlananProjeler() {
-  const [scrolled, setScrolled] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
-  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
-  const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
   const [activeCategory, setActiveCategory] = useState<Category>("Tümü");
   const [search, setSearch] = useState("");
-
-  useEffect(() => {
-    const fn = () => setScrolled(window.scrollY > 60);
-    window.addEventListener("scroll", fn, { passive: true });
-    return () => window.removeEventListener("scroll", fn);
-  }, []);
 
   const filtered = allProjects.filter((p) => {
     const catMatch = activeCategory === "Tümü" || p.tag === activeCategory;
@@ -91,110 +100,7 @@ export default function TamamlananProjeler() {
 
   return (
     <div className="bg-white text-[#1a1a1a] antialiased" style={{ fontFamily: "'Montserrat','Geneva',Arial,sans-serif" }}>
-      <header className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${scrolled ? "shadow-xl" : ""}`}>
-        <div className="bg-[#f4f4f4] border-b border-gray-200 hidden md:block">
-          <div className="max-w-[1250px] mx-auto px-4 flex items-center justify-between h-9 text-[11px] text-gray-500">
-            <div className="flex items-center gap-6">
-              <a href="#" className="hover:text-[#ee7514] transition-colors">KVKK Aydınlatma Metni</a>
-              <a href="#" className="hover:text-[#ee7514] transition-colors">İnsan Kaynakları</a>
-            </div>
-            <div className="flex items-center gap-4">
-              <div className="flex items-center gap-3 text-gray-400">
-                <a href="#" className="hover:text-[#ee7514]"><Facebook size={13} /></a>
-                <a href="#" className="hover:text-[#ee7514]"><Twitter size={13} /></a>
-                <a href="#" className="hover:text-[#ee7514]"><Instagram size={13} /></a>
-                <a href="#" className="hover:text-[#ee7514]"><Youtube size={13} /></a>
-              </div>
-              <div className="border-l border-gray-300 pl-4 flex items-center gap-2 font-bold text-[11px]">
-                <button className="text-[#ee7514]">TR</button>
-                <span className="text-gray-300">|</span>
-                <button className="hover:text-[#ee7514]">EN</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <nav className="bg-[#212a3c]">
-          <div className="max-w-[1250px] mx-auto px-4 flex items-center justify-between h-[68px] md:h-[76px]">
-            <Link href="/" className="shrink-0">
-              <img src="/images/bogazici/logo.png" alt="Boğaziçi Grup" className="h-10 md:h-12 w-auto" />
-            </Link>
-            <ul className="hidden lg:flex items-center gap-1">
-              {navItems.map((item) => (
-                <li key={item.label} className="relative group"
-                  onMouseEnter={() => item.sub.length > 0 && setOpenDropdown(item.label)}
-                  onMouseLeave={() => setOpenDropdown(null)}
-                >
-                  <a href={item.href} className={`flex items-center gap-1 px-4 py-2 text-[13px] font-semibold tracking-wide uppercase transition-colors ${item.active ? "text-[#ee7514]" : "text-white/85 hover:text-white"}`} style={{ fontFamily: "'Raleway',sans-serif" }}>
-                    {item.label}
-                    {item.sub.length > 0 && <ChevronDown size={12} className="opacity-60 group-hover:opacity-100" />}
-                  </a>
-                  {item.sub.length > 0 && (
-                    <div className={`absolute top-full left-0 bg-white shadow-xl min-w-[220px] border-t-2 border-[#ee7514] transition-all duration-200 ${openDropdown === item.label ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-2 pointer-events-none"}`}>
-                      <ul className="py-2">
-                        {item.sub.map((s, si) => (
-                          <li key={s}>
-                            {item.subHrefs ? (
-                              <Link href={item.subHrefs[si]} className={`block px-5 py-2.5 text-[12px] font-semibold tracking-wide uppercase transition-colors ${s === "Tamamlanan Projeler" ? "text-[#ee7514] bg-orange-50" : "text-[#333] hover:bg-[#f8f8f8] hover:text-[#ee7514]"}`} style={{ fontFamily: "'Raleway',sans-serif" }}>{s}</Link>
-                            ) : (
-                              <a href="#" className="block px-5 py-2.5 text-[#333] hover:bg-[#f8f8f8] hover:text-[#ee7514] text-[12px] font-semibold tracking-wide uppercase transition-colors" style={{ fontFamily: "'Raleway',sans-serif" }}>{s}</a>
-                            )}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
-                </li>
-              ))}
-            </ul>
-            <button className="lg:hidden text-white p-2" onClick={() => setMobileOpen(true)}><Menu size={26} /></button>
-          </div>
-        </nav>
-      </header>
-
-      {mobileOpen && (
-        <div className="fixed inset-0 z-[100] lg:hidden">
-          <div className="absolute inset-0 bg-black/50" onClick={() => setMobileOpen(false)} />
-          <div className="absolute top-0 right-0 w-[300px] max-w-full h-full bg-[#212a3c] flex flex-col overflow-y-auto">
-            <div className="flex items-center justify-between p-5 border-b border-white/10">
-              <img src="/images/bogazici/logo.png" alt="Boğaziçi Grup" className="h-10 w-auto" />
-              <button onClick={() => setMobileOpen(false)} className="text-white"><X size={24} /></button>
-            </div>
-            <ul className="flex-1 py-4">
-              {navItems.map((item) => (
-                <li key={item.label} className="border-b border-white/5">
-                  {item.sub.length > 0 ? (
-                    <>
-                      <button className={`w-full flex items-center justify-between px-5 py-3.5 text-[13px] font-semibold tracking-wide uppercase text-left ${item.active ? "text-[#ee7514]" : "text-white/85"}`} style={{ fontFamily: "'Raleway',sans-serif" }} onClick={() => setMobileExpanded(mobileExpanded === item.label ? null : item.label)}>
-                        {item.label} <ChevronDown size={14} className={`transition-transform ${mobileExpanded === item.label ? "rotate-180" : ""}`} />
-                      </button>
-                      {mobileExpanded === item.label && (
-                        <ul className="bg-black/20">
-                          {item.sub.map((s, si) => (
-                            <li key={s}>
-                              {item.subHrefs ? (
-                                <Link href={item.subHrefs[si]} className={`block px-8 py-2.5 text-[12px] font-semibold tracking-wide uppercase transition-colors ${s === "Tamamlanan Projeler" ? "text-[#ee7514]" : "text-white/60 hover:text-[#ee7514]"}`} style={{ fontFamily: "'Raleway',sans-serif" }} onClick={() => setMobileOpen(false)}>{s}</Link>
-                              ) : (
-                                <a href="#" className="block px-8 py-2.5 text-white/60 hover:text-[#ee7514] text-[12px] font-semibold tracking-wide uppercase transition-colors" style={{ fontFamily: "'Raleway',sans-serif" }}>{s}</a>
-                              )}
-                            </li>
-                          ))}
-                        </ul>
-                      )}
-                    </>
-                  ) : (
-                    <a href={item.href} className="block px-5 py-3.5 text-white/85 text-[13px] font-semibold tracking-wide uppercase" style={{ fontFamily: "'Raleway',sans-serif" }} onClick={() => setMobileOpen(false)}>{item.label}</a>
-                  )}
-                </li>
-              ))}
-            </ul>
-            <div className="p-5 border-t border-white/10 flex items-center gap-4">
-              <button className="text-[#ee7514] text-sm font-bold">TR</button>
-              <span className="text-white/30">|</span>
-              <button className="text-white/60 text-sm font-bold">EN</button>
-            </div>
-          </div>
-        </div>
-      )}
+      <Header activeNav="Projeler" />
 
       {/* Page Banner */}
       <div className="relative pt-[68px] md:pt-[112px]">
@@ -306,7 +212,7 @@ export default function TamamlananProjeler() {
 
       {/* Footer */}
       <footer className="bg-[#1b1b1b] text-white mt-8">
-        <div className="max-w-[1250px] mx-auto px-4 py-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="max-w-[1250px] mx-auto px-4 py-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10">
           <div className="sm:col-span-2 lg:col-span-1">
             <img src="/images/bogazici/logo.png" alt="Boğaziçi Grup" className="h-11 w-auto mb-6 opacity-90" />
             <p className="text-white/45 text-sm leading-7 mb-6">1938'den bu yana inşaat sektörünün güvenilir ismi.</p>
@@ -322,18 +228,33 @@ export default function TamamlananProjeler() {
             </div>
           </div>
           <div>
+            <h5 className="text-sm font-bold uppercase tracking-widest text-white mb-5" style={{ fontFamily: "'Oswald',sans-serif" }}>Kurumsal</h5>
+            <ul className="space-y-3">
+              <li><Link href="/kurumsal/hakkimizda" className="text-white/45 hover:text-[#ee7514] text-sm transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-[#ee7514] rounded-full shrink-0" />Hakkımızda</Link></li>
+              <li><Link href="/kurumsal/onursal-baskan" className="text-white/45 hover:text-[#ee7514] text-sm transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-[#ee7514] rounded-full shrink-0" />Onursal Başkan</Link></li>
+              <li><Link href="/kurumsal/tarihce" className="text-white/45 hover:text-[#ee7514] text-sm transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-[#ee7514] rounded-full shrink-0" />Tarihçe</Link></li>
+              <li><Link href="/kurumsal/vizyon-misyon" className="text-white/45 hover:text-[#ee7514] text-sm transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-[#ee7514] rounded-full shrink-0" />Vizyon & Misyon</Link></li>
+              <li><Link href="/kurumsal/kalite-politikamiz" className="text-white/45 hover:text-[#ee7514] text-sm transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-[#ee7514] rounded-full shrink-0" />Kalite Politikamız</Link></li>
+              <li><Link href="/kurumsal/belgeler" className="text-white/45 hover:text-[#ee7514] text-sm transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-[#ee7514] rounded-full shrink-0" />Belgeler</Link></li>
+            </ul>
+          </div>
+          <div>
+            <h5 className="text-sm font-bold uppercase tracking-widest text-white mb-5" style={{ fontFamily: "'Oswald',sans-serif" }}>Faaliyet Alanları</h5>
+            <ul className="space-y-3">
+              <li><Link href="/faaliyet-alanlari/gayrimenkul" className="text-white/45 hover:text-[#ee7514] text-sm transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-[#ee7514] rounded-full shrink-0" />Gayrimenkul</Link></li>
+              <li><Link href="/faaliyet-alanlari/taahhut" className="text-white/45 hover:text-[#ee7514] text-sm transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-[#ee7514] rounded-full shrink-0" />Taahhüt</Link></li>
+              <li><Link href="/faaliyet-alanlari/turizm" className="text-white/45 hover:text-[#ee7514] text-sm transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-[#ee7514] rounded-full shrink-0" />Turizm</Link></li>
+            </ul>
+            <h5 className="text-sm font-bold uppercase tracking-widest text-white mb-5 mt-8" style={{ fontFamily: "'Oswald',sans-serif" }}>Kariyer</h5>
+            <ul className="space-y-3">
+              <li><Link href="/insan-kaynaklari" className="text-white/45 hover:text-[#ee7514] text-sm transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-[#ee7514] rounded-full shrink-0" />İnsan Kaynakları</Link></li>
+            </ul>
+          </div>
+          <div>
             <h5 className="text-sm font-bold uppercase tracking-widest text-white mb-5" style={{ fontFamily: "'Oswald',sans-serif" }}>Projeler</h5>
             <ul className="space-y-3">
               <li><Link href="/projeler/gelecek" className="text-white/45 hover:text-[#ee7514] text-sm transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-[#ee7514] rounded-full shrink-0" />Gelecek Projeler</Link></li>
               <li><Link href="/projeler/tamamlanan" className="text-[#ee7514] text-sm transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-[#ee7514] rounded-full shrink-0" />Tamamlanan Projeler</Link></li>
-            </ul>
-          </div>
-          <div>
-            <h5 className="text-sm font-bold uppercase tracking-widest text-white mb-5" style={{ fontFamily: "'Oswald',sans-serif" }}>Kurumsal</h5>
-            <ul className="space-y-3">
-              {["Hakkımızda", "Tarihçe", "Vizyon & Misyon", "Belgeler"].map((l) => (
-                <li key={l}><Link href="/" className="text-white/45 hover:text-[#ee7514] text-sm transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-[#ee7514] rounded-full shrink-0" />{l}</Link></li>
-              ))}
             </ul>
           </div>
           <div>
@@ -342,14 +263,17 @@ export default function TamamlananProjeler() {
               <div className="flex gap-3 items-start"><MapPin size={15} className="text-[#ee7514] shrink-0 mt-0.5" /><p className="text-white/45 text-sm leading-6">Barbaros Mah. Akzambak Sok.<br />Uphill Towers A Blok No: 3/A<br />Ataşehir / İstanbul</p></div>
               <div className="flex gap-3 items-center"><Mail size={15} className="text-[#ee7514] shrink-0" /><a href="mailto:info@bogazicigroup.com.tr" className="text-white/45 hover:text-[#ee7514] text-sm transition-colors">info@bogazicigroup.com.tr</a></div>
             </div>
+            <div className="mt-6 space-y-3">
+              <Link href="/iletisim/bize-ulasin" className="text-white/45 hover:text-[#ee7514] text-sm transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-[#ee7514] rounded-full shrink-0" />Bize Ulaşın</Link>
+              <Link href="/iletisim/satis-ofisleri" className="text-white/45 hover:text-[#ee7514] text-sm transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-[#ee7514] rounded-full shrink-0" />Satış Ofisleri</Link>
+            </div>
           </div>
         </div>
         <div className="border-t border-white/8">
           <div className="max-w-[1250px] mx-auto px-4 py-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-white/30">
             <span>© 2026 Boğaziçi Grup A.Ş. — Tüm Hakları Saklıdır.</span>
             <div className="flex items-center gap-5">
-              <a href="#" className="hover:text-white transition-colors">KVKK Aydınlatma Metni</a>
-              <a href="#" className="hover:text-white transition-colors">Gizlilik Politikası</a>
+              <a href="/kvkk-aydinlatma-metni" className="hover:text-white transition-colors">KVKK Aydınlatma Metni</a>
             </div>
           </div>
         </div>
