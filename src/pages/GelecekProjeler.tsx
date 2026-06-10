@@ -167,7 +167,7 @@ export default function GelecekProjeler() {
       )}
 
       {/* Page Banner */}
-      <div className="relative pt-[108px] md:pt-[116px]">
+      <div className="relative pt-[68px] md:pt-[112px]">
         <div className="relative h-[260px] md:h-[340px] flex items-end overflow-hidden" style={{ background: "linear-gradient(135deg, #212a3c 0%, #2e3d55 100%)" }}>
           <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(255,255,255,0.03) 40px, rgba(255,255,255,0.03) 80px)" }} />
           <div className="absolute top-0 left-0 w-full h-1 bg-[#ee7514]" />
@@ -189,7 +189,7 @@ export default function GelecekProjeler() {
       </div>
 
       {/* Sub nav */}
-      <div className="bg-white border-b border-gray-200 sticky top-[108px] md:top-[116px] z-40 shadow-sm">
+      <div className="bg-white border-b border-gray-200 sticky top-[68px] md:top-[112px] z-40 shadow-sm">
         <div className="max-w-[1250px] mx-auto px-4 flex items-center gap-0 overflow-x-auto" style={{ scrollbarWidth: "none" }}>
           <Link href="/projeler/gelecek" className="shrink-0 px-5 py-4 text-xs font-bold uppercase tracking-wider border-b-2 border-[#ee7514] text-[#212a3c] transition-colors" style={{ fontFamily: "'Raleway', sans-serif" }}>
             Gelecek Projeler
@@ -216,7 +216,7 @@ export default function GelecekProjeler() {
                 <h2 className="text-xl font-bold text-[#212a3c] mb-3 uppercase" style={{ fontFamily: "'Oswald', sans-serif" }}>{project.name}</h2>
                 <div className="w-8 h-0.5 bg-[#ee7514] mb-4 transition-all duration-300 group-hover:w-16" />
                 <p className="text-[#666] text-sm leading-relaxed mb-6">{project.desc}</p>
-                <a href="#" className="inline-flex items-center gap-2 text-[#212a3c] hover:text-[#ee7514] text-xs font-bold uppercase tracking-widest transition-colors border-b border-gray-200 hover:border-[#ee7514] pb-1" style={{ fontFamily: "'Raleway', sans-serif" }}>
+                <a href="#" className="inline-flex items-center gap-2 text-[#212a3c] hover:text-[#ee7514] text-xs font-bold uppercase tracking-widest transition-all border-b border-gray-200 hover:border-[#ee7514] pb-1 active:scale-[0.97]" style={{ fontFamily: "'Raleway', sans-serif" }}>
                   Projeyi İncele <ArrowRight size={13} />
                 </a>
               </div>
@@ -230,7 +230,7 @@ export default function GelecekProjeler() {
             <h3 className="font-bold text-[#212a3c] text-lg mb-1" style={{ fontFamily: "'Oswald', sans-serif" }}>YENİ PROJELERİMİZDEN HABERDAR OLUN</h3>
             <p className="text-[#777] text-sm">Güncel proje duyurularımız ve fırsatlar için iletişimde kalın.</p>
           </div>
-          <a href="#" className="shrink-0 inline-flex items-center gap-2 bg-[#212a3c] hover:bg-[#ee7514] text-white px-7 py-3.5 text-sm font-bold uppercase tracking-widest transition-all duration-200" style={{ fontFamily: "'Oswald', sans-serif" }}>
+          <a href="#" className="shrink-0 inline-flex items-center gap-2 bg-[#212a3c] hover:bg-[#ee7514] text-white px-7 py-3.5 text-sm font-bold uppercase tracking-widest transition-all duration-200 active:scale-[0.97]" style={{ fontFamily: "'Oswald', sans-serif" }}>
             Bize Ulaşın <ArrowRight size={15} />
           </a>
         </motion.div>

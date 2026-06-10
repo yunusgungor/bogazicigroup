@@ -90,7 +90,7 @@ export default function HomePage() {
     <div className="bg-white text-[#1a1a1a] antialiased" style={{ fontFamily: "'Montserrat', 'Geneva', Arial, sans-serif" }}>
       <header className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${scrolled ? "shadow-xl" : ""} bg-white`}>
         <div className="bg-[#f4f4f4] border-b border-gray-200 hidden md:block">
-          <div className="max-w-[1250px] mx-auto px-4 flex items-center justify-between h-9 text-[11px] text-gray-700 font-semibold">
+          <div className="max-w-[1250px] mx-auto px-4 flex items-center justify-between h-9 text-[11px] text-gray-500">
             <div className="flex items-center gap-6">
               <a href="#" className="hover:text-[#ee7514] transition-colors">KVKK Aydınlatma Metni</a>
               <a href="#" className="hover:text-[#ee7514] transition-colors">İnsan Kaynakları</a>
@@ -117,7 +117,7 @@ export default function HomePage() {
               <img 
                 src="/images/bogazici/logo.png" 
                 alt="Boğaziçi Grup" 
-                className="h-12 md:h-14 w-auto"
+                className="h-10 md:h-12 w-auto"
               />
             </Link>
 
@@ -228,7 +228,7 @@ export default function HomePage() {
       )}
 
       {/* CAROUSEL SLIDER */}
-      <section className="relative w-full mt-[68px] md:mt-[112px] h-[calc(100vh-68px)] md:h-[calc(100vh-112px)] min-h-[640px] overflow-hidden">
+      <section className="relative w-full mt-[68px] md:mt-[112px] h-[calc(100dvh-68px)] md:h-[calc(100dvh-112px)] min-h-[640px] overflow-hidden">
         <Carousel
           opts={{ loop: true, align: "center" }}
           plugins={[
@@ -261,7 +261,7 @@ export default function HomePage() {
                 href: "#faaliyetler",
               },
             ].map((slide, i) => (
-              <CarouselItem key={i} className="relative h-[calc(100vh-68px)] md:h-[calc(100vh-112px)] min-h-[640px] pl-0 basis-full overflow-hidden">
+              <CarouselItem key={i} className="relative h-[calc(100dvh-68px)] md:h-[calc(100dvh-112px)] min-h-[640px] pl-0 basis-full overflow-hidden">
                 <div className="absolute inset-0">
                   <div className="absolute inset-0 bg-gradient-to-b from-[#212a3c]/80 via-[#212a3c]/50 to-[#212a3c]/90 z-10" />
                   <img
@@ -282,7 +282,7 @@ export default function HomePage() {
                   </p>
                   <a
                     href={slide.href}
-                    className="inline-flex items-center gap-2.5 bg-[#ee7514] hover:bg-[#d66810] text-white px-8 py-4 text-sm font-bold tracking-widest uppercase transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg"
+                    className="inline-flex items-center gap-2.5 bg-[#ee7514] hover:bg-[#d66810] text-white px-8 py-4 text-sm font-bold tracking-widest uppercase transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg active:scale-[0.97]"
                     style={{ fontFamily: "'Oswald', sans-serif" }}
                   >
                     Keşfet <ArrowRight size={16} />
@@ -292,8 +292,8 @@ export default function HomePage() {
             ))}
           </CarouselContent>
 
-          <CarouselPrevious className="left-4 md:left-8 w-11 h-11 bg-white/10 hover:bg-white/25 border-0 text-white backdrop-blur-sm" />
-          <CarouselNext className="right-4 md:right-8 w-11 h-11 bg-white/10 hover:bg-white/25 border-0 text-white backdrop-blur-sm" />
+          <CarouselPrevious className="left-4 md:left-8 w-11 h-11 bg-white/10 hover:bg-white/25 border-0 text-white backdrop-blur-sm active:scale-90 transition-transform" />
+          <CarouselNext className="right-4 md:right-8 w-11 h-11 bg-white/10 hover:bg-white/25 border-0 text-white backdrop-blur-sm active:scale-90 transition-transform" />
 
           <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 flex items-center gap-3">
             {[0, 1, 2].map((i) => (
@@ -340,16 +340,16 @@ export default function HomePage() {
                 YARINI İNŞA EDEN<br />KÖKLÜ BİR MİRAS
               </motion.h2>
               <motion.div variants={fadeUp} className="w-14 h-1 bg-[#ee7514] mb-8" />
-              <motion.p variants={fadeUp} className="text-[#333] text-base leading-7 mb-5">
+              <motion.p variants={fadeUp} className="text-[#333] text-base leading-7 mb-5 max-w-[65ch]">
                 <strong>BOĞAZİÇİ GRUP</strong> 1938 yılından bu yana inşaat taahhüt sektöründe faaliyet göstermekte olup gerek yurt içi gerekse yurt dışında birçok projede yer almıştır.
               </motion.p>
-              <motion.p variants={fadeUp} className="text-[#555] text-[15px] leading-7 mb-5">
+              <motion.p variants={fadeUp} className="text-[#555] text-[15px] leading-7 mb-5 max-w-[65ch]">
                 Kuruluşundan günümüze kadar üstlendiği Üstyapı İşleri, Altyapı İşleri, Endüstriyel Tesisler, Enerji Santralleri, Arıtma Tesisleri, Yol ve Köprü İşleri başta olmak üzere taahhüt grubunun hemen her faaliyet alanında hizmet vermektedir.
               </motion.p>
-              <motion.p variants={fadeUp} className="text-[#555] text-[15px] leading-7 mb-10">
+              <motion.p variants={fadeUp} className="text-[#555] text-[15px] leading-7 mb-10 max-w-[65ch]">
                 Uzman ekibi ile üstlendiği projeleri bütçesi içerisinde, uluslararası kalite standartlarında ve iş sağlığı güvenliğine büyük önem vererek sektöründe tercih edilen saygın yüklenici konumuna gelmiştir.
               </motion.p>
-              <motion.a variants={fadeUp} href="#" className="inline-flex items-center gap-2 text-[#212a3c] border-b-2 border-[#ee7514] pb-1 text-sm font-bold uppercase tracking-wider hover:text-[#ee7514] transition-colors" style={{ fontFamily: "'Oswald', sans-serif" }}>
+              <motion.a variants={fadeUp} href="#" className="inline-flex items-center gap-2 text-[#212a3c] border-b-2 border-[#ee7514] pb-1 text-sm font-bold uppercase tracking-wider hover:text-[#ee7514] active:scale-[0.97] transition-all" style={{ fontFamily: "'Oswald', sans-serif" }}>
                 Devamını Oku <ChevronRight size={15} />
               </motion.a>
             </div>
@@ -380,14 +380,14 @@ export default function HomePage() {
                 { title: "Taahhüt", desc: "Altyapı ve üstyapı projelerinde, mühendislik gücümüz ile devasa yapılar inşa ediyoruz.", img: "/images/bogazici/taahhut.png" },
                 { title: "Turizm", desc: "Lüks otel ve marina yatırımlarımızla Türkiye'nin turizm potansiyeline dünya standartlarında değer katıyoruz.", img: "/images/bogazici/turizm.png" },
               ].map((item) => (
-                <motion.div key={item.title} variants={fadeUp} className="group relative overflow-hidden block bg-[#212a3c] shadow-lg" style={{ minHeight: 400 }}>
+                <motion.div key={item.title} variants={fadeUp} className="group relative overflow-hidden block bg-[#212a3c] shadow-lg min-h-[400px]">
                   <img src={item.img} alt={item.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#212a3c] via-[#212a3c]/60 to-transparent" />
-                  <div className="relative h-full flex flex-col justify-end p-7 md:p-9" style={{ minHeight: 400 }}>
+                  <div className="relative h-full flex flex-col justify-end p-7 md:p-9 min-h-[400px]">
                     <div className="w-8 h-0.5 bg-[#ee7514] mb-4 transition-all duration-300 group-hover:w-16" />
                     <h3 className="text-3xl font-bold text-white uppercase mb-3" style={{ fontFamily: "'Oswald', sans-serif" }}>{item.title}</h3>
                     <p className="text-white/70 text-sm leading-relaxed mb-6 max-h-0 overflow-hidden group-hover:max-h-32 transition-all duration-500">{item.desc}</p>
-                    <div className="flex items-center gap-2 text-[#ee7514] text-xs font-bold uppercase tracking-widest" style={{ fontFamily: "'Raleway', sans-serif" }}>
+                    <div className="flex items-center gap-2 text-[#ee7514] text-xs font-bold uppercase tracking-widest group-active:scale-95 transition-transform" style={{ fontFamily: "'Raleway', sans-serif" }}>
                       Keşfet <ChevronRight size={14} />
                     </div>
                   </div>
@@ -408,13 +408,13 @@ export default function HomePage() {
                 <h2 className="font-bold text-[#212a3c]" style={{ fontFamily: "'Oswald', sans-serif", fontSize: "clamp(2rem, 4vw, 3.5rem)" }}>ÖNE ÇIKAN PROJELER</h2>
                 <div className="w-14 h-1 bg-[#ee7514] mt-4" />
               </div>
-              <Link href="/projeler/tamamlanan" className="inline-flex items-center gap-2 text-[#212a3c] border-b-2 border-[#ee7514] pb-1 text-sm font-bold uppercase tracking-wider hover:text-[#ee7514] transition-colors shrink-0" style={{ fontFamily: "'Oswald', sans-serif" }}>
+              <Link href="/projeler/tamamlanan" className="inline-flex items-center gap-2 text-[#212a3c] border-b-2 border-[#ee7514] pb-1 text-sm font-bold uppercase tracking-wider hover:text-[#ee7514] active:scale-[0.97] transition-all shrink-0" style={{ fontFamily: "'Oswald', sans-serif" }}>
                 Tüm Projeleri Gör <ArrowRight size={15} />
               </Link>
             </motion.div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
               {projects.map((p) => (
-                <motion.div key={p.name} variants={fadeUp} className="group relative overflow-hidden shadow-md" style={{ minHeight: 320 }}>
+                <motion.div key={p.name} variants={fadeUp} className="group relative overflow-hidden shadow-md min-h-[320px]">
                   <img src={p.img} alt={p.name} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
                   <div className="absolute top-4 left-4">
@@ -553,7 +553,7 @@ export default function HomePage() {
       <footer className="bg-[#1b1b1b] text-white">
         <div className="max-w-[1250px] mx-auto px-4 py-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           <div className="sm:col-span-2 lg:col-span-1">
-
+            <img src="/images/bogazici/logo.png" alt="Boğaziçi Grup" className="h-11 w-auto mb-6 opacity-90" />
             <p className="text-white/45 text-sm leading-7 mb-6">1938'den bu yana inşaat sektörünün güvenilir ismi.</p>
             <div className="flex items-center gap-3">
               {(["Facebook", "Twitter", "Instagram", "Youtube"] as const).map((l) => (

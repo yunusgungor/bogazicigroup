@@ -197,7 +197,7 @@ export default function TamamlananProjeler() {
       )}
 
       {/* Page Banner */}
-      <div className="relative pt-[108px] md:pt-[116px]">
+      <div className="relative pt-[68px] md:pt-[112px]">
         <div className="relative h-[260px] md:h-[340px] flex items-end overflow-hidden" style={{ background: "linear-gradient(135deg, #212a3c 0%, #2e3d55 100%)" }}>
           <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(255,255,255,0.03) 40px, rgba(255,255,255,0.03) 80px)" }} />
           <div className="absolute top-0 left-0 w-full h-1 bg-[#ee7514]" />
@@ -223,13 +223,13 @@ export default function TamamlananProjeler() {
       </div>
 
       {/* Filter bar */}
-      <div className="bg-white border-b border-gray-200 sticky top-[108px] md:top-[116px] z-40 shadow-sm">
+      <div className="bg-white border-b border-gray-200 sticky top-[68px] md:top-[112px] z-40 shadow-sm">
         <div className="max-w-[1250px] mx-auto px-4">
           <div className="flex flex-col sm:flex-row sm:items-center gap-3 py-3">
             <div className="flex items-center gap-1 overflow-x-auto" style={{ scrollbarWidth: "none" }}>
               {categories.map((cat) => (
                 <button key={cat} onClick={() => setActiveCategory(cat)}
-                  className={`shrink-0 px-4 py-2 text-xs font-bold uppercase tracking-wider transition-all ${activeCategory === cat ? "bg-[#212a3c] text-white" : "bg-white text-gray-500 hover:bg-gray-100 border border-gray-200"}`}
+                  className={`shrink-0 px-4 py-2 text-xs font-bold uppercase tracking-wider transition-all active:scale-[0.97] ${activeCategory === cat ? "bg-[#212a3c] text-white" : "bg-white text-gray-500 hover:bg-gray-100 border border-gray-200"}`}
                   style={{ fontFamily: "'Raleway',sans-serif" }}
                 >
                   {cat}
