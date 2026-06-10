@@ -1,5 +1,6 @@
 import { Switch, Route, Router as WouterRouter } from "wouter";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import ScrollToTop from "@/components/ScrollToTop";
 import HomePage from "@/pages/HomePage";
 import GelecekProjeler from "@/pages/GelecekProjeler";
 import TamamlananProjeler from "@/pages/TamamlananProjeler";
@@ -51,6 +52,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
         <Router />
+        <ScrollToTop />
       </WouterRouter>
     </QueryClientProvider>
   );
