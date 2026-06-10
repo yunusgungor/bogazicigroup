@@ -81,8 +81,8 @@ export default function HomePage() {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Boğaziçi Grup A.Ş.",
-    "url": "https://bogazicigrup.com.tr",
-    "logo": "https://bogazicigrup.com.tr/images/bogazici/logo.png",
+    "url": "https://bogazicigroup.vercel.app",
+    "logo": "https://bogazicigroup.vercel.app/images/bogazici/logo.png",
     "foundingDate": "1938",
     "contactPoint": {
       "@type": "ContactPoint",

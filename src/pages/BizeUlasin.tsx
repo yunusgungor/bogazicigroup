@@ -23,7 +23,7 @@ export default function BizeUlasin() {
     },
     "telephone": "+90-216-821-34-34",
     "email": "info@bogazicigroup.com.tr",
-    "url": "https://bogazicigrup.com.tr/iletisim/bize-ulasin"
+    "url": "https://bogazicigroup.vercel.app/iletisim/bize-ulasin"
   };
 
   return (
