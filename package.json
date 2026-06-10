@@ -71,6 +71,9 @@
     "zod": "^3.23.8"
   },
   "dependencies": {
-    "embla-carousel-autoplay": "^8.6.0"
+    "@vercel/analytics": "^2.0.1",
+    "@vercel/speed-insights": "^2.0.0",
+    "embla-carousel-autoplay": "^8.6.0",
+    "react-helmet-async": "^3.0.0"
   }
 }

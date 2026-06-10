@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
+import { Helmet } from "react-helmet-async";
 import {
   ChevronRight, Facebook, Twitter, Instagram, Youtube, MapPin, Mail, Search, SlidersHorizontal
 } from "lucide-react";
@@ -100,6 +101,10 @@ export default function TamamlananProjeler() {
 
   return (
     <div className="bg-white text-[#1a1a1a] antialiased" style={{ fontFamily: "'Montserrat','Geneva',Arial,sans-serif" }}>
+      <Helmet>
+        <title>Tamamlanan Projeler | Boğaziçi Grup A.Ş.</title>
+        <meta name="description" content="Boğaziçi Grup tarafından başarıyla tamamlanan üst yapı, alt yapı, endüstriyel tesis ve uluslararası projelerimizi inceleyin." />
+      </Helmet>
       <Header activeNav="Projeler" />
 
       {/* Page Banner */}

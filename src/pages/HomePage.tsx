@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Link } from "wouter";
+import { Helmet } from "react-helmet-async";
 import {
   ArrowRight, ChevronRight,
   MapPin, Mail, Phone,
@@ -76,8 +77,34 @@ const milestones = [
 export default function HomePage() {
   const [carouselApi, setCarouselApi] = useState<CarouselApi | null>(null);
 
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Boğaziçi Grup A.Ş.",
+    "url": "https://bogazicigrup.com.tr",
+    "logo": "https://bogazicigrup.com.tr/images/bogazici/logo.png",
+    "foundingDate": "1938",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+90-216-688-08-00",
+      "contactType": "customer service",
+      "areaServed": "TR",
+      "availableLanguage": "Turkish"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/bogazici-grup"
+    ]
+  };
+
   return (
     <div className="bg-white text-foreground antialiased">
+      <Helmet>
+        <title>Boğaziçi Grup A.Ş. | İnşaat, Gayrimenkul ve Turizm</title>
+        <meta name="description" content="1938'den beri Boğaziçi Grup A.Ş., Türkiye'nin köklü inşaat taahhüt, gayrimenkul geliştirme ve turizm yatırımları firmasıdır. Projelerimizi keşfedin." />
+        <script type="application/ld+json">
+          {JSON.stringify(organizationSchema)}
+        </script>
+      </Helmet>
       <Header />
 
       {/* CAROUSEL SLIDER */}

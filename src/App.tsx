@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Switch, Route, Router as WouterRouter, useLocation } from "wouter";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { HelmetProvider } from "react-helmet-async";
 import ScrollToTop from "@/components/ScrollToTop";
 import HomePage from "@/pages/HomePage";
 import GelecekProjeler from "@/pages/GelecekProjeler";
@@ -58,13 +59,15 @@ function Router() {
 
 function App() {
   return (
-    <QueryClientProvider client={queryClient}>
-      <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
-        <Router />
-        <ScrollToTop />
-        <ScrollToTopOnNavigate />
-      </WouterRouter>
-    </QueryClientProvider>
+    <HelmetProvider>
+      <QueryClientProvider client={queryClient}>
+        <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
+          <Router />
+          <ScrollToTop />
+          <ScrollToTopOnNavigate />
+        </WouterRouter>
+      </QueryClientProvider>
+    </HelmetProvider>
   );
 }
 

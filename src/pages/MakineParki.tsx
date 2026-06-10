@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 import SubPageLayout from "@/components/SubPageLayout";
 
 const fadeUp = {
@@ -38,38 +39,44 @@ const machines = [
 
 export default function MakineParki() {
   return (
-    <SubPageLayout
-      title="MAKİNE PARKI"
-      breadcrumbs={[
-        { label: "Ana Sayfa", href: "/" },
-        { label: "Makine Parkı" },
-      ]}
-    >
-      <motion.div initial="hidden" animate="visible" variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.03 } } }}>
-        <div className="overflow-x-auto">
-          <table className="w-full border-collapse">
-            <thead>
-              <tr className="bg-[#212a3c] text-white text-xs uppercase tracking-wider" style={{ fontFamily: "'Raleway', sans-serif" }}>
-                <th className="text-left px-4 py-3 font-semibold">Makine Cinsi</th>
-                <th className="text-left px-4 py-3 font-semibold">Marka</th>
-                <th className="text-left px-4 py-3 font-semibold">Model</th>
-                <th className="text-left px-4 py-3 font-semibold">Yılı</th>
-              </tr>
-            </thead>
-            <tbody>
-              {machines.map((m, i) => (
-                <motion.tr key={i} variants={fadeUp} className="border-b border-gray-100 hover:bg-[#f8f8f8] transition-colors text-sm text-[#555]">
-                  <td className="px-4 py-3 font-medium text-[#333]">{m.name}</td>
-                  <td className="px-4 py-3">{m.brand}</td>
-                  <td className="px-4 py-3">{m.model}</td>
-                  <td className="px-4 py-3">{m.year}</td>
-                </motion.tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-        <p className="text-[#999] text-xs mt-6 italic">*Güncel makine parkı listesi yansıtılmıştır.</p>
-      </motion.div>
-    </SubPageLayout>
+    <>
+      <Helmet>
+        <title>Geniş Makine Parkı ve Ekipman Filosu | Boğaziçi Grup A.Ş.</title>
+        <meta name="description" content="Boğaziçi Grup'un modern ve güçlü makine parkı; ekskavatörler, greyderler, vinçler ve ağır taşıma araçları listesi." />
+      </Helmet>
+      <SubPageLayout
+        title="MAKİNE PARKI"
+        breadcrumbs={[
+          { label: "Ana Sayfa", href: "/" },
+          { label: "Makine Parkı" },
+        ]}
+      >
+        <motion.div initial="hidden" animate="visible" variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.03 } } }}>
+          <div className="overflow-x-auto">
+            <table className="w-full border-collapse">
+              <thead>
+                <tr className="bg-[#212a3c] text-white text-xs uppercase tracking-wider" style={{ fontFamily: "'Raleway', sans-serif" }}>
+                  <th className="text-left px-4 py-3 font-semibold">Makine Cinsi</th>
+                  <th className="text-left px-4 py-3 font-semibold">Marka</th>
+                  <th className="text-left px-4 py-3 font-semibold">Model</th>
+                  <th className="text-left px-4 py-3 font-semibold">Yılı</th>
+                </tr>
+              </thead>
+              <tbody>
+                {machines.map((m, i) => (
+                  <motion.tr key={i} variants={fadeUp} className="border-b border-gray-100 hover:bg-[#f8f8f8] transition-colors text-sm text-[#555]">
+                    <td className="px-4 py-3 font-medium text-[#333]">{m.name}</td>
+                    <td className="px-4 py-3">{m.brand}</td>
+                    <td className="px-4 py-3">{m.model}</td>
+                    <td className="px-4 py-3">{m.year}</td>
+                  </motion.tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="text-[#999] text-xs mt-6 italic">*Güncel makine parkı listesi yansıtılmıştır.</p>
+        </motion.div>
+      </SubPageLayout>
+    </>
   );
 }
