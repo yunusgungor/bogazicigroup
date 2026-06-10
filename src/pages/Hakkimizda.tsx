@@ -47,12 +47,12 @@ export default function Hakkimizda() {
             <div className="absolute inset-0 translate-x-3 translate-y-3 bg-[#f4f4f4] hidden sm:block" />
             <img src="/images/bogazici/project-1.png" alt="Boğaziçi Grup" className="relative z-10 w-full aspect-[4/3] object-cover shadow-2xl" />
           </div>
-          <div className="mt-10 bg-[#f8f8f8] border-l-4 border-[#ee7514] p-6">
+          <div className="mt-10 bg-[#f8f8f8] border-l-4 border-[#6cbe59] p-6">
             <h3 className="text-lg font-bold text-[#212a3c] mb-2 uppercase" style={{ fontFamily: "'Oswald', sans-serif" }}>Onursal Başkan</h3>
             <p className="text-[#555] text-sm leading-7 mb-4">
               Covid-19 pandemisi ile başlayan gelişmeler, tüm dünyada olduğu gibi ülkemizde de zorlu bir sürecin yaşanmasına neden oldu. Salgının yarattığı şok dalgasının üzerinden geçen iki yılın sonunda, enflasyonun tetiklenmesi ve üreticilerin sipariş modellerinde değişikliğe gitmeleri ekonomik durgunluk riskini beraberinde getirdi.
             </p>
-            <Link href="/kurumsal/onursal-baskan" className="inline-flex items-center gap-1 text-[#ee7514] text-xs font-bold uppercase tracking-widest hover:gap-2 transition-all" style={{ fontFamily: "'Raleway', sans-serif" }}>
+            <Link href="/kurumsal/onursal-baskan" className="inline-flex items-center gap-1 text-[#6cbe59] text-xs font-bold uppercase tracking-widest hover:gap-2 transition-all" style={{ fontFamily: "'Raleway', sans-serif" }}>
               Bilgi için tıklayın <ChevronRight size={13} />
             </Link>
           </div>

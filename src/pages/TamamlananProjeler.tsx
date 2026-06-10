@@ -82,7 +82,7 @@ const allProjects: { name: string; tag: Category; location: string; img: string 
 const categories: Category[] = ["Tümü", "Gayrimenkul", "Taahhüt", "Turizm", "Uluslararası"];
 
 const tagColors: Record<string, string> = {
-  Gayrimenkul: "#ee7514",
+  Gayrimenkul: "#6cbe59",
   Taahhüt: "#212a3c",
   Turizm: "#0ea5e9",
   Uluslararası: "#6366f1",
@@ -106,20 +106,20 @@ export default function TamamlananProjeler() {
       <div className="relative pt-[68px] md:pt-[112px]">
         <div className="relative h-[260px] md:h-[340px] flex items-end overflow-hidden" style={{ background: "linear-gradient(135deg, #212a3c 0%, #2e3d55 100%)" }}>
           <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(255,255,255,0.03) 40px, rgba(255,255,255,0.03) 80px)" }} />
-          <div className="absolute top-0 left-0 w-full h-1 bg-[#ee7514]" />
+          <div className="absolute top-0 left-0 w-full h-1 bg-[#6cbe59]" />
           <div className="max-w-[1250px] mx-auto px-4 pb-10 md:pb-14 w-full">
             <div className="flex items-center gap-2 text-white/40 text-xs font-semibold uppercase tracking-widest mb-5" style={{ fontFamily: "'Raleway',sans-serif" }}>
-              <Link href="/" className="hover:text-[#ee7514] transition-colors">Ana Sayfa</Link>
+              <Link href="/" className="hover:text-[#6cbe59] transition-colors">Ana Sayfa</Link>
               <ChevronRight size={12} />
               <span>Projeler</span>
               <ChevronRight size={12} />
-              <span className="text-[#ee7514]">Tamamlanan Projeler</span>
+              <span className="text-[#6cbe59]">Tamamlanan Projeler</span>
             </div>
             <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }}
               className="font-bold text-white" style={{ fontFamily: "'Oswald',sans-serif", fontSize: "clamp(2.2rem, 5vw, 4rem)" }}>
               TAMAMLANAN PROJELER
             </motion.h1>
-            <motion.div initial={{ width: 0 }} animate={{ width: 56 }} transition={{ duration: 0.6, delay: 0.4 }} className="h-1 bg-[#ee7514] mt-4" />
+            <motion.div initial={{ width: 0 }} animate={{ width: 56 }} transition={{ duration: 0.6, delay: 0.4 }} className="h-1 bg-[#6cbe59] mt-4" />
             <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6, delay: 0.6 }}
               className="text-white/50 text-sm mt-4" style={{ fontFamily: "'Raleway',sans-serif" }}>
               {allProjects.length} referans proje — yurt içi ve yurt dışı
@@ -182,11 +182,11 @@ export default function TamamlananProjeler() {
                   <img src={project.img} alt={project.name} className="w-full h-full object-cover transition-transform duration-600 group-hover:scale-105" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                   <span className="absolute bottom-3 left-3 text-white/80 text-[10px] font-semibold tracking-wide" style={{ fontFamily: "'Raleway',sans-serif" }}>{project.location}</span>
-                  <span className="absolute top-3 right-3 text-white text-[10px] font-bold px-2.5 py-1 uppercase tracking-wider" style={{ background: tagColors[project.tag] || "#ee7514", fontFamily: "'Raleway',sans-serif" }}>{project.tag}</span>
+                  <span className="absolute top-3 right-3 text-white text-[10px] font-bold px-2.5 py-1 uppercase tracking-wider" style={{ background: tagColors[project.tag] || "#6cbe59", fontFamily: "'Raleway',sans-serif" }}>{project.tag}</span>
                 </div>
                 <div className="p-4">
-                  <div className="w-6 h-0.5 bg-[#ee7514] mb-3 transition-all duration-300 group-hover:w-12" />
-                  <h3 className="text-base font-bold text-[#212a3c] uppercase leading-tight group-hover:text-[#ee7514] transition-colors" style={{ fontFamily: "'Oswald',sans-serif" }}>{project.name}</h3>
+                  <div className="w-6 h-0.5 bg-[#6cbe59] mb-3 transition-all duration-300 group-hover:w-12" />
+                  <h3 className="text-base font-bold text-[#212a3c] uppercase leading-tight group-hover:text-[#6cbe59] transition-colors" style={{ fontFamily: "'Oswald',sans-serif" }}>{project.name}</h3>
                 </div>
               </motion.a>
             ))}
@@ -203,7 +203,7 @@ export default function TamamlananProjeler() {
             ].map((s) => (
               <div key={s.label} className="text-center">
                 <div className="text-4xl font-bold text-[#212a3c] mb-1" style={{ fontFamily: "'Oswald',sans-serif" }}>{s.value}</div>
-                <div className="text-[#ee7514] text-xs font-bold uppercase tracking-widest" style={{ fontFamily: "'Raleway',sans-serif" }}>{s.label}</div>
+                <div className="text-[#6cbe59] text-xs font-bold uppercase tracking-widest" style={{ fontFamily: "'Raleway',sans-serif" }}>{s.label}</div>
               </div>
             ))}
           </div>
@@ -211,14 +211,14 @@ export default function TamamlananProjeler() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-[#1b1b1b] text-white mt-8">
+      <footer className="bg-[#212a3c] text-white mt-8">
         <div className="max-w-[1250px] mx-auto px-4 py-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10">
           <div className="sm:col-span-2 lg:col-span-1">
             <img src="/images/bogazici/logo.png" alt="Boğaziçi Grup" className="h-11 w-auto mb-6 opacity-90" />
             <p className="text-white/45 text-sm leading-7 mb-6">1938'den bu yana inşaat sektörünün güvenilir ismi.</p>
             <div className="flex items-center gap-3">
               {(["Facebook", "Twitter", "Instagram", "Youtube"] as const).map((l) => (
-                <a key={l} href="#" aria-label={l} className="w-9 h-9 flex items-center justify-center border border-white/15 hover:border-[#ee7514] hover:text-[#ee7514] text-white/40 transition-all">
+                <a key={l} href="#" aria-label={l} className="w-9 h-9 flex items-center justify-center border border-white/15 hover:border-[#6cbe59] hover:text-[#6cbe59] text-white/40 transition-all">
                   {l === "Facebook" && <Facebook size={14} />}
                   {l === "Twitter" && <Twitter size={14} />}
                   {l === "Instagram" && <Instagram size={14} />}
@@ -230,42 +230,42 @@ export default function TamamlananProjeler() {
           <div>
             <h5 className="text-sm font-bold uppercase tracking-widest text-white mb-5" style={{ fontFamily: "'Oswald',sans-serif" }}>Kurumsal</h5>
             <ul className="space-y-3">
-              <li><Link href="/kurumsal/hakkimizda" className="text-white/45 hover:text-[#ee7514] text-sm transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-[#ee7514] rounded-full shrink-0" />Hakkımızda</Link></li>
-              <li><Link href="/kurumsal/onursal-baskan" className="text-white/45 hover:text-[#ee7514] text-sm transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-[#ee7514] rounded-full shrink-0" />Onursal Başkan</Link></li>
-              <li><Link href="/kurumsal/tarihce" className="text-white/45 hover:text-[#ee7514] text-sm transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-[#ee7514] rounded-full shrink-0" />Tarihçe</Link></li>
-              <li><Link href="/kurumsal/vizyon-misyon" className="text-white/45 hover:text-[#ee7514] text-sm transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-[#ee7514] rounded-full shrink-0" />Vizyon & Misyon</Link></li>
-              <li><Link href="/kurumsal/kalite-politikamiz" className="text-white/45 hover:text-[#ee7514] text-sm transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-[#ee7514] rounded-full shrink-0" />Kalite Politikamız</Link></li>
-              <li><Link href="/kurumsal/belgeler" className="text-white/45 hover:text-[#ee7514] text-sm transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-[#ee7514] rounded-full shrink-0" />Belgeler</Link></li>
+              <li><Link href="/kurumsal/hakkimizda" className="text-white/45 hover:text-[#6cbe59] text-sm transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-[#6cbe59] rounded-full shrink-0" />Hakkımızda</Link></li>
+              <li><Link href="/kurumsal/onursal-baskan" className="text-white/45 hover:text-[#6cbe59] text-sm transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-[#6cbe59] rounded-full shrink-0" />Onursal Başkan</Link></li>
+              <li><Link href="/kurumsal/tarihce" className="text-white/45 hover:text-[#6cbe59] text-sm transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-[#6cbe59] rounded-full shrink-0" />Tarihçe</Link></li>
+              <li><Link href="/kurumsal/vizyon-misyon" className="text-white/45 hover:text-[#6cbe59] text-sm transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-[#6cbe59] rounded-full shrink-0" />Vizyon & Misyon</Link></li>
+              <li><Link href="/kurumsal/kalite-politikamiz" className="text-white/45 hover:text-[#6cbe59] text-sm transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-[#6cbe59] rounded-full shrink-0" />Kalite Politikamız</Link></li>
+              <li><Link href="/kurumsal/belgeler" className="text-white/45 hover:text-[#6cbe59] text-sm transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-[#6cbe59] rounded-full shrink-0" />Belgeler</Link></li>
             </ul>
           </div>
           <div>
             <h5 className="text-sm font-bold uppercase tracking-widest text-white mb-5" style={{ fontFamily: "'Oswald',sans-serif" }}>Faaliyet Alanları</h5>
             <ul className="space-y-3">
-              <li><Link href="/faaliyet-alanlari/gayrimenkul" className="text-white/45 hover:text-[#ee7514] text-sm transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-[#ee7514] rounded-full shrink-0" />Gayrimenkul</Link></li>
-              <li><Link href="/faaliyet-alanlari/taahhut" className="text-white/45 hover:text-[#ee7514] text-sm transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-[#ee7514] rounded-full shrink-0" />Taahhüt</Link></li>
-              <li><Link href="/faaliyet-alanlari/turizm" className="text-white/45 hover:text-[#ee7514] text-sm transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-[#ee7514] rounded-full shrink-0" />Turizm</Link></li>
+              <li><Link href="/faaliyet-alanlari/gayrimenkul" className="text-white/45 hover:text-[#6cbe59] text-sm transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-[#6cbe59] rounded-full shrink-0" />Gayrimenkul</Link></li>
+              <li><Link href="/faaliyet-alanlari/taahhut" className="text-white/45 hover:text-[#6cbe59] text-sm transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-[#6cbe59] rounded-full shrink-0" />Taahhüt</Link></li>
+              <li><Link href="/faaliyet-alanlari/turizm" className="text-white/45 hover:text-[#6cbe59] text-sm transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-[#6cbe59] rounded-full shrink-0" />Turizm</Link></li>
             </ul>
             <h5 className="text-sm font-bold uppercase tracking-widest text-white mb-5 mt-8" style={{ fontFamily: "'Oswald',sans-serif" }}>Kariyer</h5>
             <ul className="space-y-3">
-              <li><Link href="/insan-kaynaklari" className="text-white/45 hover:text-[#ee7514] text-sm transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-[#ee7514] rounded-full shrink-0" />İnsan Kaynakları</Link></li>
+              <li><Link href="/insan-kaynaklari" className="text-white/45 hover:text-[#6cbe59] text-sm transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-[#6cbe59] rounded-full shrink-0" />İnsan Kaynakları</Link></li>
             </ul>
           </div>
           <div>
             <h5 className="text-sm font-bold uppercase tracking-widest text-white mb-5" style={{ fontFamily: "'Oswald',sans-serif" }}>Projeler</h5>
             <ul className="space-y-3">
-              <li><Link href="/projeler/gelecek" className="text-white/45 hover:text-[#ee7514] text-sm transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-[#ee7514] rounded-full shrink-0" />Gelecek Projeler</Link></li>
-              <li><Link href="/projeler/tamamlanan" className="text-[#ee7514] text-sm transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-[#ee7514] rounded-full shrink-0" />Tamamlanan Projeler</Link></li>
+              <li><Link href="/projeler/gelecek" className="text-white/45 hover:text-[#6cbe59] text-sm transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-[#6cbe59] rounded-full shrink-0" />Gelecek Projeler</Link></li>
+              <li><Link href="/projeler/tamamlanan" className="text-[#6cbe59] text-sm transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-[#6cbe59] rounded-full shrink-0" />Tamamlanan Projeler</Link></li>
             </ul>
           </div>
           <div>
             <h5 className="text-sm font-bold uppercase tracking-widest text-white mb-5" style={{ fontFamily: "'Oswald',sans-serif" }}>İletişim</h5>
             <div className="space-y-4">
-              <div className="flex gap-3 items-start"><MapPin size={15} className="text-[#ee7514] shrink-0 mt-0.5" /><p className="text-white/45 text-sm leading-6">Barbaros Mah. Akzambak Sok.<br />Uphill Towers A Blok No: 3/A<br />Ataşehir / İstanbul</p></div>
-              <div className="flex gap-3 items-center"><Mail size={15} className="text-[#ee7514] shrink-0" /><a href="mailto:info@bogazicigroup.com.tr" className="text-white/45 hover:text-[#ee7514] text-sm transition-colors">info@bogazicigroup.com.tr</a></div>
+              <div className="flex gap-3 items-start"><MapPin size={15} className="text-[#6cbe59] shrink-0 mt-0.5" /><p className="text-white/45 text-sm leading-6">Barbaros Mah. Akzambak Sok.<br />Uphill Towers A Blok No: 3/A<br />Ataşehir / İstanbul</p></div>
+              <div className="flex gap-3 items-center"><Mail size={15} className="text-[#6cbe59] shrink-0" /><a href="mailto:info@bogazicigroup.com.tr" className="text-white/45 hover:text-[#6cbe59] text-sm transition-colors">info@bogazicigroup.com.tr</a></div>
             </div>
             <div className="mt-6 space-y-3">
-              <Link href="/iletisim/bize-ulasin" className="text-white/45 hover:text-[#ee7514] text-sm transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-[#ee7514] rounded-full shrink-0" />Bize Ulaşın</Link>
-              <Link href="/iletisim/satis-ofisleri" className="text-white/45 hover:text-[#ee7514] text-sm transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-[#ee7514] rounded-full shrink-0" />Satış Ofisleri</Link>
+              <Link href="/iletisim/bize-ulasin" className="text-white/45 hover:text-[#6cbe59] text-sm transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-[#6cbe59] rounded-full shrink-0" />Bize Ulaşın</Link>
+              <Link href="/iletisim/satis-ofisleri" className="text-white/45 hover:text-[#6cbe59] text-sm transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-[#6cbe59] rounded-full shrink-0" />Satış Ofisleri</Link>
             </div>
           </div>
         </div>

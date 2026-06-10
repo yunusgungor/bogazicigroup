@@ -47,15 +47,15 @@ export default function Taahhut() {
             "Tekirdağ Karayolu İnşaatı", "Maltepe Sosyal Güvenlik Merkezi",
             "Küçükçekmece Kalp Damar Cerrahisi", "Germencik Enerji Santrali",
           ].map((proje) => (
-            <div key={proje} className="border border-gray-200 px-4 py-3.5 text-xs font-semibold text-[#555] uppercase tracking-wide hover:border-[#ee7514] hover:text-[#ee7514] hover:bg-orange-50 transition-colors cursor-pointer text-center" style={{ fontFamily: "'Raleway', sans-serif" }}>
+            <div key={proje} className="border border-gray-200 px-4 py-3.5 text-xs font-semibold text-[#555] uppercase tracking-wide hover:border-[#6cbe59] hover:text-[#6cbe59] hover:bg-orange-50 transition-colors cursor-pointer text-center" style={{ fontFamily: "'Raleway', sans-serif" }}>
               {proje}
             </div>
           ))}
         </div>
 
-        <motion.div variants={fadeUp} className="mt-14 bg-[#f8f8f8] border-l-4 border-[#ee7514] px-8 py-6">
+        <motion.div variants={fadeUp} className="mt-14 bg-[#f8f8f8] border-l-4 border-[#6cbe59] px-8 py-6">
           <p className="text-[#777] text-sm leading-7" style={{ fontFamily: "'Raleway', sans-serif" }}>
-            Detaylı proje listesi için <Link href="/projeler/tamamlanan" className="text-[#ee7514] font-bold hover:underline">Tamamlanan Projeler</Link> sayfamızı ziyaret edebilirsiniz.
+            Detaylı proje listesi için <Link href="/projeler/tamamlanan" className="text-[#6cbe59] font-bold hover:underline">Tamamlanan Projeler</Link> sayfamızı ziyaret edebilirsiniz.
           </p>
         </motion.div>
       </motion.div>

@@ -40,10 +40,10 @@ export default function Belgeler() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-16">
           {belgeler.map((belge) => (
-            <motion.div key={belge.file} variants={fadeUp} className="group bg-white border border-gray-200 hover:border-[#ee7514] transition-all shadow-sm hover:shadow-md overflow-hidden">
+            <motion.div key={belge.file} variants={fadeUp} className="group bg-white border border-gray-200 hover:border-[#6cbe59] transition-all shadow-sm hover:shadow-md overflow-hidden">
               <div className="bg-[#f8f8f8] p-8 flex items-center justify-center border-b border-gray-100">
                 <div className="w-20 h-20 bg-white rounded-lg shadow-sm flex items-center justify-center border border-gray-200">
-                  <FileText size={36} className="text-[#ee7514]" />
+                  <FileText size={36} className="text-[#6cbe59]" />
                 </div>
               </div>
               <div className="p-6">
@@ -54,7 +54,7 @@ export default function Belgeler() {
                     href={`${pdfBase}/${belge.file}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 bg-[#212a3c] hover:bg-[#ee7514] text-white text-[11px] font-bold uppercase tracking-wider px-4 py-2.5 transition-all active:scale-[0.97]"
+                    className="inline-flex items-center gap-2 bg-[#212a3c] hover:bg-[#6cbe59] text-white text-[11px] font-bold uppercase tracking-wider px-4 py-2.5 transition-all active:scale-[0.97]"
                     style={{ fontFamily: "'Raleway', sans-serif" }}
                   >
                     <Eye size={13} /> İncele
@@ -62,7 +62,7 @@ export default function Belgeler() {
                   <a
                     href={`${pdfBase}/${belge.file}`}
                     download={belge.file}
-                    className="inline-flex items-center gap-2 border border-gray-300 hover:border-[#ee7514] hover:text-[#ee7514] text-[#555] text-[11px] font-bold uppercase tracking-wider px-4 py-2.5 transition-all active:scale-[0.97]"
+                    className="inline-flex items-center gap-2 border border-gray-300 hover:border-[#6cbe59] hover:text-[#6cbe59] text-[#555] text-[11px] font-bold uppercase tracking-wider px-4 py-2.5 transition-all active:scale-[0.97]"
                     style={{ fontFamily: "'Raleway', sans-serif" }}
                   >
                     <Download size={13} /> İndir
@@ -83,7 +83,7 @@ export default function Belgeler() {
               <p className="text-[#555] text-sm leading-7 mb-3">
                 Ülkemizde İnşaat Taahhüt Sektöründe faaliyet gösteren firmamızın temelleri 1938 yılında proje ve müteahhitlik hizmetleri ile atılmıştır.
               </p>
-              <Link href="/kurumsal/hakkimizda" className="inline-flex items-center gap-2 text-[#ee7514] text-xs font-bold uppercase tracking-widest hover:underline" style={{ fontFamily: "'Raleway', sans-serif" }}>
+              <Link href="/kurumsal/hakkimizda" className="inline-flex items-center gap-2 text-[#6cbe59] text-xs font-bold uppercase tracking-widest hover:underline" style={{ fontFamily: "'Raleway', sans-serif" }}>
                 Bilgi için tıklayın
               </Link>
             </div>

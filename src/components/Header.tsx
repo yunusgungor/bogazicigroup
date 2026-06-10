@@ -53,20 +53,20 @@ export default function Header({ activeNav }: HeaderProps) {
         <div className="bg-[#f4f4f4] border-b border-gray-200 hidden md:block">
           <div className="max-w-[1250px] mx-auto px-4 flex items-center justify-between h-9 text-[11px] text-gray-500">
             <div className="flex items-center gap-6">
-              <a href="/kvkk-aydinlatma-metni" className="hover:text-[#ee7514] transition-colors">KVKK Aydınlatma Metni</a>
-              <a href="/insan-kaynaklari" className="hover:text-[#ee7514] transition-colors">İnsan Kaynakları</a>
+              <a href="/kvkk-aydinlatma-metni" className="hover:text-[#6cbe59] transition-colors">KVKK Aydınlatma Metni</a>
+              <a href="/insan-kaynaklari" className="hover:text-[#6cbe59] transition-colors">İnsan Kaynakları</a>
             </div>
             <div className="flex items-center gap-4">
               <div className="flex items-center gap-3 text-gray-500">
-                <a href="#" aria-label="Facebook" className="hover:text-[#ee7514] transition-colors"><Facebook size={13} /></a>
-                <a href="#" aria-label="Twitter" className="hover:text-[#ee7514] transition-colors"><Twitter size={13} /></a>
-                <a href="#" aria-label="Instagram" className="hover:text-[#ee7514] transition-colors"><Instagram size={13} /></a>
-                <a href="#" aria-label="Youtube" className="hover:text-[#ee7514] transition-colors"><Youtube size={13} /></a>
+                <a href="#" aria-label="Facebook" className="hover:text-[#6cbe59] transition-colors"><Facebook size={13} /></a>
+                <a href="#" aria-label="Twitter" className="hover:text-[#6cbe59] transition-colors"><Twitter size={13} /></a>
+                <a href="#" aria-label="Instagram" className="hover:text-[#6cbe59] transition-colors"><Instagram size={13} /></a>
+                <a href="#" aria-label="Youtube" className="hover:text-[#6cbe59] transition-colors"><Youtube size={13} /></a>
               </div>
               <div className="border-l border-gray-300 pl-4 flex items-center gap-2 font-bold text-[11px]">
-                <button className="text-[#ee7514]">TR</button>
+                <button className="text-[#6cbe59]">TR</button>
                 <span className="text-gray-400">|</span>
-                <button className="hover:text-[#ee7514] transition-colors">EN</button>
+                <button className="hover:text-[#6cbe59] transition-colors">EN</button>
               </div>
             </div>
           </div>
@@ -92,23 +92,23 @@ export default function Header({ activeNav }: HeaderProps) {
                 >
                   <a
                     href={item.href}
-                    className={`flex items-center gap-1 px-4 py-2 text-[13px] font-bold tracking-wide uppercase transition-colors ${isActive(item.label) ? "text-[#ee7514]" : "text-[#1a1a1a] hover:text-[#ee7514]"}`}
+                    className={`flex items-center gap-1 px-4 py-2 text-[13px] font-bold tracking-wide uppercase transition-colors ${isActive(item.label) ? "text-[#6cbe59]" : "text-[#1a1a1a] hover:text-[#6cbe59]"}`}
                     style={{ fontFamily: "'Raleway', sans-serif" }}
                   >
                     {item.label}
                     {item.sub.length > 0 && <ChevronDown size={12} className="opacity-60 group-hover:opacity-100 transition-opacity" />}
                   </a>
                   {item.sub.length > 0 && (
-                    <div className={`absolute top-full left-0 bg-white shadow-xl min-w-[220px] border-t-2 border-[#ee7514] transition-all duration-200 ${openDropdown === item.label ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-2 pointer-events-none"}`}>
+                    <div className={`absolute top-full left-0 bg-white shadow-xl min-w-[220px] border-t-2 border-[#6cbe59] transition-all duration-200 ${openDropdown === item.label ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-2 pointer-events-none"}`}>
                       <ul className="py-2">
                         {item.sub.map((s, si) => (
                           <li key={s}>
                             {item.subHrefs ? (
-                              <Link href={item.subHrefs[si]} className={`block px-5 py-2.5 text-[12px] font-semibold tracking-wide uppercase transition-colors ${window.location.pathname === item.subHrefs[si] ? "text-[#ee7514] bg-orange-50" : "text-[#333] hover:bg-[#f8f8f8] hover:text-[#ee7514]"}`} style={{ fontFamily: "'Raleway', sans-serif" }}>
+                              <Link href={item.subHrefs[si]} className={`block px-5 py-2.5 text-[12px] font-semibold tracking-wide uppercase transition-colors ${window.location.pathname === item.subHrefs[si] ? "text-[#6cbe59] bg-orange-50" : "text-[#333] hover:bg-[#f8f8f8] hover:text-[#6cbe59]"}`} style={{ fontFamily: "'Raleway', sans-serif" }}>
                                 {s}
                               </Link>
                             ) : (
-                              <a href="#" className="block px-5 py-2.5 text-[#333] hover:bg-[#f8f8f8] hover:text-[#ee7514] text-[12px] font-semibold tracking-wide uppercase transition-colors" style={{ fontFamily: "'Raleway', sans-serif" }}>
+                              <a href="#" className="block px-5 py-2.5 text-[#333] hover:bg-[#f8f8f8] hover:text-[#6cbe59] text-[12px] font-semibold tracking-wide uppercase transition-colors" style={{ fontFamily: "'Raleway', sans-serif" }}>
                                 {s}
                               </a>
                             )}
@@ -146,7 +146,7 @@ export default function Header({ activeNav }: HeaderProps) {
                   {item.sub.length > 0 ? (
                     <>
                       <button
-                        className={`w-full flex items-center justify-between px-5 py-3.5 text-[13px] font-bold tracking-wide uppercase text-left ${isActive(item.label) ? "text-[#ee7514]" : "text-[#1a1a1a]"}`}
+                        className={`w-full flex items-center justify-between px-5 py-3.5 text-[13px] font-bold tracking-wide uppercase text-left ${isActive(item.label) ? "text-[#6cbe59]" : "text-[#1a1a1a]"}`}
                         style={{ fontFamily: "'Raleway', sans-serif" }}
                         onClick={() => setMobileExpanded(mobileExpanded === item.label ? null : item.label)}
                       >
@@ -158,11 +158,11 @@ export default function Header({ activeNav }: HeaderProps) {
                           {item.sub.map((s, si) => (
                             <li key={s}>
                               {item.subHrefs ? (
-                                <Link href={item.subHrefs[si]} className={`block px-8 py-2.5 text-[12px] font-bold tracking-wide uppercase transition-colors ${window.location.pathname === item.subHrefs[si] ? "text-[#ee7514]" : "text-[#4a4a4a] hover:text-[#ee7514]"}`} style={{ fontFamily: "'Raleway', sans-serif" }} onClick={() => setMobileOpen(false)}>
+                                <Link href={item.subHrefs[si]} className={`block px-8 py-2.5 text-[12px] font-bold tracking-wide uppercase transition-colors ${window.location.pathname === item.subHrefs[si] ? "text-[#6cbe59]" : "text-[#4a4a4a] hover:text-[#6cbe59]"}`} style={{ fontFamily: "'Raleway', sans-serif" }} onClick={() => setMobileOpen(false)}>
                                   {s}
                                 </Link>
                               ) : (
-                                <a href="#" className="block px-8 py-2.5 text-[#4a4a4a] hover:text-[#ee7514] text-[12px] font-bold tracking-wide uppercase transition-colors" style={{ fontFamily: "'Raleway', sans-serif" }}>
+                                <a href="#" className="block px-8 py-2.5 text-[#4a4a4a] hover:text-[#6cbe59] text-[12px] font-bold tracking-wide uppercase transition-colors" style={{ fontFamily: "'Raleway', sans-serif" }}>
                                   {s}
                                 </a>
                               )}
@@ -180,7 +180,7 @@ export default function Header({ activeNav }: HeaderProps) {
               ))}
             </ul>
             <div className="p-5 border-t border-gray-200 flex items-center gap-4">
-              <button className="text-[#ee7514] text-sm font-bold">TR</button>
+              <button className="text-[#6cbe59] text-sm font-bold">TR</button>
               <span className="text-gray-300">|</span>
               <button className="text-gray-500 hover:text-[#212a3c] text-sm font-bold">EN</button>
             </div>

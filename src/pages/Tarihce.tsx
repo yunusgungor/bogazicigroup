@@ -49,15 +49,15 @@ export default function Tarihce() {
         <motion.p variants={fadeUp} className="text-[#555] text-[15px] leading-7 mb-5">
           İngiltere, Amerika Birleşik Devletleri gibi Avrupa şirketlerinde konut, villa üretimi yanı sıra Türkiye'de birçok taahhüt işlerinde bulunmuştur.
         </motion.p>
-        <motion.div variants={fadeUp} className="bg-[#f8f8f8] p-6 mb-8 border-l-4 border-[#ee7514]">
+        <motion.div variants={fadeUp} className="bg-[#f8f8f8] p-6 mb-8 border-l-4 border-[#6cbe59]">
           <ul className="space-y-2 text-[#555] text-[15px]">
-            <li className="flex items-start gap-2"><span className="text-[#ee7514] mt-2">•</span>Çağlayan Adliye Sarayı</li>
-            <li className="flex items-start gap-2"><span className="text-[#ee7514] mt-2">•</span>Eczacıbaşı Ormanada Villaları</li>
-            <li className="flex items-start gap-2"><span className="text-[#ee7514] mt-2">•</span>Garanti Bankası Teknoloji Kampüsü</li>
-            <li className="flex items-start gap-2"><span className="text-[#ee7514] mt-2">•</span>İŞGYO Tuzla Ticaret Merkezi</li>
-            <li className="flex items-start gap-2"><span className="text-[#ee7514] mt-2">•</span>Kartal Lütfi Kırdar Eğitim ve Araştırma Hastanesi</li>
-            <li className="flex items-start gap-2"><span className="text-[#ee7514] mt-2">•</span>Teknopark İstanbul 3.Etap İnşaatı</li>
-            <li className="flex items-start gap-2"><span className="text-[#ee7514] mt-2">•</span>Yılda 500.000 m² inşaat hedefi ile üretilen İstanbul'un çeşitli ilçelerinde üretilen gayrimenkul inşaatları</li>
+            <li className="flex items-start gap-2"><span className="text-[#6cbe59] mt-2">•</span>Çağlayan Adliye Sarayı</li>
+            <li className="flex items-start gap-2"><span className="text-[#6cbe59] mt-2">•</span>Eczacıbaşı Ormanada Villaları</li>
+            <li className="flex items-start gap-2"><span className="text-[#6cbe59] mt-2">•</span>Garanti Bankası Teknoloji Kampüsü</li>
+            <li className="flex items-start gap-2"><span className="text-[#6cbe59] mt-2">•</span>İŞGYO Tuzla Ticaret Merkezi</li>
+            <li className="flex items-start gap-2"><span className="text-[#6cbe59] mt-2">•</span>Kartal Lütfi Kırdar Eğitim ve Araştırma Hastanesi</li>
+            <li className="flex items-start gap-2"><span className="text-[#6cbe59] mt-2">•</span>Teknopark İstanbul 3.Etap İnşaatı</li>
+            <li className="flex items-start gap-2"><span className="text-[#6cbe59] mt-2">•</span>Yılda 500.000 m² inşaat hedefi ile üretilen İstanbul'un çeşitli ilçelerinde üretilen gayrimenkul inşaatları</li>
           </ul>
         </motion.div>
 

@@ -24,7 +24,7 @@ export default function OnursalBaskan() {
             <div className="w-16 h-16 bg-[#212a3c] rounded-full flex items-center justify-center text-white text-2xl font-bold shrink-0" style={{ fontFamily: "'Oswald', sans-serif" }}>YB</div>
             <div>
               <h2 className="text-xl font-bold text-[#212a3c]" style={{ fontFamily: "'Oswald', sans-serif" }}>Yusuf Yılmaz BEYAZ</h2>
-              <p className="text-[#ee7514] text-xs font-bold uppercase tracking-widest" style={{ fontFamily: "'Raleway', sans-serif" }}>Onursal Başkan</p>
+              <p className="text-[#6cbe59] text-xs font-bold uppercase tracking-widest" style={{ fontFamily: "'Raleway', sans-serif" }}>Onursal Başkan</p>
             </div>
           </div>
 
@@ -56,12 +56,12 @@ export default function OnursalBaskan() {
             <div className="absolute inset-0 translate-x-3 translate-y-3 bg-[#f4f4f4] hidden sm:block" />
             <img src="/images/bogazici/project-1.png" alt="Yusuf Yılmaz Beyaz" className="relative z-10 w-full aspect-[4/3] object-cover shadow-2xl" />
           </div>
-          <div className="mt-10 bg-[#f8f8f8] border-l-4 border-[#ee7514] p-6">
+          <div className="mt-10 bg-[#f8f8f8] border-l-4 border-[#6cbe59] p-6">
             <h3 className="text-lg font-bold text-[#212a3c] mb-2 uppercase" style={{ fontFamily: "'Oswald', sans-serif" }}>Tarihçe</h3>
             <p className="text-[#555] text-sm leading-7 mb-4">
               BOĞAZİÇİ GRUP temelleri 38'li yıllarda İstanbul merkezli olarak atılmış olup, esas olarak inşaat sektöründe faaliyetlere başlanmıştır. Gelişen organizasyon yapısı ve ulaşılan performans seviyesi ile ulusal olduğu kadar uluslararası platformlarda da özellikle inşaat ve ticaret alanlarında önemli yerlere ulaşmışlardır.
             </p>
-            <Link href="/kurumsal/tarihce" className="inline-flex items-center gap-1 text-[#ee7514] text-xs font-bold uppercase tracking-widest hover:gap-2 transition-all" style={{ fontFamily: "'Raleway', sans-serif" }}>
+            <Link href="/kurumsal/tarihce" className="inline-flex items-center gap-1 text-[#6cbe59] text-xs font-bold uppercase tracking-widest hover:gap-2 transition-all" style={{ fontFamily: "'Raleway', sans-serif" }}>
               Bilgi için tıklayın <ChevronRight size={13} />
             </Link>
           </div>

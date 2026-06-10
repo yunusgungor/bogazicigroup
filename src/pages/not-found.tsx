@@ -8,7 +8,7 @@ export default function NotFound() {
         <div className="text-[#212a3c] font-bold leading-none mb-6" style={{ fontFamily: "'Oswald', sans-serif", fontSize: "clamp(6rem, 15vw, 10rem)" }}>
           404
         </div>
-        <div className="w-14 h-1 bg-[#ee7514] mx-auto mb-8" />
+        <div className="w-14 h-1 bg-[#6cbe59] mx-auto mb-8" />
         <h1 className="text-2xl font-bold text-[#212a3c] mb-4 uppercase tracking-wide" style={{ fontFamily: "'Oswald', sans-serif" }}>
           Sayfa Bulunamadı
         </h1>
@@ -17,7 +17,7 @@ export default function NotFound() {
         </p>
         <Link
           href="/"
-          className="inline-flex items-center gap-2 bg-[#212a3c] hover:bg-[#ee7514] text-white px-8 py-4 text-sm font-bold uppercase tracking-widest transition-all duration-200 active:scale-[0.97]"
+          className="inline-flex items-center gap-2 bg-[#212a3c] hover:bg-[#6cbe59] text-white px-8 py-4 text-sm font-bold uppercase tracking-widest transition-all duration-200 active:scale-[0.97]"
           style={{ fontFamily: "'Oswald', sans-serif" }}
         >
           <ArrowLeft size={16} />
