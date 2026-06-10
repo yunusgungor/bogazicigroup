@@ -79,7 +79,7 @@ export default function HomePage() {
 
   return (
     <div className="bg-white text-[#1a1a1a] antialiased" style={{ fontFamily: "'Montserrat', 'Geneva', Arial, sans-serif" }}>
-      <header className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${scrolled ? "shadow-xl" : ""}`}>
+      <header className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${scrolled ? "shadow-xl" : ""} bg-[#212a3c]`}>
         <div className="bg-[#f4f4f4] border-b border-gray-200 hidden md:block">
           <div className="max-w-[1250px] mx-auto px-4 flex items-center justify-between h-9 text-[11px] text-gray-500">
             <div className="flex items-center gap-6">
@@ -102,10 +102,15 @@ export default function HomePage() {
           </div>
         </div>
 
-        <nav className="bg-[#212a3c]">
+        <nav className="">
           <div className="max-w-[1250px] mx-auto px-4 flex items-center justify-between h-[68px] md:h-[76px]">
             <Link href="/" className="shrink-0">
-              <img src="/images/bogazici/logo.png" alt="Boğaziçi Grup" className="h-10 md:h-12 w-auto" />
+              <img 
+                src="/images/bogazici/logo.png" 
+                alt="Boğaziçi Grup" 
+                className="h-10 md:h-12 w-auto"
+                style={{ filter: 'drop-shadow(0 0 15px rgba(255,255,255,0.7))' }}
+              />
             </Link>
 
             <ul className="hidden lg:flex items-center gap-1">
@@ -159,7 +164,12 @@ export default function HomePage() {
           <div className="absolute inset-0 bg-black/50" onClick={() => setMobileOpen(false)} />
           <div className="absolute top-0 right-0 w-[300px] max-w-full h-full bg-[#212a3c] flex flex-col overflow-y-auto">
             <div className="flex items-center justify-between p-5 border-b border-white/10">
-              <img src="/images/bogazici/logo.png" alt="Boğaziçi Grup" className="h-10 w-auto" />
+              <img 
+                src="/images/bogazici/logo.png" 
+                alt="Boğaziçi Grup" 
+                className="h-10 w-auto"
+                style={{ filter: 'drop-shadow(0 0 15px rgba(255,255,255,0.7))' }}
+              />
               <button onClick={() => setMobileOpen(false)} className="text-white"><X size={24} /></button>
             </div>
             <ul className="flex-1 py-4">
@@ -213,7 +223,7 @@ export default function HomePage() {
       {/* HERO */}
       <section className="relative h-screen min-h-[640px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-b from-[#212a3c]/55 via-[#212a3c]/30 to-[#212a3c]/80 z-10" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#212a3c]/85 via-[#212a3c]/70 to-[#212a3c]/95 z-10" />
           <motion.img
             initial={{ scale: 1.08 }}
             animate={{ scale: 1 }}
@@ -247,7 +257,7 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.75 }}
-            className="text-white/70 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto mb-10"
+            className="text-white/90 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto mb-10 font-medium"
             style={{ fontFamily: "'Montserrat', sans-serif" }}
           >
             Uzman ekibi ve güçlü altyapısıyla yurt içi ve yurt dışında uluslararası kalite standartlarında projeler üretiyor.
@@ -350,7 +360,7 @@ export default function HomePage() {
               ].map((item) => (
                 <motion.div key={item.title} variants={fadeUp} className="group relative overflow-hidden block bg-[#212a3c] shadow-lg" style={{ minHeight: 400 }}>
                   <img src={item.img} alt={item.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#212a3c]/95 via-[#212a3c]/50 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#212a3c] via-[#212a3c]/60 to-transparent" />
                   <div className="relative h-full flex flex-col justify-end p-7 md:p-9" style={{ minHeight: 400 }}>
                     <div className="w-8 h-0.5 bg-[#ee7514] mb-4 transition-all duration-300 group-hover:w-16" />
                     <h3 className="text-3xl font-bold text-white uppercase mb-3" style={{ fontFamily: "'Oswald', sans-serif" }}>{item.title}</h3>
@@ -384,7 +394,7 @@ export default function HomePage() {
               {projects.map((p) => (
                 <motion.div key={p.name} variants={fadeUp} className="group relative overflow-hidden shadow-md" style={{ minHeight: 320 }}>
                   <img src={p.img} alt={p.name} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
                   <div className="absolute top-4 left-4">
                     <span className="bg-[#ee7514] text-white text-[10px] font-bold px-3 py-1.5 uppercase tracking-wider" style={{ fontFamily: "'Raleway', sans-serif" }}>{p.tag}</span>
                   </div>
@@ -521,7 +531,12 @@ export default function HomePage() {
       <footer className="bg-[#1b1b1b] text-white">
         <div className="max-w-[1250px] mx-auto px-4 py-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           <div className="sm:col-span-2 lg:col-span-1">
-            <img src="/images/bogazici/logo.png" alt="Boğaziçi Grup" className="h-11 w-auto mb-6 opacity-90" />
+            <img 
+              src="/images/bogazici/logo.png" 
+              alt="Boğaziçi Grup" 
+              className="h-11 w-auto opacity-90 mb-6"
+              style={{ filter: 'drop-shadow(0 0 12px rgba(255,255,255,0.6))' }}
+            />
             <p className="text-white/45 text-sm leading-7 mb-6">1938'den bu yana inşaat sektörünün güvenilir ismi.</p>
             <div className="flex items-center gap-3">
               {(["Facebook", "Twitter", "Instagram", "Youtube"] as const).map((l) => (
