@@ -314,7 +314,9 @@ export default function HomePage() {
             </div>
             <motion.div variants={fadeUp} className="mt-10 flex flex-wrap gap-3">
               {otherProjects.map((p) => (
-                <span key={p} className="border border-gray-200 px-4 py-2 text-xs font-semibold text-[#555] uppercase tracking-wide hover:border-[#6cbe59] hover:text-[#6cbe59] transition-colors cursor-pointer" style={{ fontFamily: "'Raleway', sans-serif" }}>{p}</span>
+                <Link key={p} href="/projeler/tamamlanan" className="border border-gray-200 px-4 py-2 text-xs font-semibold text-[#555] uppercase tracking-wide hover:border-[#6cbe59] hover:text-[#6cbe59] transition-colors cursor-pointer" style={{ fontFamily: "'Raleway', sans-serif" }}>
+                  {p}
+                </Link>
               ))}
               <Link href="/projeler/tamamlanan" className="border border-[#6cbe59] bg-[#6cbe59]/5 px-4 py-2 text-xs font-semibold text-[#6cbe59] uppercase tracking-wide hover:bg-[#6cbe59] hover:text-white transition-all cursor-pointer" style={{ fontFamily: "'Raleway', sans-serif" }}>
                 +25 Daha →

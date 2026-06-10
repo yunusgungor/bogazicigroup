@@ -90,14 +90,23 @@ export default function Header({ activeNav }: HeaderProps) {
                   onMouseEnter={() => item.sub.length > 0 && setOpenDropdown(item.label)}
                   onMouseLeave={() => setOpenDropdown(null)}
                 >
-                  <a
-                    href={item.href}
-                    className={`flex items-center gap-1 px-4 py-2 text-[13px] font-bold tracking-wide uppercase transition-colors ${isActive(item.label) ? "text-[#6cbe59]" : "text-[#1a1a1a] hover:text-[#6cbe59]"}`}
-                    style={{ fontFamily: "'Raleway', sans-serif" }}
-                  >
-                    {item.label}
-                    {item.sub.length > 0 && <ChevronDown size={12} className="opacity-60 group-hover:opacity-100 transition-opacity" />}
-                  </a>
+                  {item.sub.length > 0 ? (
+                    <button
+                      className={`flex items-center gap-1 px-4 py-2 text-[13px] font-bold tracking-wide uppercase transition-colors ${isActive(item.label) ? "text-[#6cbe59]" : "text-[#1a1a1a] hover:text-[#6cbe59]"}`}
+                      style={{ fontFamily: "'Raleway', sans-serif" }}
+                    >
+                      {item.label}
+                      <ChevronDown size={12} className="opacity-60 group-hover:opacity-100 transition-opacity" />
+                    </button>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      className={`flex items-center gap-1 px-4 py-2 text-[13px] font-bold tracking-wide uppercase transition-colors ${isActive(item.label) ? "text-[#6cbe59]" : "text-[#1a1a1a] hover:text-[#6cbe59]"}`}
+                      style={{ fontFamily: "'Raleway', sans-serif" }}
+                    >
+                      {item.label}
+                    </Link>
+                  )}
                   {item.sub.length > 0 && (
                     <div className={`absolute top-full left-0 bg-white shadow-xl min-w-[220px] border-t-2 border-[#6cbe59] transition-all duration-200 ${openDropdown === item.label ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-2 pointer-events-none"}`}>
                       <ul className="py-2">
