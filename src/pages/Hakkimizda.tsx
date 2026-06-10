@@ -50,7 +50,7 @@ export default function Hakkimizda() {
           <div className="mt-10 bg-[#f8f8f8] border-l-4 border-[#ee7514] p-6">
             <h3 className="text-lg font-bold text-[#212a3c] mb-2 uppercase" style={{ fontFamily: "'Oswald', sans-serif" }}>Onursal Başkan</h3>
             <p className="text-[#555] text-sm leading-7 mb-4">
-              Covid-19 pandemisi ile başlayan gelişmeler, tüm dünyada olduğu gibi ülkemizde de zorlu bir sürecin yaşanmasına neden oldu.
+              Covid-19 pandemisi ile başlayan gelişmeler, tüm dünyada olduğu gibi ülkemizde de zorlu bir sürecin yaşanmasına neden oldu. Salgının yarattığı şok dalgasının üzerinden geçen iki yılın sonunda, enflasyonun tetiklenmesi ve üreticilerin sipariş modellerinde değişikliğe gitmeleri ekonomik durgunluk riskini beraberinde getirdi.
             </p>
             <Link href="/kurumsal/onursal-baskan" className="inline-flex items-center gap-1 text-[#ee7514] text-xs font-bold uppercase tracking-widest hover:gap-2 transition-all" style={{ fontFamily: "'Raleway', sans-serif" }}>
               Bilgi için tıklayın <ChevronRight size={13} />

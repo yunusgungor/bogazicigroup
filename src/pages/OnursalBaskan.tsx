@@ -35,10 +35,10 @@ export default function OnursalBaskan() {
             2023 yılında muhtemelen gelişmiş ülke merkez bankaları, faiz oranlarını yükseltmekle birlikte para arzını da azaltarak enflasyonla mücadelenin çözümlerini üretmeye çalışacaklar. Yılın ortasından itibaren enflasyonun dünya genelinde düşmeye başlayacağı beklense de, küresel emtia, tarım-gıda, enerji fiyatları ve lojistik maliyetlere bağlı olarak küresel enflasyon riskinin yine de çok önemli bir sorun teşkil edeceği görülüyor.
           </motion.p>
           <motion.p variants={fadeUp} className="text-[#555] text-[15px] leading-7 mb-5">
-            Tüm dünyayı etkisi altına alan "enerji krizi" ile, Rusya-Ukrayna savaşı enerji ve doğalgaz tüketim maliyetlerinin artmasıyla birlikte başta Avrupa Birliği olmak üzere bütün ülkelerin sıkıntı yaşamasına neden oldu.
+            Tüm dünyayı etkisi altına alan "enerji krizi" ile, Rusya-Ukrayna savaşı enerji ve doğalgaz tüketim maliyetlerinin artmasıyla birlikte başta Avrupa Birliği olmak üzere bütün ülkelerin sıkıntı yaşamasına neden oldu. Bu kapsamda hızla yenilenebilir enerji yatırımlarına yönelinmesi yanında bu sektörde de kritik değişimlerin yaşanması bekleniyor.
           </motion.p>
           <motion.p variants={fadeUp} className="text-[#555] text-[15px] leading-7 mb-5">
-            Bunun yanı sıra küresel iklim krizi ve küresel iklim güvenliği, gelecek yılların en önemli dikkat çekecek gündemi olacaktır. Türkiye'nin bu konu üzerinde durarak gelişmeleri yakından takip etmesi ile Paris Antlaşması'nın bir parçası oldu ve 2053 yılı hedefini "net sıfır karbon" olarak açıkladı.
+            Bunun yanı sıra küresel iklim krizi ve küresel iklim güvenliği, gelecek yılların en önemli dikkat çekecek gündemi olacaktır. Bunun sebebi ile enerji, ulaştırma, konut, tarım gibi sektörlerde ve imalat sanayiinde yeni yaklaşımları öncelikli hale getirecektir. Türkiye'nin bu konu üzerinde durarak gelişmeleri yakından takip etmesi ile Paris Antlaşması'nın bir parçası oldu ve 2053 yılı hedefini "net sıfır karbon" olarak açıkladı.
           </motion.p>
           <motion.p variants={fadeUp} className="text-[#555] text-[15px] leading-7 mb-5">
             2022 yılında gayrimenkul sektöründe beklenen konut maliyetlerindeki artışa rağmen, döviz yatırımı bulunan yerli ve yabancı yatırımcıların bir kısmının döviz pozisyonundan çıkarak gayrimenkule yönelmesini umuyoruz.
@@ -59,7 +59,7 @@ export default function OnursalBaskan() {
           <div className="mt-10 bg-[#f8f8f8] border-l-4 border-[#ee7514] p-6">
             <h3 className="text-lg font-bold text-[#212a3c] mb-2 uppercase" style={{ fontFamily: "'Oswald', sans-serif" }}>Tarihçe</h3>
             <p className="text-[#555] text-sm leading-7 mb-4">
-              BOĞAZİÇİ GRUP temelleri 38'li yıllarda İstanbul merkezli olarak atılmış olup, esas olarak inşaat sektöründe faaliyetlere başlanmıştır.
+              BOĞAZİÇİ GRUP temelleri 38'li yıllarda İstanbul merkezli olarak atılmış olup, esas olarak inşaat sektöründe faaliyetlere başlanmıştır. Gelişen organizasyon yapısı ve ulaşılan performans seviyesi ile ulusal olduğu kadar uluslararası platformlarda da özellikle inşaat ve ticaret alanlarında önemli yerlere ulaşmışlardır.
             </p>
             <Link href="/kurumsal/tarihce" className="inline-flex items-center gap-1 text-[#ee7514] text-xs font-bold uppercase tracking-widest hover:gap-2 transition-all" style={{ fontFamily: "'Raleway', sans-serif" }}>
               Bilgi için tıklayın <ChevronRight size={13} />

@@ -73,6 +73,10 @@ export default function BizeUlasin() {
                 <label className="block text-xs font-bold text-[#333] uppercase tracking-wider mb-1.5" style={{ fontFamily: "'Raleway', sans-serif" }}>Mesajınız *</label>
                 <textarea rows={4} className="w-full border border-gray-200 px-4 py-2.5 text-sm focus:border-[#ee7514] focus:outline-none transition-colors" />
               </div>
+              <div className="flex items-start gap-2 mt-2">
+                <input type="checkbox" id="kvkk-iletisim" className="mt-1 shrink-0" />
+                <label htmlFor="kvkk-iletisim" className="text-[#777] text-xs leading-5">Aydınlatma Metni'ni okudum, anladım.</label>
+              </div>
               <button type="submit" className="bg-[#212a3c] hover:bg-[#ee7514] text-white px-8 py-3 text-sm font-bold uppercase tracking-widest transition-all duration-200 active:scale-[0.97]" style={{ fontFamily: "'Oswald', sans-serif" }}>
                 Gönder
               </button>

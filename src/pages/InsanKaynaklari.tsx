@@ -53,6 +53,14 @@ export default function InsanKaynaklari() {
               <label className="block text-xs font-bold text-[#333] uppercase tracking-wider mb-1.5" style={{ fontFamily: "'Raleway', sans-serif" }}>CV (PDF)</label>
               <input type="file" accept=".pdf" className="w-full text-sm text-[#555] file:mr-4 file:py-2 file:px-4 file:border-0 file:text-xs file:font-bold file:bg-[#212a3c] file:text-white hover:file:bg-[#ee7514] transition-colors" />
             </div>
+            <div className="flex items-start gap-2">
+              <input type="checkbox" id="kvkk-okudum" className="mt-1 shrink-0" />
+              <label htmlFor="kvkk-okudum" className="text-[#777] text-xs leading-5">Aydınlatma Metni'ni okudum.</label>
+            </div>
+            <div className="flex items-start gap-2">
+              <input type="checkbox" id="kvkk-riza" className="mt-1 shrink-0" />
+              <label htmlFor="kvkk-riza" className="text-[#777] text-xs leading-5">Kişisel verilerimin aydınlatma metni doğrultusunda işlenmesine rızam vardır.</label>
+            </div>
           </div>
           <button type="submit" className="mt-6 bg-[#212a3c] hover:bg-[#ee7514] text-white px-8 py-3 text-sm font-bold uppercase tracking-widest transition-all duration-200 active:scale-[0.97]" style={{ fontFamily: "'Oswald', sans-serif" }}>
             Gönder

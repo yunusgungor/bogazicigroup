@@ -29,10 +29,6 @@ export default function Gayrimenkul() {
             <p className="text-[#555] text-[15px] leading-7 mb-6">
               Yurtiçinde ve yurtdışında inşaa ettiğimiz projelerde kaliteli yapı ve zamanında teslim prensiplerimizden hiç ödün vermeden üretim yapmaya devam ediyoruz.
             </p>
-            <div className="w-12 h-1 bg-[#ee7514] mb-6" />
-            <p className="text-[#777] text-sm leading-7">
-              Konut, ofis, ticari merkez ve karma projelerde uzmanlaşan Boğaziçi Grup, modern mimari anlayışı ve kaliteli işçiliği ile İstanbul başta olmak üzere Türkiye'nin çeşitli bölgelerinde değer yaratan projelere imza atmıştır.
-            </p>
           </motion.div>
         </div>
 

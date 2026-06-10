@@ -63,7 +63,7 @@ export default function VizyonMisyon() {
           <div className="mt-10 bg-[#f8f8f8] border-l-4 border-[#ee7514] p-6">
             <h3 className="text-lg font-bold text-[#212a3c] mb-2 uppercase" style={{ fontFamily: "'Oswald', sans-serif" }}>Kalite Politikamız</h3>
             <p className="text-[#555] text-sm leading-7 mb-4">
-              BOĞAZİÇİ GRUP yürürlükte bulunan çevreyle ilgili mevzuat ve idari düzenlemelere uyarak altyapı, üstyapı inşaatları ve yapı elemanları üretiminde çevre değerlerinin korunmasına özen gösterir.
+              BOĞAZİÇİ GRUP yürürlükte bulunan çevreyle ilgili mevzuat ve idari düzenlemelere, kendiliğinden tabi olduğu şartlara uyarak altyapı, üstyapı inşaatları ve yapı elemanları üretiminde havanın, suyun ve toprağın kirlenmesinin önlenmesi için gerekli kaynaklarını kullanmaya özen gösterir.
             </p>
             <Link href="/kurumsal/kalite-politikamiz" className="inline-flex items-center gap-1 text-[#ee7514] text-xs font-bold uppercase tracking-widest hover:gap-2 transition-all" style={{ fontFamily: "'Raleway', sans-serif" }}>
               Bilgi için tıklayın <ChevronRight size={13} />

@@ -29,10 +29,6 @@ export default function Taahhut() {
             <p className="text-[#555] text-[15px] leading-7 mb-6">
               İlk proje aşamasından anahtar teslimine ve işletme destek hizmetlerine kadar uzanan sürecin her bölümünde, ileri seviye standartlarda hizmet veren Boğaziçi Grup, sürekli bir şekilde artış gösteren iş hacmiyle sektörünün önde gelen firmalarından biri haline gelmiştir.
             </p>
-            <div className="w-12 h-1 bg-[#ee7514] mb-6" />
-            <p className="text-[#777] text-sm leading-7">
-              Altyapı, üstyapı, endüstriyel tesisler, enerji santralleri, arıtma tesisleri, yol ve köprü işleri gibi taahhüt grubunun hemen her faaliyet alanında hizmet vermekteyiz.
-            </p>
           </motion.div>
         </div>
 

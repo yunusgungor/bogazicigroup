@@ -51,14 +51,26 @@ const otherProjects = [
 ];
 
 const milestones = [
-  { year: "1938", title: "Kuruluş", desc: "Proje ve müteahhitlik hizmetleriyle temeller atıldı." },
-  { year: "1952", title: "İlk Büyük Taahhüt", desc: "Devlet ihalelerinde ilk büyük başarı kazanıldı." },
-  { year: "1972", title: "Altyapı Atılımı", desc: "Yol, köprü ve altyapı projelerinde güç gösterildi." },
-  { year: "1984", title: "Kurumsallaşma", desc: "A.Ş. statüsüne geçiş ve kurumsal yapının pekişmesi." },
-  { year: "1999", title: "Turizm Yatırımı", desc: "Turizm sektörüne stratejik adım atıldı." },
-  { year: "2007", title: "Uluslararası Projeler", desc: "Yurt dışı taahhüt iş hacmi büyütüldü." },
-  { year: "2013", title: "Levent 199", desc: "İstanbul'un prestijli Levent 199 projesi tamamlandı." },
-  { year: "2021", title: "Yeni Vizyon", desc: "Sürdürülebilir ve yeşil bina standartlarına odaklanma." },
+  { year: "1938", title: "BOĞAZİÇİ GRUP Kuruldu", desc: "" },
+  { year: "1948", title: "Malatya Köprüleri İnşaatı", desc: "" },
+  { year: "1952", title: "Türkiye'nin ilk 154 KV enerji nakil hattı inşaatı", desc: "" },
+  { year: "1958", title: "Türkiye'nin ilk telefon şebekesi hattı", desc: "" },
+  { year: "1972", title: "Libya Trablus Limanı", desc: "" },
+  { year: "1978", title: "Mekke Muna Tünelleri", desc: "" },
+  { year: "1981", title: "Mısır Dimyat Limanı", desc: "" },
+  { year: "1984", title: "Tunus Gibyat Limanı", desc: "" },
+  { year: "1992", title: "Pakistan İndüs Karayolu İnşaatı", desc: "" },
+  { year: "1999", title: "Gölcük Deprem Konutları İnşaatı", desc: "" },
+  { year: "2000", title: "Ras Laffan Katar Limanı İnşaatı", desc: "" },
+  { year: "2007", title: "Suudi Arabistan Manifata Geçiti İnşaatı", desc: "" },
+  { year: "2008", title: "Katar Konteyner Limanı", desc: "" },
+  { year: "2009", title: "Çağlayan Adliye Sarayı İnşaatı", desc: "" },
+  { year: "2010", title: "Eczacıbaşı Ormanada Projesi", desc: "" },
+  { year: "2012", title: "Garanti Bankası Teknoloji Kampüsü İnşaatı", desc: "" },
+  { year: "2013", title: "İşgyo Tuzla Ticaret Merkezi İnşaatı", desc: "" },
+  { year: "2015", title: "Kartal Lütfi Kırdar Eğitim ve Araştırma Hastanesi İnşaatı", desc: "" },
+  { year: "2019", title: "Teknopark İstanbul 3.Etap İnşaatı", desc: "" },
+  { year: "2021", title: "Spor Toto Gençlik Merkezi, Futbol Sahası ve Basketbol Sahaları İnşaatı", desc: "" },
 ];
 
 export default function HomePage() {
@@ -178,17 +190,20 @@ export default function HomePage() {
             <div>
               <motion.p variants={fadeUp} className="text-[#ee7514] text-xs font-bold tracking-[0.25em] uppercase mb-4" style={{ fontFamily: "'Raleway', sans-serif" }}>Hakkımızda</motion.p>
               <motion.h2 variants={fadeUp} className="font-bold text-[#212a3c] leading-tight mb-6" style={{ fontFamily: "'Oswald', sans-serif", fontSize: "clamp(2rem, 4vw, 3.5rem)" }}>
-                YARINI İNŞA EDEN<br />KÖKLÜ BİR MİRAS
+                BOĞAZİÇİ İNŞAAT
               </motion.h2>
               <motion.div variants={fadeUp} className="w-14 h-1 bg-[#ee7514] mb-8" />
-              <motion.p variants={fadeUp} className="text-[#333] text-base leading-7 mb-5 max-w-[65ch]">
-                <strong>BOĞAZİÇİ GRUP</strong> 1938 yılından bu yana inşaat taahhüt sektöründe faaliyet göstermekte olup gerek yurt içi gerekse yurt dışında birçok projede yer almıştır.
+              <motion.p variants={fadeUp} className="text-[#555] text-[15px] leading-7 mb-5 max-w-[65ch]">
+                Ülkemizde İnşaat Taahhüt Sektöründe faaliyet gösteren firmamızın temelleri 1938 yılında proje ve müteahhitlik hizmetleri ile atılmıştır.
               </motion.p>
               <motion.p variants={fadeUp} className="text-[#555] text-[15px] leading-7 mb-5 max-w-[65ch]">
-                Kuruluşundan günümüze kadar üstlendiği Üstyapı İşleri, Altyapı İşleri, Endüstriyel Tesisler, Enerji Santralleri, Arıtma Tesisleri, Yol ve Köprü İşleri başta olmak üzere taahhüt grubunun hemen her faaliyet alanında hizmet vermektedir.
+                <strong>BOĞAZİÇİ GRUP</strong> 1938 yılından bu yana inşaat taahhüt sektöründe faaliyet göstermekle birlikte gerek yurt içi gerekse yurt dışında birçok proje de yer almıştır.
+              </motion.p>
+              <motion.p variants={fadeUp} className="text-[#555] text-[15px] leading-7 mb-5 max-w-[65ch]">
+                Kuruşundan günümüze kadar üstlenmiş olduğu Üstyapı İşleri, Altyapı İşleri, Endüstriyel Tesisler, Enerji Santralleri, Arıtma Tesisleri, Yol ve Köprü İşleri, Bağlantı yolları inşaatı gibi Taahhüt grubunun hemen her faaliyet alanında hizmet vermektedir.
               </motion.p>
               <motion.p variants={fadeUp} className="text-[#555] text-[15px] leading-7 mb-10 max-w-[65ch]">
-                Uzman ekibi ile üstlendiği projeleri bütçesi içerisinde, uluslararası kalite standartlarında ve iş sağlığı güvenliğine büyük önem vererek sektöründe tercih edilen saygın yüklenici konumuna gelmiştir.
+                <strong>BOĞAZİÇİ GRUP</strong>, uzman ekibi ve kadrosu ile üstlendiği projeleri bütçesi içerisinde, uluslararası kalite de ve iş sağlığı ve güvenliğine büyük önem vererek sektöründe tercih edilen saygın yüklenici firmalardan biri konumuna gelmiştir.
               </motion.p>
               <Link href="/kurumsal/hakkimizda" className="inline-flex items-center gap-2 text-[#212a3c] border-b-2 border-[#ee7514] pb-1 text-sm font-bold uppercase tracking-wider hover:text-[#ee7514] active:scale-[0.97] transition-all" style={{ fontFamily: "'Oswald', sans-serif" }}>
                 Devamını Oku <ChevronRight size={15} />
@@ -289,7 +304,7 @@ export default function HomePage() {
           <Section>
             <motion.div variants={fadeUp} className="text-center max-w-2xl mx-auto mb-16">
               <p className="text-[#ee7514] text-xs font-bold tracking-[0.25em] uppercase mb-4" style={{ fontFamily: "'Raleway', sans-serif" }}>Kilometre Taşları</p>
-              <h2 className="font-bold text-white" style={{ fontFamily: "'Oswald', sans-serif", fontSize: "clamp(2rem, 4vw, 3.5rem)" }}>86 YILLIK KÖKLÜ TARİH</h2>
+              <h2 className="font-bold text-white" style={{ fontFamily: "'Oswald', sans-serif", fontSize: "clamp(2rem, 4vw, 3.5rem)" }}>KİLOMETRE TAŞLARI</h2>
               <div className="w-14 h-1 bg-[#ee7514] mx-auto mt-5" />
             </motion.div>
             <div className="relative">
@@ -303,8 +318,7 @@ export default function HomePage() {
                   >
                     <div className={`md:w-1/2 ${i % 2 === 0 ? "md:text-right md:pr-10" : "md:text-left md:pl-10"} mb-4 md:mb-0`}>
                       <div className="inline-block bg-[#ee7514] text-white px-4 py-1.5 text-sm font-bold mb-2" style={{ fontFamily: "'Oswald', sans-serif" }}>{m.year}</div>
-                      <h3 className="text-white font-bold text-lg mb-1 uppercase" style={{ fontFamily: "'Oswald', sans-serif" }}>{m.title}</h3>
-                      <p className="text-white/50 text-sm leading-relaxed">{m.desc}</p>
+                      <h3 className="text-white font-bold text-base mb-1 leading-snug" style={{ fontFamily: "'Oswald', sans-serif" }}>{m.title}</h3>
                     </div>
                     <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-[#ee7514] border-4 border-[#212a3c] z-10" />
                     <div className="md:w-1/2" />

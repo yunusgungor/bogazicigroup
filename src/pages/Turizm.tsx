@@ -29,10 +29,6 @@ export default function Turizm() {
             <p className="text-[#555] text-[15px] leading-7 mb-6">
               Boğaziçi Grup 1938 yılından beri inşaatın yanı sıra turizm sektörüyle de iç içe bulunuyor. Sektörün önde gelen şehirlerinden sayılan İzmir'de başlanan turizm yatırımları ilerleyen dönemlerde çeşitlenerek artırmayı planlıyoruz.
             </p>
-            <div className="w-12 h-1 bg-[#ee7514] mb-6" />
-            <p className="text-[#777] text-sm leading-7">
-              Otel ve konaklama projelerimizle turizm sektöründe de fark yaratan Boğaziçi Grup, modern mimari anlayışı ve kaliteli hizmet anlayışıyla misafirlerine en iyi deneyimi sunmayı hedeflemektedir.
-            </p>
           </motion.div>
         </div>
 
