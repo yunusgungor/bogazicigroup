@@ -6,8 +6,7 @@ import {
   Facebook, Twitter, Instagram, Youtube, MapPin, Mail, Phone
 } from "lucide-react";
 
-const NAVY = "#212a3c";
-const ORANGE = "#ee7514";
+
 
 const fadeUp = {
   hidden: { opacity: 0, y: 32 },
@@ -79,15 +78,15 @@ export default function HomePage() {
 
   return (
     <div className="bg-white text-[#1a1a1a] antialiased" style={{ fontFamily: "'Montserrat', 'Geneva', Arial, sans-serif" }}>
-      <header className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${scrolled ? "shadow-xl" : ""} bg-[#212a3c]`}>
+      <header className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${scrolled ? "shadow-xl" : ""} bg-white`}>
         <div className="bg-[#f4f4f4] border-b border-gray-200 hidden md:block">
-          <div className="max-w-[1250px] mx-auto px-4 flex items-center justify-between h-9 text-[11px] text-gray-500">
+          <div className="max-w-[1250px] mx-auto px-4 flex items-center justify-between h-9 text-[11px] text-gray-700 font-semibold">
             <div className="flex items-center gap-6">
               <a href="#" className="hover:text-[#ee7514] transition-colors">KVKK Aydınlatma Metni</a>
               <a href="#" className="hover:text-[#ee7514] transition-colors">İnsan Kaynakları</a>
             </div>
             <div className="flex items-center gap-4">
-              <div className="flex items-center gap-3 text-gray-400">
+              <div className="flex items-center gap-3 text-gray-500">
                 <a href="#" aria-label="Facebook" className="hover:text-[#ee7514] transition-colors"><Facebook size={13} /></a>
                 <a href="#" aria-label="Twitter" className="hover:text-[#ee7514] transition-colors"><Twitter size={13} /></a>
                 <a href="#" aria-label="Instagram" className="hover:text-[#ee7514] transition-colors"><Instagram size={13} /></a>
@@ -95,7 +94,7 @@ export default function HomePage() {
               </div>
               <div className="border-l border-gray-300 pl-4 flex items-center gap-2 font-bold text-[11px]">
                 <button className="text-[#ee7514]">TR</button>
-                <span className="text-gray-300">|</span>
+                <span className="text-gray-400">|</span>
                 <button className="hover:text-[#ee7514] transition-colors">EN</button>
               </div>
             </div>
@@ -108,8 +107,7 @@ export default function HomePage() {
               <img 
                 src="/images/bogazici/logo.png" 
                 alt="Boğaziçi Grup" 
-                className="h-10 md:h-12 w-auto"
-                style={{ filter: 'drop-shadow(0 0 15px rgba(255,255,255,0.7))' }}
+                className="h-12 md:h-14 w-auto"
               />
             </Link>
 
@@ -123,7 +121,7 @@ export default function HomePage() {
                 >
                   <a
                     href={item.href}
-                    className="flex items-center gap-1 px-4 py-2 text-white/85 hover:text-white text-[13px] font-semibold tracking-wide uppercase transition-colors"
+                    className="flex items-center gap-1 px-4 py-2 text-[#1a1a1a] hover:text-[#ee7514] text-[13px] font-bold tracking-wide uppercase transition-colors"
                     style={{ fontFamily: "'Raleway', sans-serif" }}
                   >
                     {item.label}
@@ -152,7 +150,7 @@ export default function HomePage() {
               ))}
             </ul>
 
-            <button className="lg:hidden text-white p-2" onClick={() => setMobileOpen(true)} aria-label="Menüyü Aç">
+            <button className="lg:hidden text-[#212a3c] p-2" onClick={() => setMobileOpen(true)} aria-label="Menüyü Aç">
               <Menu size={26} />
             </button>
           </div>
@@ -162,23 +160,22 @@ export default function HomePage() {
       {mobileOpen && (
         <div className="fixed inset-0 z-[100] lg:hidden">
           <div className="absolute inset-0 bg-black/50" onClick={() => setMobileOpen(false)} />
-          <div className="absolute top-0 right-0 w-[300px] max-w-full h-full bg-[#212a3c] flex flex-col overflow-y-auto">
-            <div className="flex items-center justify-between p-5 border-b border-white/10">
+          <div className="absolute top-0 right-0 w-[300px] max-w-full h-full bg-white flex flex-col overflow-y-auto">
+            <div className="flex items-center justify-between p-5 border-b border-gray-200">
               <img 
                 src="/images/bogazici/logo.png" 
                 alt="Boğaziçi Grup" 
-                className="h-10 w-auto"
-                style={{ filter: 'drop-shadow(0 0 15px rgba(255,255,255,0.7))' }}
+                className="h-12 w-auto"
               />
-              <button onClick={() => setMobileOpen(false)} className="text-white"><X size={24} /></button>
+              <button onClick={() => setMobileOpen(false)} className="text-[#212a3c]"><X size={24} /></button>
             </div>
             <ul className="flex-1 py-4">
               {navItems.map((item) => (
-                <li key={item.label} className="border-b border-white/5">
+                <li key={item.label} className="border-b border-gray-100">
                   {item.sub.length > 0 ? (
                     <>
                       <button
-                        className="w-full flex items-center justify-between px-5 py-3.5 text-white/85 text-[13px] font-semibold tracking-wide uppercase text-left"
+                        className="w-full flex items-center justify-between px-5 py-3.5 text-[#1a1a1a] text-[13px] font-bold tracking-wide uppercase text-left"
                         style={{ fontFamily: "'Raleway', sans-serif" }}
                         onClick={() => setMobileExpanded(mobileExpanded === item.label ? null : item.label)}
                       >
@@ -186,15 +183,15 @@ export default function HomePage() {
                         <ChevronDown size={14} className={`transition-transform ${mobileExpanded === item.label ? "rotate-180" : ""}`} />
                       </button>
                       {mobileExpanded === item.label && (
-                        <ul className="bg-black/20">
+                        <ul className="bg-gray-50">
                           {item.sub.map((s, si) => (
                             <li key={s}>
                               {item.subHrefs ? (
-                                <Link href={item.subHrefs[si]} className="block px-8 py-2.5 text-white/60 hover:text-[#ee7514] text-[12px] font-semibold tracking-wide uppercase transition-colors" style={{ fontFamily: "'Raleway', sans-serif" }} onClick={() => setMobileOpen(false)}>
+                                <Link href={item.subHrefs[si]} className="block px-8 py-2.5 text-[#4a4a4a] hover:text-[#ee7514] text-[12px] font-bold tracking-wide uppercase transition-colors" style={{ fontFamily: "'Raleway', sans-serif" }} onClick={() => setMobileOpen(false)}>
                                   {s}
                                 </Link>
                               ) : (
-                                <a href="#" className="block px-8 py-2.5 text-white/60 hover:text-[#ee7514] text-[12px] font-semibold tracking-wide uppercase transition-colors" style={{ fontFamily: "'Raleway', sans-serif" }}>
+                                <a href="#" className="block px-8 py-2.5 text-[#4a4a4a] hover:text-[#ee7514] text-[12px] font-bold tracking-wide uppercase transition-colors" style={{ fontFamily: "'Raleway', sans-serif" }}>
                                   {s}
                                 </a>
                               )}
@@ -204,17 +201,17 @@ export default function HomePage() {
                       )}
                     </>
                   ) : (
-                    <a href={item.href} className="block px-5 py-3.5 text-white/85 text-[13px] font-semibold tracking-wide uppercase" style={{ fontFamily: "'Raleway', sans-serif" }} onClick={() => setMobileOpen(false)}>
+                    <a href={item.href} className="block px-5 py-3.5 text-[#1a1a1a] text-[13px] font-bold tracking-wide uppercase" style={{ fontFamily: "'Raleway', sans-serif" }} onClick={() => setMobileOpen(false)}>
                       {item.label}
                     </a>
                   )}
                 </li>
               ))}
             </ul>
-            <div className="p-5 border-t border-white/10 flex items-center gap-4">
+            <div className="p-5 border-t border-gray-200 flex items-center gap-4">
               <button className="text-[#ee7514] text-sm font-bold">TR</button>
-              <span className="text-white/30">|</span>
-              <button className="text-white/60 hover:text-white text-sm font-bold">EN</button>
+              <span className="text-gray-300">|</span>
+              <button className="text-gray-500 hover:text-[#212a3c] text-sm font-bold">EN</button>
             </div>
           </div>
         </div>
@@ -223,7 +220,7 @@ export default function HomePage() {
       {/* HERO */}
       <section className="relative h-screen min-h-[640px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-b from-[#212a3c]/85 via-[#212a3c]/70 to-[#212a3c]/95 z-10" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#212a3c]/90 via-[#212a3c]/75 to-[#212a3c]/97 z-10" />
           <motion.img
             initial={{ scale: 1.08 }}
             animate={{ scale: 1 }}
@@ -233,7 +230,7 @@ export default function HomePage() {
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="relative z-20 text-center px-4 max-w-5xl mx-auto" style={{ marginTop: "60px" }}>
+        <div className="relative z-20 text-center px-4 max-w-5xl mx-auto pt-[120px] md:pt-[130px]">
           <motion.span
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
@@ -531,12 +528,7 @@ export default function HomePage() {
       <footer className="bg-[#1b1b1b] text-white">
         <div className="max-w-[1250px] mx-auto px-4 py-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           <div className="sm:col-span-2 lg:col-span-1">
-            <img 
-              src="/images/bogazici/logo.png" 
-              alt="Boğaziçi Grup" 
-              className="h-11 w-auto opacity-90 mb-6"
-              style={{ filter: 'drop-shadow(0 0 12px rgba(255,255,255,0.6))' }}
-            />
+
             <p className="text-white/45 text-sm leading-7 mb-6">1938'den bu yana inşaat sektörünün güvenilir ismi.</p>
             <div className="flex items-center gap-3">
               {(["Facebook", "Twitter", "Instagram", "Youtube"] as const).map((l) => (
