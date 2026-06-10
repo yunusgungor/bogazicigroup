@@ -6,7 +6,6 @@ export default function Footer() {
     <footer className="bg-secondary text-white">
       <div className="max-w-[1250px] mx-auto px-4 py-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10">
         <div className="sm:col-span-2 lg:col-span-1">
-          <img src="/images/bogazici/logo.png" alt="Boğaziçi Grup" className="h-11 w-auto mb-6 opacity-90" />
           <p className="text-white/45 text-sm leading-7 mb-6">1938'den bu yana inşaat sektörünün güvenilir ismi.</p>
           <div className="flex items-center gap-3">
             {(["Facebook", "Twitter", "Instagram", "Youtube"] as const).map((l) => (
