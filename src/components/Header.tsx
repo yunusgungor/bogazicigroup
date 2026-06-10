@@ -53,8 +53,8 @@ export default function Header({ activeNav }: HeaderProps) {
         <div className="bg-[#f4f4f4] border-b border-gray-200 hidden md:block">
           <div className="max-w-[1250px] mx-auto px-4 flex items-center justify-between h-9 text-[11px] text-gray-500">
             <div className="flex items-center gap-6">
-              <a href="/kvkk-aydinlatma-metni" className="hover:text-[#6cbe59] transition-colors">KVKK Aydınlatma Metni</a>
-              <a href="/insan-kaynaklari" className="hover:text-[#6cbe59] transition-colors">İnsan Kaynakları</a>
+              <Link href="/kvkk-aydinlatma-metni" className="hover:text-[#6cbe59] transition-colors">KVKK Aydınlatma Metni</Link>
+              <Link href="/insan-kaynaklari" className="hover:text-[#6cbe59] transition-colors">İnsan Kaynakları</Link>
             </div>
             <div className="flex items-center gap-4">
               <div className="flex items-center gap-3 text-gray-500">

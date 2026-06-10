@@ -64,7 +64,7 @@ export default function Footer() {
         <div className="max-w-[1250px] mx-auto px-4 py-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-white/30">
           <span>© 2026 Boğaziçi Grup A.Ş. — Tüm Hakları Saklıdır.</span>
           <div className="flex items-center gap-5">
-            <a href="/kvkk-aydinlatma-metni" className="hover:text-white transition-colors">KVKK Aydınlatma Metni</a>
+            <Link href="/kvkk-aydinlatma-metni" className="hover:text-white transition-colors">KVKK Aydınlatma Metni</Link>
           </div>
         </div>
       </div>
