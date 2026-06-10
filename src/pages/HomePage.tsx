@@ -5,6 +5,15 @@ import {
   Menu, X, ArrowRight, ChevronRight, ChevronDown,
   Facebook, Twitter, Instagram, Youtube, MapPin, Mail, Phone
 } from "lucide-react";
+import Autoplay from "embla-carousel-autoplay";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+  type CarouselApi,
+} from "@/components/ui/carousel";
 
 
 
@@ -63,6 +72,7 @@ export default function HomePage() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
+  const [carouselApi, setCarouselApi] = useState<CarouselApi | null>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
@@ -217,73 +227,88 @@ export default function HomePage() {
         </div>
       )}
 
-      {/* HERO */}
-      <section className="relative h-screen min-h-[640px] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-b from-[#212a3c]/90 via-[#212a3c]/75 to-[#212a3c]/97 z-10" />
-          <motion.img
-            initial={{ scale: 1.08 }}
-            animate={{ scale: 1 }}
-            transition={{ duration: 2, ease: "easeOut" }}
-            src="/images/bogazici/hero-bg.png"
-            alt="Boğaziçi Grup İnşaat"
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <div className="relative z-20 text-center px-4 max-w-5xl mx-auto pt-[120px] md:pt-[130px]">
-          <motion.span
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="inline-block text-[#ee7514] text-xs sm:text-sm font-bold tracking-[0.25em] uppercase mb-5"
-            style={{ fontFamily: "'Raleway', sans-serif" }}
-          >
-            Gayrimenkul · Taahhüt · Turizm
-          </motion.span>
-          <motion.h1
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="text-white font-bold leading-[1.1] mb-8"
-            style={{ fontFamily: "'Oswald', sans-serif", fontSize: "clamp(2.2rem, 5vw, 4.5rem)", letterSpacing: "0.01em" }}
-          >
-            1938'DEN BU YANA<br className="hidden sm:block" />
-            İNŞAATTA GÜÇ VE GÜVEN
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.75 }}
-            className="text-white/90 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto mb-10 font-medium"
-            style={{ fontFamily: "'Montserrat', sans-serif" }}
-          >
-            Uzman ekibi ve güçlü altyapısıyla yurt içi ve yurt dışında uluslararası kalite standartlarında projeler üretiyor.
-          </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.95 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4"
-          >
-            <a
-              href="#projeler"
-              className="inline-flex items-center gap-2.5 bg-[#ee7514] hover:bg-[#d66810] text-white px-8 py-4 text-sm font-bold tracking-widest uppercase transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg"
-              style={{ fontFamily: "'Oswald', sans-serif" }}
-            >
-              Projelerimizi Keşfedin <ArrowRight size={16} />
-            </a>
-            <a
-              href="#kurumsal"
-              className="inline-flex items-center gap-2.5 border border-white/40 hover:border-white text-white px-8 py-4 text-sm font-bold tracking-widest uppercase transition-all duration-200"
-              style={{ fontFamily: "'Oswald', sans-serif" }}
-            >
-              Hakkımızda
-            </a>
-          </motion.div>
-        </div>
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2">
-          <div className="w-px h-12 bg-white/30 animate-pulse" />
-        </div>
+      {/* CAROUSEL SLIDER */}
+      <section className="relative w-full mt-[68px] md:mt-[112px] h-[calc(100vh-68px)] md:h-[calc(100vh-112px)] min-h-[640px] overflow-hidden">
+        <Carousel
+          opts={{ loop: true, align: "center" }}
+          plugins={[
+            Autoplay({ delay: 5000, stopOnInteraction: false, stopOnMouseEnter: true }),
+          ]}
+          setApi={(api) => setCarouselApi(api)}
+          className="w-full h-full"
+        >
+          <CarouselContent className="h-full ml-0">
+            {[
+              {
+                img: "/images/bogazici/gayrimenkul.png",
+                label: "FAALİYET ALANLARI",
+                title: "GAYRİMENKUL",
+                desc: "Modern yaşam alanları ve prestijli ticari projeler ile şehrin siluetini yeniden şekillendiriyoruz.",
+                href: "#faaliyetler",
+              },
+              {
+                img: "/images/bogazici/taahhut.png",
+                label: "FAALİYET ALANLARI",
+                title: "TAAHHÜT",
+                desc: "Altyapı ve üstyapı projelerinde, mühendislik gücümüz ile devasa yapılar inşa ediyoruz.",
+                href: "#faaliyetler",
+              },
+              {
+                img: "/images/bogazici/turizm.png",
+                label: "FAALİYET ALANLARI",
+                title: "TURİZM",
+                desc: "Lüks otel ve marina yatırımlarımızla Türkiye'nin turizm potansiyeline dünya standartlarında değer katıyoruz.",
+                href: "#faaliyetler",
+              },
+            ].map((slide, i) => (
+              <CarouselItem key={i} className="relative h-[calc(100vh-68px)] md:h-[calc(100vh-112px)] min-h-[640px] pl-0 basis-full overflow-hidden">
+                <div className="absolute inset-0">
+                  <div className="absolute inset-0 bg-gradient-to-b from-[#212a3c]/80 via-[#212a3c]/50 to-[#212a3c]/90 z-10" />
+                  <img
+                    src={slide.img}
+                    alt={slide.title}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="relative z-20 h-full flex flex-col items-center justify-center text-center px-4 pt-[120px] md:pt-[130px]">
+                  <span className="inline-block text-[#ee7514] text-xs sm:text-sm font-bold tracking-[0.25em] uppercase mb-5" style={{ fontFamily: "'Raleway', sans-serif" }}>
+                    {slide.label}
+                  </span>
+                  <h1 className="text-white font-bold leading-[1.1] mb-6" style={{ fontFamily: "'Oswald', sans-serif", fontSize: "clamp(2.8rem, 6vw, 5.5rem)", letterSpacing: "0.01em" }}>
+                    {slide.title}
+                  </h1>
+                  <p className="text-white/80 text-base sm:text-lg leading-relaxed max-w-xl mx-auto mb-10 font-medium" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+                    {slide.desc}
+                  </p>
+                  <a
+                    href={slide.href}
+                    className="inline-flex items-center gap-2.5 bg-[#ee7514] hover:bg-[#d66810] text-white px-8 py-4 text-sm font-bold tracking-widest uppercase transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg"
+                    style={{ fontFamily: "'Oswald', sans-serif" }}
+                  >
+                    Keşfet <ArrowRight size={16} />
+                  </a>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+
+          <CarouselPrevious className="left-4 md:left-8 w-11 h-11 bg-white/10 hover:bg-white/25 border-0 text-white backdrop-blur-sm" />
+          <CarouselNext className="right-4 md:right-8 w-11 h-11 bg-white/10 hover:bg-white/25 border-0 text-white backdrop-blur-sm" />
+
+          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 flex items-center gap-3">
+            {[0, 1, 2].map((i) => (
+              <button
+                key={i}
+                onClick={() => carouselApi?.scrollTo(i)}
+                className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                  (carouselApi?.selectedScrollSnap() ?? 0) === i
+                    ? "bg-[#ee7514] w-7"
+                    : "bg-white/40 hover:bg-white/70"
+                }`}
+              />
+            ))}
+          </div>
+        </Carousel>
       </section>
 
       {/* STATS STRIP */}
