@@ -2,11 +2,7 @@ import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
 import SubPageLayout from "@/components/SubPageLayout";
 import { MapPin, Phone, Mail } from "lucide-react";
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 28 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] } },
-};
+import { fadeUp } from "@/lib/motion";
 
 export default function BizeUlasin() {
   const contactSchema = {
@@ -21,7 +17,7 @@ export default function BizeUlasin() {
       "postalCode": "34746",
       "addressCountry": "TR"
     },
-    "telephone": "+90-216-821-34-34",
+    "telephone": "+90-216-688-08-00",
     "email": "info@bogazicigroup.com.tr",
     "url": "https://bogazicigroup.vercel.app/iletisim/bize-ulasin"
   };
@@ -60,7 +56,7 @@ export default function BizeUlasin() {
                     <Phone size={18} className="text-[#6cbe59] shrink-0 mt-0.5" />
                     <div>
                       <p className="text-[#333] text-sm font-semibold">Telefon</p>
-                      <p className="text-[#555] text-sm">0216 821 34 34</p>
+                      <p className="text-[#555] text-sm">0216 688 08 00</p>
                     </div>
                   </div>
                   <div className="flex gap-4 items-start">
