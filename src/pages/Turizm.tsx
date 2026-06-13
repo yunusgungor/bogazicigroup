@@ -32,7 +32,7 @@ export default function Turizm() {
             </motion.div>
             <motion.div variants={fadeUp}>
               <p className="text-[#555] text-[15px] leading-7 mb-6">
-                Boğaziçi Grup 1938 yılından beri inşaatın yanı sıra turizm sektörüyle de iç içe bulunuyor. Sektörün önde gelen şehirlerinden sayılan İzmir'de başlanan turizm yatırımları ilerleyen dönemlerde çeşitlenerek artırmayı planlıyoruz.
+                Boğaziçi Grup 1994 yılından beri inşaatın yanı sıra turizm sektörüyle de iç içe bulunuyor. Sektörün önde gelen şehirlerinden sayılan İzmir'de başlanan turizm yatırımları ilerleyen dönemlerde çeşitlenerek artırmayı planlıyoruz.
               </p>
             </motion.div>
           </div>

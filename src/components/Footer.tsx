@@ -21,7 +21,7 @@ export default function Footer() {
     <footer className="bg-navy text-white">
       <div className="max-w-[1440px] mx-auto px-6 py-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10">
         <div className="sm:col-span-2 lg:col-span-1">
-          <p className="text-white/45 text-sm leading-7 mb-6">1938'den bu yana inşaat sektörünün güvenilir ismi.</p>
+          <p className="text-white/45 text-sm leading-7 mb-6">1994'ten bu yana inşaat sektörünün güvenilir ismi.</p>
           <div className="flex items-center gap-3">
             {socialLinks.map((s) => (
               <a key={s.name} href={s.url} target="_blank" rel="noopener noreferrer" aria-label={s.name} className="w-9 h-9 flex items-center justify-center border border-white/15 hover:border-accent hover:text-accent text-white/40 transition-all rounded-sm">
@@ -33,7 +33,7 @@ export default function Footer() {
         <div>
           <h5 className="text-sm font-bold uppercase tracking-widest text-white mb-5 font-display">Kurumsal</h5>
           <ul className="space-y-3">
-            {[["Hakkımızda", "/kurumsal/hakkimizda"], ["Onursal Başkan", "/kurumsal/onursal-baskan"], ["Tarihçe", "/kurumsal/tarihce"], ["Vizyon & Misyon", "/kurumsal/vizyon-misyon"], ["Kalite Politikamız", "/kurumsal/kalite-politikamiz"], ["Belgeler", "/kurumsal/belgeler"]].map(([label, href]) => (
+            {[["Hakkımızda", "/kurumsal/hakkimizda"], ["Tarihçe", "/kurumsal/tarihce"], ["Vizyon & Misyon", "/kurumsal/vizyon-misyon"], ["Kalite Politikamız", "/kurumsal/kalite-politikamiz"], ["Belgeler", "/kurumsal/belgeler"]].map(([label, href]) => (
               <li key={label}><Link href={href} className="text-white/45 hover:text-accent text-sm transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-accent shrink-0" />{label}</Link></li>
             ))}
           </ul>

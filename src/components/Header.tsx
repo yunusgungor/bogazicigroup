@@ -10,7 +10,7 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
-  { label: "Kurumsal", href: "#kurumsal", sub: ["Hakkımızda", "Onursal Başkan", "Tarihçe", "Vizyon & Misyon", "Kalite Politikamız", "Belgeler"], subHrefs: ["/kurumsal/hakkimizda", "/kurumsal/onursal-baskan", "/kurumsal/tarihce", "/kurumsal/vizyon-misyon", "/kurumsal/kalite-politikamiz", "/kurumsal/belgeler"] },
+  { label: "Kurumsal", href: "#kurumsal", sub: ["Hakkımızda", "Tarihçe", "Vizyon & Misyon", "Kalite Politikamız", "Belgeler"], subHrefs: ["/kurumsal/hakkimizda", "/kurumsal/tarihce", "/kurumsal/vizyon-misyon", "/kurumsal/kalite-politikamiz", "/kurumsal/belgeler"] },
   { label: "Faaliyet Alanları", href: "#faaliyetler", sub: ["Gayrimenkul", "Taahhüt", "Turizm"], subHrefs: ["/faaliyet-alanlari/gayrimenkul", "/faaliyet-alanlari/taahhut", "/faaliyet-alanlari/turizm"] },
   { label: "Projeler", href: "#projeler", sub: ["Gelecek Projeler", "Tamamlanan Projeler"], subHrefs: ["/projeler/gelecek", "/projeler/tamamlanan"] },
   { label: "Makine Parkı", href: "/makine-parki", sub: [] },

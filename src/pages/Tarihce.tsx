@@ -7,8 +7,8 @@ export default function Tarihce() {
   return (
     <>
       <Helmet>
-        <title>Tarihçe ve 85 Yıllık Tecrübe | Boğaziçi Grup A.Ş.</title>
-        <meta name="description" content="1938'den günümüze Boğaziçi Grup'un başarı hikayesi, uluslararası projeleri ve inşaat sektöründeki köklü geçmişi." />
+        <title>Tarihçe ve 32 Yıllık Tecrübe | Boğaziçi Grup A.Ş.</title>
+        <meta name="description" content="1994'ten günümüze Boğaziçi Grup'un başarı hikayesi, uluslararası projeleri ve inşaat sektöründeki tecrübesi." />
       </Helmet>
       <SubPageLayout
         title="TARİHÇE"
@@ -20,13 +20,13 @@ export default function Tarihce() {
       >
         <motion.div initial="hidden" animate="visible" variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.08 } } }} className="max-w-4xl">
           <motion.p variants={fadeUp} className="text-[#555] text-[15px] leading-7 mb-5">
-            <strong className="text-[#212a3c]">BOĞAZİÇİ GRUP</strong> temelleri 38'li yıllarda İstanbul merkezli olarak atılmış olup, esas olarak inşaat sektöründe faaliyetlere başlanmıştır. Gelişen organizasyon yapısı ve ulaşılan performans seviyesi ile ulusal olduğu kadar uluslararası platformlarda da özellikle inşaat ve ticaret alanlarında önemli yerlere ulaşmışlardır.
+            <strong className="text-[#212a3c]">BOĞAZİÇİ GRUP</strong> temelleri 1994 yılında İstanbul merkezli olarak atılmış olup, esas olarak inşaat sektöründe faaliyetlere başlanmıştır. Gelişen organizasyon yapısı ve ulaşılan performans seviyesi ile ulusal olduğu kadar uluslararası platformlarda da özellikle inşaat ve ticaret alanlarında önemli yerlere ulaşmışlardır.
           </motion.p>
           <motion.p variants={fadeUp} className="text-[#555] text-[15px] leading-7 mb-5">
             <strong className="text-[#212a3c]">BOĞAZİÇİ GRUP</strong>, İnşaat ve Ticaret, Otomotiv, Turizm ve Otel Yönetimi, Gıda ve Tarım Ürünleri olarak dört ana faaliyet alanına yayılmıştır.
           </motion.p>
           <motion.p variants={fadeUp} className="text-[#555] text-[15px] leading-7 mb-5">
-            1938 yılında Komandit şirket olarak uluslararası bir genel müteahhitlik firması olma yolunda kurulmuş ve faaliyetinin başlangıcından bu yana büyük çaplı ve yüksek teknoloji ürünü birçok uluslararası proje ile adını duyurmuştur.
+            1994 yılında Komandit şirket olarak uluslararası bir genel müteahhitlik firması olma yolunda kurulmuş ve faaliyetinin başlangıcından bu yana büyük çaplı ve yüksek teknoloji ürünü birçok uluslararası proje ile adını duyurmuştur.
           </motion.p>
 
           <motion.h3 variants={fadeUp} className="text-lg font-bold text-[#212a3c] mt-10 mb-4 uppercase" style={{ fontFamily: "'Oswald', sans-serif" }}>1940-1970 Dönemi</motion.h3>

@@ -42,15 +42,7 @@ const otherProjects = [
 ];
 
 const milestones = [
-  { year: "1938", title: "BOĞAZİÇİ GRUP Kuruldu" },
-  { year: "1948", title: "Malatya Köprüleri İnşaatı" },
-  { year: "1952", title: "Türkiye'nin ilk 154 KV enerji nakil hattı inşaatı" },
-  { year: "1958", title: "Türkiye'nin ilk telefon şebekesi hattı" },
-  { year: "1972", title: "Libya Trablus Limanı" },
-  { year: "1978", title: "Mekke Muna Tünelleri" },
-  { year: "1981", title: "Mısır Dimyat Limanı" },
-  { year: "1984", title: "Tunus Gibyat Limanı" },
-  { year: "1992", title: "Pakistan İndüs Karayolu İnşaatı" },
+  { year: "1994", title: "BOĞAZİÇİ GRUP Kuruldu" },
   { year: "1999", title: "Gölcük Deprem Konutları İnşaatı" },
   { year: "2000", title: "Ras Laffan Katar Limanı İnşaatı" },
   { year: "2007", title: "Suudi Arabistan Manifata Geçiti İnşaatı" },
@@ -104,7 +96,7 @@ export default function HomePage() {
     "name": "Boğaziçi Grup A.Ş.",
     "url": "https://bogazicigroup.vercel.app",
     "logo": "https://bogazicigroup.vercel.app/images/bogazici/logo.png",
-    "foundingDate": "1938",
+    "foundingDate": "1994",
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "+90-216-688-08-00",
@@ -121,9 +113,9 @@ export default function HomePage() {
     <div className="bg-white text-foreground antialiased">
       <Helmet>
         <title>Boğaziçi Grup A.Ş. | İnşaat, Gayrimenkul ve Turizm</title>
-        <meta name="description" content="1938'den beri Boğaziçi Grup A.Ş., Türkiye'nin köklü inşaat taahhüt, gayrimenkul geliştirme ve turizm yatırımları firmasıdır. Projelerimizi keşfedin." />
+        <meta name="description" content="1994'ten beri Boğaziçi Grup A.Ş., Türkiye'nin öncü inşaat taahhüt, gayrimenkul geliştirme ve turizm yatırımları firmasıdır. Projelerimizi keşfedin." />
         <meta property="og:title" content="Boğaziçi Grup A.Ş. | İnşaat, Gayrimenkul ve Turizm" />
-        <meta property="og:description" content="1938'den beri Türkiye'nin köklü inşaat taahhüt, gayrimenkul geliştirme ve turizm firması." />
+        <meta property="og:description" content="1994'ten beri Türkiye'nin öncü inşaat taahhüt, gayrimenkul geliştirme ve turizm firması." />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="/opengraph.jpg" />
         <script type="application/ld+json">
@@ -277,8 +269,8 @@ export default function HomePage() {
         <div className="max-w-[1440px] mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-white/10">
             {[
-              { value: "1938", label: "Kuruluş Yılı" },
-              { value: "88+", label: "Yıl Tecrübe" },
+              { value: "1994", label: "Kuruluş Yılı" },
+              { value: "32+", label: "Yıl Tecrübe" },
               { value: "3", label: "Faaliyet Alanı" },
               { value: "100+", label: "Referans Proje" },
             ].map((s, i) => (
@@ -302,10 +294,10 @@ export default function HomePage() {
               </motion.h2>
               <motion.div variants={fadeUp} className="w-14 h-1 bg-accent mb-8" />
               <motion.p variants={fadeUp} className="text-[#555] text-[15px] leading-7 mb-5 max-w-[65ch]">
-                Ülkemizde İnşaat Taahhüt Sektöründe faaliyet gösteren firmamızın temelleri 1938 yılında proje ve müteahhitlik hizmetleri ile atılmıştır.
+                Ülkemizde İnşaat Taahhüt Sektöründe faaliyet gösteren firmamızın temelleri 1994 yılında proje ve müteahhitlik hizmetleri ile atılmıştır.
               </motion.p>
               <motion.p variants={fadeUp} className="text-[#555] text-[15px] leading-7 mb-5 max-w-[65ch]">
-                <strong>BOĞAZİÇİ GRUP</strong> 1938 yılından bu yana inşaat taahhüt sektöründe faaliyet göstermekle birlikte gerek yurt içi gerekse yurt dışında birçok proje de yer almıştır.
+                <strong>BOĞAZİÇİ GRUP</strong> 1994 yılından bu yana inşaat taahhüt sektöründe faaliyet göstermekle birlikte gerek yurt içi gerekse yurt dışında birçok proje de yer almıştır.
               </motion.p>
               <motion.p variants={fadeUp} className="text-[#555] text-[15px] leading-7 mb-5 max-w-[65ch]">
                 Kuruluşundan günümüze kadar üstlenmiş olduğu Üstyapı İşleri, Altyapı İşleri, Endüstriyel Tesisler, Enerji Santralleri, Arıtma Tesisleri, Yol ve Köprü İşleri, Bağlantı yolları inşaatı gibi Taahhüt grubunun hemen her faaliyet alanında hizmet vermektedir.
@@ -321,7 +313,7 @@ export default function HomePage() {
               <div className="absolute inset-0 translate-x-4 translate-y-4 bg-[#f4f4f4] hidden sm:block" />
               <img src="/images/bogazici/project-1.png" alt="Boğaziçi Grup Yapı" className="relative z-10 w-full aspect-[4/3] object-cover shadow-2xl" loading="lazy" />
               <div className="absolute -bottom-5 -left-5 sm:-bottom-6 sm:-left-6 z-20 bg-accent text-white px-6 py-5 shadow-xl">
-                <div className="text-4xl font-bold leading-none font-display">88+</div>
+                <div className="text-4xl font-bold leading-none font-display">32+</div>
                 <div className="text-xs font-bold uppercase tracking-widest mt-1 font-heading">Yıllık Deneyim</div>
               </div>
             </motion.div>
@@ -435,24 +427,6 @@ export default function HomePage() {
                   </motion.div>
                 ))}
               </div>
-            </div>
-          </Section>
-        </div>
-      </section>
-
-      {/* ONURSAL BAŞKAN */}
-      <section className="py-20 md:py-32 bg-[#f8f8f8]">
-        <div className="max-w-[1440px] mx-auto px-6">
-          <Section>
-            <div className="max-w-3xl mx-auto text-center">
-              <motion.p variants={fadeUp} className="text-accent text-xs font-bold tracking-[0.25em] uppercase mb-4 font-heading">Onursal Başkan</motion.p>
-              <motion.div variants={fadeUp} className="w-24 h-24 bg-navy rounded-full mx-auto mb-6 flex items-center justify-center text-white text-3xl font-bold font-display">YB</motion.div>
-              <motion.h2 variants={fadeUp} className="font-bold text-navy mb-2 font-display" style={{ fontSize: "clamp(1.6rem, 3vw, 2.5rem)" }}>YUSUF YILMAZ BEYAZ</motion.h2>
-              <motion.p variants={fadeUp} className="text-accent text-xs font-bold tracking-widest uppercase mb-8 font-heading">Onursal Başkan</motion.p>
-              <motion.div variants={fadeUp} className="w-12 h-1 bg-accent mx-auto mb-8" />
-              <motion.p variants={fadeUp} className="text-[#555] text-base leading-8 italic">
-                "Boğaziçi Grup olarak 1938'den bu yana her projemizde en yüksek kalite standartlarını ve müşteri memnuniyetini esas almaktayız. Ülkemizin kalkınmasına katkıda bulunmak, bizim en büyük gururumuzdur."
-              </motion.p>
             </div>
           </Section>
         </div>

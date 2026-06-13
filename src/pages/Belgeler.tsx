@@ -81,7 +81,7 @@ export default function Belgeler() {
             <div>
               <h2 className="text-lg font-bold text-[#212a3c] uppercase mb-3" style={{ fontFamily: "'Oswald', sans-serif" }}>Hakkımızda</h2>
               <p className="text-[#555] text-sm leading-7 mb-3">
-                Ülkemizde İnşaat Taahhüt Sektöründe faaliyet gösteren firmamızın temelleri 1938 yılında proje ve müteahhitlik hizmetleri ile atılmıştır.
+                Ülkemizde İnşaat Taahhüt Sektöründe faaliyet gösteren firmamızın temelleri 1994 yılında proje ve müteahhitlik hizmetleri ile atılmıştır.
               </p>
               <Link href="/kurumsal/hakkimizda" className="inline-flex items-center gap-2 text-[#6cbe59] text-xs font-bold uppercase tracking-widest hover:underline" style={{ fontFamily: "'Raleway', sans-serif" }}>
                 Bilgi için tıklayın

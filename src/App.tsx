@@ -7,7 +7,6 @@ import HomePage from "@/pages/HomePage";
 import GelecekProjeler from "@/pages/GelecekProjeler";
 import TamamlananProjeler from "@/pages/TamamlananProjeler";
 import Hakkimizda from "@/pages/Hakkimizda";
-import OnursalBaskan from "@/pages/OnursalBaskan";
 import Tarihce from "@/pages/Tarihce";
 import VizyonMisyon from "@/pages/VizyonMisyon";
 import KalitePolitikamiz from "@/pages/KalitePolitikamiz";
@@ -39,7 +38,6 @@ function Router() {
       <Route path="/projeler/gelecek" component={GelecekProjeler} />
       <Route path="/projeler/tamamlanan" component={TamamlananProjeler} />
       <Route path="/kurumsal/hakkimizda" component={Hakkimizda} />
-      <Route path="/kurumsal/onursal-baskan" component={OnursalBaskan} />
       <Route path="/kurumsal/tarihce" component={Tarihce} />
       <Route path="/kurumsal/vizyon-misyon" component={VizyonMisyon} />
       <Route path="/kurumsal/kalite-politikamiz" component={KalitePolitikamiz} />
