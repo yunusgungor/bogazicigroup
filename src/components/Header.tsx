@@ -64,27 +64,7 @@ export default function Header({ activeNav }: HeaderProps) {
 
   return (
     <>
-      <header className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${scrolled ? "shadow-xl bg-white/98 backdrop-blur-sm" : isHome ? "bg-white/10 backdrop-blur-sm" : "bg-white"}`}>
-        {/* Üst bar */}
-          <div className={`${scrolled ? "bg-[#f4f4f4]" : isHome ? "bg-white/5" : "bg-[#f4f4f4]"} border-b hidden md:block transition-colors duration-300 ${isHome && !scrolled ? "border-white/10" : "border-gray-200"}`}>
-            <div className={`max-w-[1250px] mx-auto px-4 flex items-center justify-between h-9 text-[11px] ${isHome && !scrolled ? "text-white/60" : "text-gray-500"}`}>
-            <div className="flex items-center gap-6">
-              <Link href="/kvkk-aydinlatma-metni" className={`hover:text-accent transition-colors tracking-wide ${isHome && !scrolled ? "text-white/60 hover:text-white" : ""}`}>KVKK Aydınlatma Metni</Link>
-              <Link href="/insan-kaynaklari" className={`hover:text-accent transition-colors tracking-wide ${isHome && !scrolled ? "text-white/60 hover:text-white" : ""}`}>İnsan Kaynakları</Link>
-              <Link href="/kurumsal/hakkimizda" className={`hover:text-accent transition-colors tracking-wide ${isHome && !scrolled ? "text-white/60 hover:text-white" : ""}`}>Hakkımızda</Link>
-            </div>
-            <div className="flex items-center gap-4">
-              <div className={`flex items-center gap-3 ${isHome && !scrolled ? "text-white/60" : "text-gray-500"}`}>
-                {socialLinks.map((s) => (
-                  <a key={s.name} href={s.url} target="_blank" rel="noopener noreferrer" aria-label={s.name} className={`hover:text-accent transition-colors ${isHome && !scrolled ? "text-white/60 hover:text-white" : ""}`}>
-                    {s.icon}
-                  </a>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-
+      <header className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${scrolled ? "shadow-xl bg-white/98 backdrop-blur-sm" : isHome ? "bg-transparent" : "bg-white"}`}>
         {/* Ana nav */}
         <nav>
           <div className="max-w-[1250px] mx-auto px-4 flex items-center justify-between h-[68px] md:h-[76px]">
