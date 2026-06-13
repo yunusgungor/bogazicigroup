@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { Menu, X, ChevronDown } from "lucide-react";
 
 interface NavItem {
@@ -38,6 +38,8 @@ interface HeaderProps {
 }
 
 export default function Header({ activeNav }: HeaderProps) {
+  const [location] = useLocation();
+  const isHome = location === "/";
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
@@ -62,19 +64,19 @@ export default function Header({ activeNav }: HeaderProps) {
 
   return (
     <>
-      <header className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${scrolled ? "shadow-xl bg-white/98 backdrop-blur-sm" : "bg-white"}`}>
+      <header className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${scrolled ? "shadow-xl bg-white/98 backdrop-blur-sm" : isHome ? "bg-white/10 backdrop-blur-sm" : "bg-white"}`}>
         {/* Üst bar */}
-        <div className="bg-[#f4f4f4] border-b border-gray-200 hidden md:block">
-          <div className="max-w-[1250px] mx-auto px-4 flex items-center justify-between h-9 text-[11px] text-gray-500">
+          <div className={`${scrolled ? "bg-[#f4f4f4]" : isHome ? "bg-white/5" : "bg-[#f4f4f4]"} border-b hidden md:block transition-colors duration-300 ${isHome && !scrolled ? "border-white/10" : "border-gray-200"}`}>
+            <div className={`max-w-[1250px] mx-auto px-4 flex items-center justify-between h-9 text-[11px] ${isHome && !scrolled ? "text-white/60" : "text-gray-500"}`}>
             <div className="flex items-center gap-6">
-              <Link href="/kvkk-aydinlatma-metni" className="hover:text-accent transition-colors tracking-wide">KVKK Aydınlatma Metni</Link>
-              <Link href="/insan-kaynaklari" className="hover:text-accent transition-colors tracking-wide">İnsan Kaynakları</Link>
-              <Link href="/kurumsal/hakkimizda" className="hover:text-accent transition-colors tracking-wide">Hakkımızda</Link>
+              <Link href="/kvkk-aydinlatma-metni" className={`hover:text-accent transition-colors tracking-wide ${isHome && !scrolled ? "text-white/60 hover:text-white" : ""}`}>KVKK Aydınlatma Metni</Link>
+              <Link href="/insan-kaynaklari" className={`hover:text-accent transition-colors tracking-wide ${isHome && !scrolled ? "text-white/60 hover:text-white" : ""}`}>İnsan Kaynakları</Link>
+              <Link href="/kurumsal/hakkimizda" className={`hover:text-accent transition-colors tracking-wide ${isHome && !scrolled ? "text-white/60 hover:text-white" : ""}`}>Hakkımızda</Link>
             </div>
             <div className="flex items-center gap-4">
-              <div className="flex items-center gap-3 text-gray-500">
+              <div className={`flex items-center gap-3 ${isHome && !scrolled ? "text-white/60" : "text-gray-500"}`}>
                 {socialLinks.map((s) => (
-                  <a key={s.name} href={s.url} target="_blank" rel="noopener noreferrer" aria-label={s.name} className="hover:text-accent transition-colors">
+                  <a key={s.name} href={s.url} target="_blank" rel="noopener noreferrer" aria-label={s.name} className={`hover:text-accent transition-colors ${isHome && !scrolled ? "text-white/60 hover:text-white" : ""}`}>
                     {s.icon}
                   </a>
                 ))}
@@ -90,7 +92,7 @@ export default function Header({ activeNav }: HeaderProps) {
               <img
                 src="/images/bogazici/logo.png"
                 alt="Boğaziçi Grup"
-                className="h-11 md:h-14 w-auto"
+                className={`h-11 md:h-14 w-auto transition-all duration-300 ${isHome && !scrolled ? "brightness-0 invert" : ""}`}
               />
             </Link>
 
@@ -104,7 +106,7 @@ export default function Header({ activeNav }: HeaderProps) {
                 >
                   {item.sub.length > 0 ? (
                     <button
-                      className={`flex items-center gap-1 px-4 py-2 text-[13px] font-bold tracking-wide uppercase transition-colors font-heading ${isActive(item.label) ? "text-accent" : "text-[#1a1a1a] hover:text-accent"}`}
+                      className={`flex items-center gap-1 px-4 py-2 text-[13px] font-bold tracking-wide uppercase transition-colors font-heading ${isActive(item.label) ? "text-accent" : isHome && !scrolled ? "text-white/90 hover:text-white" : "text-[#1a1a1a] hover:text-accent"}`}
                     >
                       {item.label}
                       <ChevronDown size={12} className={`transition-transform duration-200 ${openDropdown === item.label ? "rotate-180" : ""}`} />
@@ -112,7 +114,7 @@ export default function Header({ activeNav }: HeaderProps) {
                   ) : (
                     <Link
                       href={item.href}
-                      className={`flex items-center gap-1 px-4 py-2 text-[13px] font-bold tracking-wide uppercase transition-colors font-heading ${isActive(item.label) ? "text-accent" : "text-[#1a1a1a] hover:text-accent"}`}
+                      className={`flex items-center gap-1 px-4 py-2 text-[13px] font-bold tracking-wide uppercase transition-colors font-heading ${isActive(item.label) ? "text-accent" : isHome && !scrolled ? "text-white/90 hover:text-white" : "text-[#1a1a1a] hover:text-accent"}`}
                     >
                       {item.label}
                     </Link>
@@ -141,7 +143,7 @@ export default function Header({ activeNav }: HeaderProps) {
               ))}
             </ul>
 
-            <button className="lg:hidden text-navy p-2" onClick={() => setMobileOpen(true)} aria-label="Menüyü Aç">
+            <button className={`lg:hidden p-2 transition-colors ${isHome && !scrolled ? "text-white" : "text-navy"}`} onClick={() => setMobileOpen(true)} aria-label="Menüyü Aç">
               <Menu size={26} />
             </button>
           </div>

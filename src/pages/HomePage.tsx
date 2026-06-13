@@ -64,8 +64,39 @@ const milestones = [
   { year: "2021", title: "Spor Toto Gençlik Merkezi, Futbol Sahası ve Basketbol Sahaları İnşaatı" },
 ];
 
+const slideVariants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: (delay: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.8, delay, ease: [0.25, 0.1, 0.25, 1] },
+  }),
+};
+
+const CAROUSEL_CONFIG = {
+  autoplayDelayMs: 5000,
+  transitionDurationMs: 800,
+};
+
 export default function HomePage() {
   const [carouselApi, setCarouselApi] = useState<CarouselApi | null>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const TOTAL_SLIDES = 3;
+
+  useEffect(() => {
+    if (!carouselApi) return;
+    const onSelect = () => setActiveIndex(carouselApi.selectedScrollSnap());
+    const onScroll = () => setScrollProgress(carouselApi.scrollProgress());
+    carouselApi.on("select", onSelect);
+    carouselApi.on("scroll", onScroll);
+    setActiveIndex(carouselApi.selectedScrollSnap());
+    setScrollProgress(carouselApi.scrollProgress());
+    return () => {
+      carouselApi.off("select", onSelect);
+      carouselApi.off("scroll", onScroll);
+    };
+  }, [carouselApi]);
 
   const organizationSchema = {
     "@context": "https://schema.org",
@@ -101,17 +132,17 @@ export default function HomePage() {
       </Helmet>
       <Header />
 
-      {/* CAROUSEL SLIDER */}
-      <section className="relative w-full mt-[68px] md:mt-[112px] h-[calc(100dvh-68px)] md:h-[calc(100dvh-112px)] min-h-[640px] overflow-hidden">
+      {/* CAROUSEL SLIDER - Fullscreen */}
+      <section className="relative w-full h-dvh overflow-hidden">
         <Carousel
           opts={{ loop: true, align: "center" }}
           plugins={[
-            Autoplay({ delay: 5000, stopOnInteraction: false, stopOnMouseEnter: true }),
+            Autoplay({ delay: CAROUSEL_CONFIG.autoplayDelayMs, stopOnInteraction: false, stopOnMouseEnter: false, playOnInit: true }),
           ]}
           setApi={(api) => setCarouselApi(api)}
           className="w-full h-full"
         >
-          <CarouselContent className="h-full ml-0">
+          <CarouselContent className="h-full ml-0" style={{ transitionDuration: `${CAROUSEL_CONFIG.transitionDurationMs}ms` }}>
             {[
               {
                 img: "/images/bogazici/gayrimenkul.png",
@@ -134,52 +165,109 @@ export default function HomePage() {
                 desc: "Lüks otel ve marina yatırımlarımızla Türkiye'nin turizm potansiyeline dünya standartlarında değer katıyoruz.",
                 href: "/faaliyet-alanlari/turizm",
               },
-            ].map((slide, i) => (
-              <CarouselItem key={i} className="relative h-[calc(100dvh-68px)] md:h-[calc(100dvh-112px)] min-h-[640px] pl-0 basis-full overflow-hidden">
-                <div className="absolute inset-0">
+            ].map((slide, i) => {
+              const slideScroll = scrollProgress * (TOTAL_SLIDES - 1);
+              const relativePos = slideScroll - i;
+              const parallaxX = relativePos * 70;
+              return (
+              <CarouselItem key={i} className="relative h-dvh pl-0 basis-full overflow-hidden">
+                <div className="absolute inset-0 overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-b from-[#212a3c]/80 via-[#212a3c]/50 to-[#212a3c]/90 z-10" />
-                  <img
-                    src={slide.img}
-                    alt={slide.title}
-                    className="w-full h-full object-cover"
-                  />
+                  <div
+                    className="absolute inset-0 transition-transform duration-100 ease-out"
+                    style={{
+                      width: "calc(100% + 160px)",
+                      left: "-80px",
+                      transform: `translateX(${parallaxX}px)`,
+                    }}
+                  >
+                    <motion.img
+                      src={slide.img}
+                      alt={slide.title}
+                      className="w-full h-full object-cover"
+                      initial={{ scale: 1 }}
+                      animate={activeIndex === i ? { scale: 1.08 } : { scale: 1 }}
+                      transition={{ duration: 6, ease: "easeOut" }}
+                    />
+                  </div>
                 </div>
                 <div className="relative z-20 h-full flex flex-col items-center justify-center text-center px-4 pt-[120px] md:pt-[130px]">
-                  <span className="inline-block text-accent text-xs sm:text-sm font-bold tracking-[0.25em] uppercase mb-5 font-heading">
-                    {slide.label}
-                  </span>
-                  <h1 className="text-white font-bold leading-[1.1] mb-6 font-display" style={{ fontSize: "clamp(2.8rem, 6vw, 5.5rem)", letterSpacing: "0.01em" }}>
-                    {slide.title}
-                  </h1>
-                  <p className="text-white/80 text-base sm:text-lg leading-relaxed max-w-xl mx-auto mb-10 font-sans font-medium">
-                    {slide.desc}
-                  </p>
-                  <Link
-                    href={slide.href}
-                    className="inline-flex items-center gap-2.5 bg-accent hover:bg-[#52a344] text-white px-8 py-4 text-sm font-bold tracking-widest uppercase transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg active:scale-[0.97] font-display"
+                  <motion.span
+                    custom={0}
+                    initial="hidden"
+                    animate={activeIndex === i ? "visible" : "hidden"}
+                    variants={slideVariants}
+                    className="inline-block text-accent text-xs sm:text-sm font-bold tracking-[0.25em] uppercase mb-5 font-heading"
                   >
-                    Keşfet <ArrowRight size={16} />
-                  </Link>
+                    {slide.label}
+                  </motion.span>
+                  <motion.h1
+                    custom={0.15}
+                    initial="hidden"
+                    animate={activeIndex === i ? "visible" : "hidden"}
+                    variants={slideVariants}
+                    className="text-white font-bold leading-[1.1] mb-6 font-display"
+                    style={{ fontSize: "clamp(2.8rem, 6vw, 5.5rem)", letterSpacing: "0.01em" }}
+                  >
+                    {slide.title}
+                  </motion.h1>
+                  <motion.p
+                    custom={0.3}
+                    initial="hidden"
+                    animate={activeIndex === i ? "visible" : "hidden"}
+                    variants={slideVariants}
+                    className="text-white/80 text-base sm:text-lg leading-relaxed max-w-xl mx-auto mb-10 font-sans font-medium"
+                  >
+                    {slide.desc}
+                  </motion.p>
+                  <motion.div
+                    custom={0.45}
+                    initial="hidden"
+                    animate={activeIndex === i ? "visible" : "hidden"}
+                    variants={slideVariants}
+                  >
+                    <Link
+                      href={slide.href}
+                      className="inline-flex items-center gap-2.5 bg-accent hover:bg-[#52a344] text-white px-8 py-4 text-sm font-bold tracking-widest uppercase transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg active:scale-[0.97] font-display"
+                    >
+                      Keşfet <ArrowRight size={16} />
+                    </Link>
+                  </motion.div>
                 </div>
               </CarouselItem>
-            ))}
+            );})}
           </CarouselContent>
 
           <CarouselPrevious className="left-4 md:left-8 w-11 h-11 bg-white/10 hover:bg-white/25 border-0 text-white backdrop-blur-sm active:scale-90 transition-transform" />
           <CarouselNext className="right-4 md:right-8 w-11 h-11 bg-white/10 hover:bg-white/25 border-0 text-white backdrop-blur-sm active:scale-90 transition-transform" />
 
-          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 flex items-center gap-3">
-            {[0, 1, 2].map((i) => (
-              <button
-                key={i}
-                onClick={() => carouselApi?.scrollTo(i)}
-                className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
-                  (carouselApi?.selectedScrollSnap() ?? 0) === i
-                    ? "bg-accent w-7"
-                    : "bg-white/40 hover:bg-white/70"
-                }`}
-              />
-            ))}
+          <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center gap-4">
+            <div className="flex items-center gap-3">
+              {[0, 1, 2].map((i) => (
+                <button
+                  key={i}
+                  onClick={() => carouselApi?.scrollTo(i)}
+                  className={`relative w-10 h-2.5 rounded-full transition-all duration-300 overflow-hidden ${
+                    (carouselApi?.selectedScrollSnap() ?? 0) === i
+                      ? "bg-white/25"
+                      : "bg-white/20 hover:bg-white/40"
+                  }`}
+                >
+                  {(carouselApi?.selectedScrollSnap() ?? 0) === i && (
+                    <motion.div
+                      key={`progress-${i}`}
+                      className="absolute inset-y-0 left-0 bg-accent rounded-full"
+                      initial={{ width: "0%" }}
+                      animate={{ width: "100%" }}
+                      transition={{ duration: CAROUSEL_CONFIG.autoplayDelayMs / 1000, ease: "linear" }}
+                    />
+                  )}
+                </button>
+              ))}
+            </div>
+            <span className="text-white/40 text-[11px] font-mono tracking-widest">
+              {String((carouselApi?.selectedScrollSnap() ?? 0) + 1).padStart(2, "0")} / {String(TOTAL_SLIDES).padStart(2, "0")}
+            </span>
           </div>
         </Carousel>
       </section>
