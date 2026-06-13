@@ -11,9 +11,11 @@ interface NavItem {
 
 const navItems: NavItem[] = [
   { label: "Kurumsal", href: "#kurumsal", sub: ["Hakkımızda", "Tarihçe", "Vizyon & Misyon", "Kalite Politikamız", "Belgeler"], subHrefs: ["/kurumsal/hakkimizda", "/kurumsal/tarihce", "/kurumsal/vizyon-misyon", "/kurumsal/kalite-politikamiz", "/kurumsal/belgeler"] },
-  { label: "Faaliyet Alanları", href: "#faaliyetler", sub: ["Gayrimenkul", "Taahhüt", "Turizm"], subHrefs: ["/faaliyet-alanlari/gayrimenkul", "/faaliyet-alanlari/taahhut", "/faaliyet-alanlari/turizm"] },
+  { label: "Hizmetler", href: "#hizmetler", sub: ["Anahtar Teslim Projeler", "Mühendislik Hizmetleri"], subHrefs: ["/hizmetler/anahtar-teslim-projeler", "/hizmetler/muhendislik-hizmetleri"] },
   { label: "Projeler", href: "#projeler", sub: ["Gelecek Projeler", "Tamamlanan Projeler"], subHrefs: ["/projeler/gelecek", "/projeler/tamamlanan"] },
-  { label: "Makine Parkı", href: "/makine-parki", sub: [] },
+  { label: "Sürdürülebilirlik", href: "/surdurulebilirlik", sub: [] },
+  { label: "Haberler", href: "/haberler", sub: [] },
+  { label: "Kariyer", href: "/insan-kaynaklari", sub: [] },
   { label: "İletişim", href: "#iletisim", sub: ["Bize Ulaşın", "Satış Ofisleri"], subHrefs: ["/iletisim/bize-ulasin", "/iletisim/satis-ofisleri"] },
 ];
 

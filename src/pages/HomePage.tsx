@@ -18,6 +18,7 @@ import {
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { fadeUp, stagger } from "@/lib/motion";
+import { newsData } from "@/data/news";
 
 function Section({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   const ref = useRef(null);
@@ -72,7 +73,9 @@ const CAROUSEL_CONFIG = {
 
 export default function HomePage() {
   const [carouselApi, setCarouselApi] = useState<CarouselApi | null>(null);
+  const [newsCarouselApi, setNewsCarouselApi] = useState<CarouselApi | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [newsActiveIndex, setNewsActiveIndex] = useState(0);
   const [scrollProgress, setScrollProgress] = useState(0);
   const TOTAL_SLIDES = 3;
 
@@ -89,6 +92,16 @@ export default function HomePage() {
       carouselApi.off("scroll", onScroll);
     };
   }, [carouselApi]);
+
+  useEffect(() => {
+    if (!newsCarouselApi) return;
+    const onSelect = () => setNewsActiveIndex(newsCarouselApi.selectedScrollSnap());
+    newsCarouselApi.on("select", onSelect);
+    setNewsActiveIndex(newsCarouselApi.selectedScrollSnap());
+    return () => {
+      newsCarouselApi.off("select", onSelect);
+    };
+  }, [newsCarouselApi]);
 
   const organizationSchema = {
     "@context": "https://schema.org",
@@ -112,10 +125,10 @@ export default function HomePage() {
   return (
     <div className="bg-white text-foreground antialiased">
       <Helmet>
-        <title>Boğaziçi Grup A.Ş. | İnşaat, Gayrimenkul ve Turizm</title>
-        <meta name="description" content="1994'ten beri Boğaziçi Grup A.Ş., Türkiye'nin öncü inşaat taahhüt, gayrimenkul geliştirme ve turizm yatırımları firmasıdır. Projelerimizi keşfedin." />
-        <meta property="og:title" content="Boğaziçi Grup A.Ş. | İnşaat, Gayrimenkul ve Turizm" />
-        <meta property="og:description" content="1994'ten beri Türkiye'nin öncü inşaat taahhüt, gayrimenkul geliştirme ve turizm firması." />
+        <title>Boğaziçi Grup A.Ş. | İnşaat Taahhüt ve Mühendislik</title>
+        <meta name="description" content="1994'ten beri Boğaziçi Grup A.Ş., Türkiye'nin öncü inşaat taahhüt, anahtar teslim projeler ve mühendislik hizmetleri firmasıdır. Projelerimizi keşfedin." />
+        <meta property="og:title" content="Boğaziçi Grup A.Ş. | İnşaat Taahhüt ve Mühendislik" />
+        <meta property="og:description" content="1994'ten beri Türkiye'nin öncü inşaat taahhüt, anahtar teslim projeler ve mühendislik firması." />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="/opengraph.jpg" />
         <script type="application/ld+json">
@@ -137,25 +150,25 @@ export default function HomePage() {
           <CarouselContent className="h-full ml-0" style={{ transitionDuration: `${CAROUSEL_CONFIG.transitionDurationMs}ms` }}>
             {[
               {
-                img: "/images/bogazici/gayrimenkul.png",
-                label: "FAALİYET ALANLARI",
-                title: "GAYRİMENKUL",
-                desc: "Modern yaşam alanları ve prestijli ticari projeler ile şehrin siluetini yeniden şekillendiriyoruz.",
-                href: "/faaliyet-alanlari/gayrimenkul",
+                img: "/images/bogazici/taahhut.png",
+                label: "BOĞAZİÇİ GRUP",
+                title: "30+ YILLIK TECRÜBE",
+                desc: "İnşaat taahhüt sektöründe 30 yılı aşkın deneyimimizle yurt içi ve yurt dışında yüzlerce projeye imza atıyoruz.",
+                href: "/kurumsal/hakkimizda",
               },
               {
-                img: "/images/bogazici/taahhut.png",
-                label: "FAALİYET ALANLARI",
-                title: "TAAHHÜT",
-                desc: "Altyapı ve üstyapı projelerinde, mühendislik gücümüz ile devasa yapılar inşa ediyoruz.",
-                href: "/faaliyet-alanlari/taahhut",
+                img: "/images/bogazici/gayrimenkul.png",
+                label: "HİZMETLERİMİZ",
+                title: "ANAHTAR TESLİM PROJELER",
+                desc: "Projelerinizi ilk konsept aşamasından anahtar teslimine kadar eksiksiz yönetiyor, tek noktadan sorumluluk sağlıyoruz.",
+                href: "/hizmetler/anahtar-teslim-projeler",
               },
               {
                 img: "/images/bogazici/turizm.png",
-                label: "FAALİYET ALANLARI",
-                title: "TURİZM",
-                desc: "Lüks otel ve marina yatırımlarımızla Türkiye'nin turizm potansiyeline dünya standartlarında değer katıyoruz.",
-                href: "/faaliyet-alanlari/turizm",
+                label: "HİZMETLERİMİZ",
+                title: "MÜHENDİSLİK HİZMETLERİ",
+                desc: "Proje yönetimi, yapısal mühendislik, keşif ve fizibilite çalışmaları ile projelerinize profesyonel destek sağlıyoruz.",
+                href: "/hizmetler/muhendislik-hizmetleri",
               },
             ].map((slide, i) => {
               const slideScroll = scrollProgress * (TOTAL_SLIDES - 1);
@@ -271,7 +284,7 @@ export default function HomePage() {
             {[
               { value: "1994", label: "Kuruluş Yılı" },
               { value: "32+", label: "Yıl Tecrübe" },
-              { value: "3", label: "Faaliyet Alanı" },
+              { value: "2", label: "Hizmet Alanı" },
               { value: "100+", label: "Referans Proje" },
             ].map((s, i) => (
               <div key={i} className="flex flex-col items-center justify-center py-10 px-6 text-center">
@@ -321,41 +334,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* FAHALİYET ALANLARI */}
-      <section id="faaliyetler" className="py-20 md:py-32 bg-[#f8f8f8]">
-        <div className="max-w-[1440px] mx-auto px-6">
-          <Section>
-            <motion.div variants={fadeUp} className="text-center max-w-2xl mx-auto mb-14 md:mb-20">
-              <p className="text-accent text-xs font-bold tracking-[0.25em] uppercase mb-4 font-heading">Faaliyet Alanları</p>
-              <h2 className="font-bold text-navy mb-5 font-display" style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)" }}>ÜÇ ANA SEKTÖRDE GÜÇLÜ VARLIK</h2>
-              <div className="w-14 h-1 bg-accent mx-auto" />
-            </motion.div>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 lg:gap-8">
-              {[
-                { title: "Gayrimenkul", desc: "Modern yaşam alanları ve prestijli ticari projeler ile şehrin siluetini yeniden şekillendiriyoruz.", img: "/images/bogazici/gayrimenkul.png", href: "/faaliyet-alanlari/gayrimenkul" },
-                { title: "Taahhüt", desc: "Altyapı ve üstyapı projelerinde, mühendislik gücümüz ile devasa yapılar inşa ediyoruz.", img: "/images/bogazici/taahhut.png", href: "/faaliyet-alanlari/taahhut" },
-                { title: "Turizm", desc: "Lüks otel ve marina yatırımlarımızla Türkiye'nin turizm potansiyeline dünya standartlarında değer katıyoruz.", img: "/images/bogazici/turizm.png", href: "/faaliyet-alanlari/turizm" },
-              ].map((item) => (
-                <Link key={item.title} href={item.href}>
-                  <motion.div variants={fadeUp} className="group relative overflow-hidden block bg-navy shadow-lg min-h-[400px]">
-                    <img src={item.img} alt={item.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#212a3c] via-[#212a3c]/60 to-transparent" />
-                    <div className="relative h-full flex flex-col justify-end p-7 md:p-9 min-h-[400px]">
-                      <div className="w-8 h-0.5 bg-accent mb-4 transition-all duration-300 group-hover:w-16" />
-                      <h3 className="text-3xl font-bold text-white uppercase mb-3 font-display">{item.title}</h3>
-                      <p className="text-white/70 text-sm leading-relaxed mb-6 max-h-0 overflow-hidden group-hover:max-h-32 transition-all duration-500">{item.desc}</p>
-                      <div className="flex items-center gap-2 text-accent text-xs font-bold uppercase tracking-widest group-active:scale-95 transition-transform font-heading">
-                        Keşfet <ChevronRight size={14} />
-                      </div>
-                    </div>
-                  </motion.div>
-                </Link>
-              ))}
-            </div>
-          </Section>
-        </div>
-      </section>
-
       {/* PROJELER */}
       <section id="projeler" className="py-20 md:py-32 bg-white">
         <div className="max-w-[1440px] mx-auto px-6">
@@ -399,18 +377,174 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* KİLOMETRE TAŞLARI */}
-      <section id="tarihce" className="py-20 md:py-32 bg-navy relative overflow-hidden">
-        <div className="absolute inset-0 opacity-5" style={{ backgroundImage: "repeating-linear-gradient(45deg, transparent, transparent 60px, rgba(255,255,255,0.05) 60px, rgba(255,255,255,0.05) 120px)" }} />
-        <div className="max-w-[1440px] mx-auto px-6 relative z-10">
+      {/* SÜRDÜRÜLEBİLİRLİK */}
+      <section id="surdurulebilirlik" className="py-20 md:py-32 bg-white">
+        <div className="max-w-[1440px] mx-auto px-6">
           <Section>
-            <motion.div variants={fadeUp} className="text-center max-w-2xl mx-auto mb-16">
+            <motion.div variants={fadeUp} className="text-center max-w-2xl mx-auto mb-14 md:mb-20">
+              <p className="text-accent text-xs font-bold tracking-[0.25em] uppercase mb-4 font-heading">Sürdürülebilirlik</p>
+              <h2 className="font-bold text-navy mb-5 font-display" style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)" }}>SÜRDÜRÜLEBİLİRLİK</h2>
+              <div className="w-14 h-1 bg-accent mx-auto" />
+            </motion.div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center mb-14">
+              <motion.div variants={fadeUp}>
+                <p className="text-[#555] text-[15px] leading-7 mb-5">
+                  Çalışanlarımızın ve iş ortaklarımızın sağlık ve güvenliğini en öncelikli konumuz olarak görüyor, tüm projelerimizde 
+                  "sıfır kaza" hedefiyle hareket ediyoruz. ISO 9001 ve ISO 14001 standartlarına uygun olarak yürüttüğümüz 
+                  faaliyetlerimizde çevresel sürdürülebilirliği iş süreçlerimizin ayrılmaz bir parçası olarak benimsiyoruz.
+                </p>
+                <p className="text-[#555] text-[15px] leading-7 mb-8">
+                  Düzenli danışma, eğitimler ve iç & dış denetimler yoluyla çalışanlarımızın katılımını aktif olarak teşvik ediyor, 
+                  topluma değer katmayı kurumsal sorumluluğumuzun temel bir parçası olarak görüyoruz.
+                </p>
+                <Link
+                  href="/surdurulebilirlik"
+                  className="inline-flex items-center gap-2 bg-navy hover:bg-accent text-white px-8 py-3.5 text-[12px] font-bold uppercase tracking-wider transition-all active:scale-[0.97] font-heading"
+                >
+                  Detaylı Bilgi <ArrowRight size={14} />
+                </Link>
+              </motion.div>
+              <motion.div variants={fadeUp} className="grid grid-cols-2 gap-4">
+                {[
+                  { value: "0", label: "Kaza Hedefi", color: "bg-accent" },
+                  { value: "ISO 14001", label: "Çevre Yönetimi", color: "bg-navy" },
+                  { value: "ISO 9001", label: "Kalite Yönetimi", color: "bg-navy" },
+                  { value: "%100", label: "Yasal Uyum", color: "bg-accent" },
+                ].map((item) => (
+                  <div key={item.label} className={`${item.color} text-white p-6 text-center`}>
+                    <div className="text-3xl font-bold mb-1 font-display">{item.value}</div>
+                    <div className="text-[11px] font-bold uppercase tracking-widest text-white/80 font-heading">{item.label}</div>
+                  </div>
+                ))}
+              </motion.div>
+            </div>
+
+            {/* Policy Pillars */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+              {[
+                { title: "Çevre Politikası", desc: "Doğal kaynakları verimli kullanıyor, karbon ayak izimizi azaltarak yeşil dönüşüme katkıda bulunuyoruz.", icon: (
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-7 h-7"><path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 007.92 12.446A9 9 0 1112 2.992z"/></svg>
+                ) },
+                { title: "Sosyal Sorumluluk", desc: "Faaliyet gösterdiğimiz bölgelerde sosyal ve ekonomik kalkınmaya destek oluyor, yerel istihdama katkı sağlıyoruz.", icon: (
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-7 h-7"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87m-4-12a4 4 0 010 7.75"/></svg>
+                ) },
+                { title: "Kalite Anlayışı", desc: "Müşteri memnuniyetini en üst düzeyde tutarak sürekli iyileştirme prensibiyle hareket ediyoruz.", icon: (
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-7 h-7"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                ) },
+              ].map((item) => (
+                <motion.div key={item.title} variants={fadeUp} className="bg-[#f8f8f8] p-7 border border-gray-100 group hover:shadow-md transition-all duration-300">
+                  <div className="w-12 h-12 bg-accent text-white flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+                    {item.icon}
+                  </div>
+                  <h3 className="text-navy font-bold text-sm uppercase mb-3 font-display group-hover:text-accent transition-colors">{item.title}</h3>
+                  <p className="text-[#555] text-[13px] leading-6">{item.desc}</p>
+                </motion.div>
+              ))}
+            </div>
+          </Section>
+        </div>
+      </section>
+
+      {/* HABERLER */}
+      <section className="py-20 md:py-32 bg-[#f8f8f8]">
+        <div className="max-w-[1440px] mx-auto px-6">
+          <Section>
+            <motion.div variants={fadeUp} className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 md:mb-16">
+              <div>
+                <p className="text-accent text-xs font-bold tracking-[0.25em] uppercase mb-4 font-heading">Haberler</p>
+                <h2 className="font-bold text-navy font-display" style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)" }}>BİZDEN HABERLER</h2>
+                <div className="w-14 h-1 bg-accent mt-4" />
+              </div>
+              <Link href="/haberler" className="inline-flex items-center gap-2 text-navy border-b-2 border-accent pb-1 text-sm font-bold uppercase tracking-wider hover:text-accent active:scale-[0.97] transition-all shrink-0 font-display">
+                Tüm Haberler <ArrowRight size={15} />
+              </Link>
+            </motion.div>
+            <Carousel
+              opts={{ loop: true, align: "start" }}
+              plugins={[
+                Autoplay({ delay: 4000, stopOnInteraction: false, stopOnMouseEnter: true, playOnInit: true }),
+              ]}
+              setApi={setNewsCarouselApi}
+              className="w-full"
+            >
+              <CarouselContent>
+                {newsData.map((item) => (
+                  <CarouselItem key={item.slug} className="basis-full md:basis-1/2 lg:basis-1/3 pl-4">
+                    <Link
+                      href={`/haberler/${item.slug}`}
+                      className="group block h-full"
+                    >
+                      <motion.div
+                        variants={fadeUp}
+                        className="bg-white border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden h-full flex flex-col"
+                      >
+                        <div className="relative overflow-hidden h-44 shrink-0">
+                          <img
+                            src={item.image}
+                            alt={item.title}
+                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                            loading="lazy"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                          <span className="absolute top-3 left-3 bg-accent text-white text-[10px] font-bold px-3 py-1 uppercase tracking-wider font-heading">
+                            {item.category}
+                          </span>
+                        </div>
+                        <div className="p-5 md:p-6 flex-1 flex flex-col">
+                          <span className="text-[#999] text-[11px] font-medium mb-2">{item.date}</span>
+                          <h3 className="text-base font-bold text-navy uppercase mb-2 font-display group-hover:text-accent transition-colors leading-snug">
+                            {item.title}
+                          </h3>
+                          <p className="text-[#555] text-[13px] leading-6 flex-1 line-clamp-3">
+                            {item.summary}
+                          </p>
+                          <div className="flex items-center gap-1 text-accent text-[10px] font-bold uppercase tracking-widest transition-all font-heading mt-auto pt-3">
+                            Devamını Oku
+                            <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
+                          </div>
+                        </div>
+                      </motion.div>
+                    </Link>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+
+              {/* Navigation & Dots */}
+              <div className="flex items-center justify-center gap-4 mt-10">
+                <CarouselPrevious className="static w-10 h-10 bg-white border border-gray-200 text-navy hover:bg-accent hover:text-white hover:border-accent active:scale-90 transition-all translate-y-0" />
+                <div className="flex items-center gap-2.5">
+                  {newsData.map((item, i) => (
+                    <button
+                      key={item.slug}
+                      onClick={() => newsCarouselApi?.scrollTo(i)}
+                      className={`size-2 rounded-full transition-all duration-300 ${
+                        newsActiveIndex === i
+                          ? "bg-accent w-6"
+                          : "bg-gray-300 hover:bg-gray-400"
+                      }`}
+                      aria-label={`Habere git ${i + 1}`}
+                    />
+                  ))}
+                </div>
+                <CarouselNext className="static w-10 h-10 bg-white border border-gray-200 text-navy hover:bg-accent hover:text-white hover:border-accent active:scale-90 transition-all translate-y-0" />
+              </div>
+            </Carousel>
+          </Section>
+        </div>
+      </section>
+
+      {/* KİLOMETRE TAŞLARI */}
+      <section id="tarihce" className="py-20 md:py-32 bg-[#f8f8f8]">
+        <div className="max-w-[1440px] mx-auto px-6">
+          <Section>
+            <motion.div variants={fadeUp} className="mb-14">
               <p className="text-accent text-xs font-bold tracking-[0.25em] uppercase mb-4 font-heading">Kilometre Taşları</p>
-              <h2 className="font-bold text-white font-display" style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)" }}>KİLOMETRE TAŞLARI</h2>
-              <div className="w-14 h-1 bg-accent mx-auto mt-5" />
+              <h2 className="font-bold text-navy font-display" style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)" }}>KİLOMETRE TAŞLARI</h2>
+              <div className="w-14 h-1 bg-accent mt-4" />
             </motion.div>
             <div className="relative">
-              <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-white/10 -translate-x-1/2" />
+              <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-gray-200 -translate-x-1/2" />
               <div className="space-y-8 md:space-y-0">
                 {milestones.map((m, i) => (
                   <motion.div
@@ -420,9 +554,9 @@ export default function HomePage() {
                   >
                     <div className={`md:w-1/2 ${i % 2 === 0 ? "md:text-right md:pr-10" : "md:text-left md:pl-10"} mb-4 md:mb-0`}>
                       <div className="inline-block bg-accent text-white px-4 py-1.5 text-sm font-bold mb-2 font-display">{m.year}</div>
-                      <h3 className="text-white font-bold text-base mb-1 leading-snug font-display">{m.title}</h3>
+                      <h3 className="text-navy font-bold text-base mb-1 leading-snug font-display">{m.title}</h3>
                     </div>
-                    <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-accent border-4 border-navy z-10" />
+                    <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-accent border-4 border-white z-10" />
                     <div className="md:w-1/2" />
                   </motion.div>
                 ))}
@@ -432,57 +566,25 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* MAKİNE PARKI */}
-      <section id="makine-parki" className="py-20 md:py-32 bg-white">
-        <div className="max-w-[1440px] mx-auto px-6">
-          <Section className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <motion.div variants={fadeUp} className="relative order-2 lg:order-1">
-              <div className="absolute inset-0 -translate-x-4 -translate-y-4 bg-[#f4f4f4] hidden sm:block" />
-              <img src="/images/bogazici/makine.png" alt="Makine Parkı" className="relative z-10 w-full aspect-[4/3] object-cover shadow-2xl" loading="lazy" />
-              <div className="absolute -bottom-5 -right-5 sm:-bottom-6 sm:-right-6 z-20 bg-navy text-white px-6 py-5 shadow-xl">
-                <div className="text-3xl font-bold leading-none font-display">200+</div>
-                <div className="text-[10px] font-bold uppercase tracking-widest mt-1 text-white/60 font-heading">İş Makinesi</div>
-              </div>
-            </motion.div>
-            <div className="order-1 lg:order-2">
-              <motion.p variants={fadeUp} className="text-accent text-xs font-bold tracking-[0.25em] uppercase mb-4 font-heading">Makine Parkı</motion.p>
-              <motion.h2 variants={fadeUp} className="font-bold text-navy leading-tight mb-6 font-display" style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)" }}>
-                GÜÇLÜ MAKİNE PARKI<br />BÜYÜK PROJELER
-              </motion.h2>
-              <motion.div variants={fadeUp} className="w-14 h-1 bg-accent mb-8" />
-              <motion.p variants={fadeUp} className="text-[#555] text-[15px] leading-7 mb-8">
-                Modern ve güçlü makine parkımız ile en zorlu inşaat projelerini bile başarıyla tamamlıyoruz. Sürekli güncellenen ekipman filosumuz ile sektörün en yüksek standartlarını karşılıyoruz.
-              </motion.p>
-              {[["Hafriyat & Kazı Ekipmanları", "50+"], ["Beton & Çelik İşleme", "80+"], ["Ağır Taşıma & Vinçler", "40+"], ["Özel Mühendislik Ekipmanları", "30+"]].map(([label, count]) => (
-                <motion.div key={label} variants={fadeUp} className="flex items-center justify-between border-b border-gray-100 py-3">
-                  <span className="text-[#333] text-sm font-medium">{label}</span>
-                  <span className="text-accent font-bold text-sm font-display">{count}</span>
-                </motion.div>
-              ))}
-            </div>
-          </Section>
-        </div>
-      </section>
-
       {/* İLETİŞİM */}
-      <section id="iletisim" className="py-20 md:py-28 bg-navy">
+      <section id="iletisim" className="py-20 md:py-28 bg-[#f8f8f8]">
         <div className="max-w-[1440px] mx-auto px-6">
           <Section>
-            <motion.div variants={fadeUp} className="text-center mb-12">
+            <motion.div variants={fadeUp} className="mb-12">
               <p className="text-accent text-xs font-bold tracking-[0.25em] uppercase mb-4 font-heading">İletişim</p>
-              <h2 className="font-bold text-white mb-5 font-display" style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)" }}>BİZE ULAŞIN</h2>
-              <div className="w-14 h-1 bg-accent mx-auto" />
+              <h2 className="font-bold text-navy mb-5 font-display" style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)" }}>BİZE ULAŞIN</h2>
+              <div className="w-14 h-1 bg-accent" />
             </motion.div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl">
               {[
                 { icon: <MapPin size={22} />, title: "Adres", lines: ["Barbaros Mah. Akzambak Sok.", "Uphill Towers A Blok No: 3/A", "Ataşehir / İstanbul"] },
                 { icon: <Phone size={22} />, title: "Telefon", lines: ["+90 (216) 688 08 00"] },
                 { icon: <Mail size={22} />, title: "E-posta", lines: ["info@bogazicigroup.com.tr"] },
               ].map((c) => (
-                <motion.div key={c.title} variants={fadeUp} className="text-center">
-                  <div className="w-14 h-14 bg-accent flex items-center justify-center text-white mx-auto mb-5">{c.icon}</div>
-                  <h4 className="text-white font-bold uppercase tracking-widest text-sm mb-3 font-display">{c.title}</h4>
-                  {c.lines.map((l, i) => <p key={i} className="text-white/50 text-sm leading-6">{l}</p>)}
+                <motion.div key={c.title} variants={fadeUp}>
+                  <div className="w-14 h-14 bg-accent flex items-center justify-center text-white mb-5">{c.icon}</div>
+                  <h4 className="text-navy font-bold uppercase tracking-widest text-sm mb-3 font-display">{c.title}</h4>
+                  {c.lines.map((l, i) => <p key={i} className="text-[#666] text-sm leading-6">{l}</p>)}
                 </motion.div>
               ))}
             </div>

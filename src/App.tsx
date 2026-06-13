@@ -11,12 +11,13 @@ import Tarihce from "@/pages/Tarihce";
 import VizyonMisyon from "@/pages/VizyonMisyon";
 import KalitePolitikamiz from "@/pages/KalitePolitikamiz";
 import Belgeler from "@/pages/Belgeler";
-import Gayrimenkul from "@/pages/Gayrimenkul";
-import Taahhut from "@/pages/Taahhut";
-import Turizm from "@/pages/Turizm";
-import MakineParki from "@/pages/MakineParki";
+import AnahtarTeslimProjeler from "@/pages/AnahtarTeslimProjeler";
+import MuhendislikHizmetleri from "@/pages/MuhendislikHizmetleri";
+import Surdurulebilirlik from "@/pages/Surdurulebilirlik";
 import BizeUlasin from "@/pages/BizeUlasin";
 import SatisOfisleri from "@/pages/SatisOfisleri";
+import Haberler from "@/pages/Haberler";
+import HaberDetay from "@/pages/HaberDetay";
 import InsanKaynaklari from "@/pages/InsanKaynaklari";
 import Kvkk from "@/pages/Kvkk";
 import NotFound from "@/pages/not-found";
@@ -42,10 +43,11 @@ function Router() {
       <Route path="/kurumsal/vizyon-misyon" component={VizyonMisyon} />
       <Route path="/kurumsal/kalite-politikamiz" component={KalitePolitikamiz} />
       <Route path="/kurumsal/belgeler" component={Belgeler} />
-      <Route path="/faaliyet-alanlari/gayrimenkul" component={Gayrimenkul} />
-      <Route path="/faaliyet-alanlari/taahhut" component={Taahhut} />
-      <Route path="/faaliyet-alanlari/turizm" component={Turizm} />
-      <Route path="/makine-parki" component={MakineParki} />
+      <Route path="/hizmetler/anahtar-teslim-projeler" component={AnahtarTeslimProjeler} />
+      <Route path="/hizmetler/muhendislik-hizmetleri" component={MuhendislikHizmetleri} />
+      <Route path="/surdurulebilirlik" component={Surdurulebilirlik} />
+      <Route path="/haberler" component={Haberler} />
+      <Route path="/haberler/:slug" component={HaberDetay} />
       <Route path="/iletisim/bize-ulasin" component={BizeUlasin} />
       <Route path="/iletisim/satis-ofisleri" component={SatisOfisleri} />
       <Route path="/insan-kaynaklari" component={InsanKaynaklari} />

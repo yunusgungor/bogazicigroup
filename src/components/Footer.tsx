@@ -19,7 +19,7 @@ const socialLinks = [
 export default function Footer() {
   return (
     <footer className="bg-navy text-white">
-      <div className="max-w-[1440px] mx-auto px-6 py-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10">
+      <div className="max-w-[1440px] mx-auto px-6 py-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-10">
         <div className="sm:col-span-2 lg:col-span-1">
           <p className="text-white/45 text-sm leading-7 mb-6">1994'ten bu yana inşaat sektörünün güvenilir ismi.</p>
           <div className="flex items-center gap-3">
@@ -39,9 +39,9 @@ export default function Footer() {
           </ul>
         </div>
         <div>
-          <h5 className="text-sm font-bold uppercase tracking-widest text-white mb-5 font-display">Faaliyet Alanları</h5>
+          <h5 className="text-sm font-bold uppercase tracking-widest text-white mb-5 font-display">Hizmetler</h5>
           <ul className="space-y-3">
-            {[["Gayrimenkul", "/faaliyet-alanlari/gayrimenkul"], ["Taahhüt", "/faaliyet-alanlari/taahhut"], ["Turizm", "/faaliyet-alanlari/turizm"]].map(([label, href]) => (
+            {[["Anahtar Teslim Projeler", "/hizmetler/anahtar-teslim-projeler"], ["Mühendislik Hizmetleri", "/hizmetler/muhendislik-hizmetleri"]].map(([label, href]) => (
               <li key={label}><Link href={href} className="text-white/45 hover:text-accent text-sm transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-accent shrink-0" />{label}</Link></li>
             ))}
           </ul>
@@ -56,6 +56,16 @@ export default function Footer() {
             {[["Gelecek Projeler", "/projeler/gelecek"], ["Tamamlanan Projeler", "/projeler/tamamlanan"]].map(([label, href]) => (
               <li key={label}><Link href={href} className="text-white/45 hover:text-accent text-sm transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-accent shrink-0" />{label}</Link></li>
             ))}
+          </ul>
+        </div>
+        <div>
+          <h5 className="text-sm font-bold uppercase tracking-widest text-white mb-5 font-display">Sürdürülebilirlik</h5>
+          <ul className="space-y-3">
+            <li><Link href="/surdurulebilirlik" className="text-white/45 hover:text-accent text-sm transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-accent shrink-0" />Sürdürülebilirlik</Link></li>
+          </ul>
+          <h5 className="text-sm font-bold uppercase tracking-widest text-white mb-5 mt-8 font-display">Haberler</h5>
+          <ul className="space-y-3">
+            <li><Link href="/haberler" className="text-white/45 hover:text-accent text-sm transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-accent shrink-0" />Haberler</Link></li>
           </ul>
         </div>
         <div>
