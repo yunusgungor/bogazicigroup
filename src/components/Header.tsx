@@ -67,12 +67,12 @@ export default function Header({ activeNav }: HeaderProps) {
       <header className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${scrolled ? "shadow-xl bg-white/98 backdrop-blur-sm" : isHome ? "bg-transparent" : "bg-white"}`}>
         {/* Ana nav */}
         <nav>
-          <div className="max-w-[1250px] mx-auto px-4 flex items-center justify-between h-[68px] md:h-[76px]">
+          <div className="max-w-[1440px] mx-auto px-6 flex items-center justify-between h-[60px] md:h-[68px]">
             <Link href="/" className="shrink-0 block">
               <img
                 src="/images/bogazici/logo.png"
                 alt="Boğaziçi Grup"
-                className={`h-11 md:h-14 w-auto transition-all duration-300 ${isHome && !scrolled ? "brightness-0 invert" : ""}`}
+                className={`h-10 md:h-12 w-auto transition-all duration-300 ${isHome && !scrolled ? "brightness-0 invert" : ""}`}
               />
             </Link>
 

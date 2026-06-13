@@ -191,7 +191,7 @@ export default function HomePage() {
                     />
                   </div>
                 </div>
-                <div className="relative z-20 h-full flex flex-col items-center justify-center text-center px-4 pt-[120px] md:pt-[130px]">
+                <div className="relative z-20 h-full flex flex-col items-center justify-center text-center px-6 pt-[80px] md:pt-[88px]">
                   <motion.span
                     custom={0}
                     initial="hidden"
@@ -274,7 +274,7 @@ export default function HomePage() {
 
       {/* STATS STRIP */}
       <div className="bg-navy">
-        <div className="max-w-[1250px] mx-auto px-4">
+        <div className="max-w-[1440px] mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-white/10">
             {[
               { value: "1938", label: "Kuruluş Yılı" },
@@ -282,7 +282,7 @@ export default function HomePage() {
               { value: "3", label: "Faaliyet Alanı" },
               { value: "100+", label: "Referans Proje" },
             ].map((s, i) => (
-              <div key={i} className="flex flex-col items-center justify-center py-10 px-4 text-center">
+              <div key={i} className="flex flex-col items-center justify-center py-10 px-6 text-center">
                 <span className="text-4xl md:text-5xl font-bold text-white mb-1 font-display">{s.value}</span>
                 <span className="text-accent text-xs sm:text-sm font-semibold tracking-[0.15em] uppercase font-heading">{s.label}</span>
               </div>
@@ -293,7 +293,7 @@ export default function HomePage() {
 
       {/* HAKKIMIZDA */}
       <section id="kurumsal" className="py-20 md:py-32 bg-white">
-        <div className="max-w-[1250px] mx-auto px-4">
+        <div className="max-w-[1440px] mx-auto px-6">
           <Section className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div>
               <motion.p variants={fadeUp} className="text-accent text-xs font-bold tracking-[0.25em] uppercase mb-4 font-heading">Hakkımızda</motion.p>
@@ -331,7 +331,7 @@ export default function HomePage() {
 
       {/* FAHALİYET ALANLARI */}
       <section id="faaliyetler" className="py-20 md:py-32 bg-[#f8f8f8]">
-        <div className="max-w-[1250px] mx-auto px-4">
+        <div className="max-w-[1440px] mx-auto px-6">
           <Section>
             <motion.div variants={fadeUp} className="text-center max-w-2xl mx-auto mb-14 md:mb-20">
               <p className="text-accent text-xs font-bold tracking-[0.25em] uppercase mb-4 font-heading">Faaliyet Alanları</p>
@@ -366,7 +366,7 @@ export default function HomePage() {
 
       {/* PROJELER */}
       <section id="projeler" className="py-20 md:py-32 bg-white">
-        <div className="max-w-[1250px] mx-auto px-4">
+        <div className="max-w-[1440px] mx-auto px-6">
           <Section>
             <motion.div variants={fadeUp} className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 md:mb-16">
               <div>
@@ -410,7 +410,7 @@ export default function HomePage() {
       {/* KİLOMETRE TAŞLARI */}
       <section id="tarihce" className="py-20 md:py-32 bg-navy relative overflow-hidden">
         <div className="absolute inset-0 opacity-5" style={{ backgroundImage: "repeating-linear-gradient(45deg, transparent, transparent 60px, rgba(255,255,255,0.05) 60px, rgba(255,255,255,0.05) 120px)" }} />
-        <div className="max-w-[1250px] mx-auto px-4 relative z-10">
+        <div className="max-w-[1440px] mx-auto px-6 relative z-10">
           <Section>
             <motion.div variants={fadeUp} className="text-center max-w-2xl mx-auto mb-16">
               <p className="text-accent text-xs font-bold tracking-[0.25em] uppercase mb-4 font-heading">Kilometre Taşları</p>
@@ -442,7 +442,7 @@ export default function HomePage() {
 
       {/* ONURSAL BAŞKAN */}
       <section className="py-20 md:py-32 bg-[#f8f8f8]">
-        <div className="max-w-[1250px] mx-auto px-4">
+        <div className="max-w-[1440px] mx-auto px-6">
           <Section>
             <div className="max-w-3xl mx-auto text-center">
               <motion.p variants={fadeUp} className="text-accent text-xs font-bold tracking-[0.25em] uppercase mb-4 font-heading">Onursal Başkan</motion.p>
@@ -460,7 +460,7 @@ export default function HomePage() {
 
       {/* MAKİNE PARKI */}
       <section id="makine-parki" className="py-20 md:py-32 bg-white">
-        <div className="max-w-[1250px] mx-auto px-4">
+        <div className="max-w-[1440px] mx-auto px-6">
           <Section className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <motion.div variants={fadeUp} className="relative order-2 lg:order-1">
               <div className="absolute inset-0 -translate-x-4 -translate-y-4 bg-[#f4f4f4] hidden sm:block" />
@@ -492,7 +492,7 @@ export default function HomePage() {
 
       {/* İLETİŞİM */}
       <section id="iletisim" className="py-20 md:py-28 bg-navy">
-        <div className="max-w-[1250px] mx-auto px-4">
+        <div className="max-w-[1440px] mx-auto px-6">
           <Section>
             <motion.div variants={fadeUp} className="text-center mb-12">
               <p className="text-accent text-xs font-bold tracking-[0.25em] uppercase mb-4 font-heading">İletişim</p>

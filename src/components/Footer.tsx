@@ -19,7 +19,7 @@ const socialLinks = [
 export default function Footer() {
   return (
     <footer className="bg-navy text-white">
-      <div className="max-w-[1250px] mx-auto px-4 py-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10">
+      <div className="max-w-[1440px] mx-auto px-6 py-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10">
         <div className="sm:col-span-2 lg:col-span-1">
           <p className="text-white/45 text-sm leading-7 mb-6">1938'den bu yana inşaat sektörünün güvenilir ismi.</p>
           <div className="flex items-center gap-3">
@@ -71,7 +71,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="border-t border-white/10">
-        <div className="max-w-[1250px] mx-auto px-4 py-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-white/30">
+        <div className="max-w-[1440px] mx-auto px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-white/30">
           <span>© 2026 Boğaziçi Grup A.Ş. — Tüm Hakları Saklıdır.</span>
           <div className="flex items-center gap-5">
             <Link href="/kvkk-aydinlatma-metni" className="hover:text-white transition-colors">KVKK Aydınlatma Metni</Link>

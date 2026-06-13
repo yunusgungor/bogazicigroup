@@ -14,7 +14,7 @@ export default function NotFound() {
       </Helmet>
       <div className="min-h-screen flex flex-col bg-white">
         <Header />
-        <div className="flex-1 flex items-center justify-center text-center px-4 pt-[120px]">
+        <div className="flex-1 flex items-center justify-center text-center px-6 pt-[120px]">
           <div className="max-w-md">
             <div className="text-navy font-bold leading-none mb-6 font-display" style={{ fontSize: "clamp(6rem, 15vw, 10rem)" }}>
               404
